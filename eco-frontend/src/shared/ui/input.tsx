@@ -1,5 +1,6 @@
 "use client";
 
+import { IMaskInput, IMaskInputProps } from "react-imask";
 import {
   FC,
   forwardRef,
@@ -11,6 +12,8 @@ import { Input as HeadlessInput } from "@headlessui/react";
 import { cn } from "@/src/shared/lib/utils";
 import { EyeClosedIcon, EyeIcon, IconType } from "@/src/shared/icons";
 import { Button } from "./button";
+import { PopoverTrigger } from "./popover";
+import { FactoryOpts, InputMask, MaskedDate } from "imask";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   withAsterisk?: boolean;
@@ -104,4 +107,54 @@ const PasswordInput = forwardRef<HTMLInputElement, InputProps>(
 );
 PasswordInput.displayName = "PasswordInput";
 
-export { Input, PasswordInput };
+interface MaskInputProps extends InputProps {
+  onAccept: (
+    value: InputMask<MaskedDate>["value"],
+    maskRef: InputMask<{ [x: string]: unknown }>,
+    e?: InputEvent | undefined,
+  ) => void;
+}
+
+const MaskInput = forwardRef<HTMLInputElement, MaskInputProps>(
+  ({ placeholder, Icon, withAsterisk, className, type, ...props }, ref) => {
+    return (
+      <div className="transition duration-100 relative">
+        <label
+          className={cn(
+            "select-none pointer-events-none transition duration-300 absolute text-content-tertiary top-4 text-base font-medium left-4",
+            props.value &&
+            placeholder &&
+            "translate-y-[-8px] opacity-100 text-content-primary text-xs",
+          )}
+        >
+          {placeholder}
+          {withAsterisk && <span className="text-border-error">*</span>}
+        </label>
+        <IMaskInput
+          mask={Date}
+          className={cn(
+            "transition duration-300 p-4 bg-background-secondary w-full outline outline-[1.5px] outline-border-secondary rounded-2xl text-content-primary text-base placeholder:text-transparent disabled:text-border-hover-overlay",
+            props.value &&
+            placeholder &&
+            "placeholder:text-opacity-0 pt-[26px] pb-[6px]",
+            Icon && "pr-12",
+            className,
+          )}
+          onAccept={props.onAccept}
+          ref={ref}
+          value={props.value as string}
+        />
+        {Icon && (
+          <div className="absolute right-4 top-4">
+            <PopoverTrigger>
+              <Icon />
+            </PopoverTrigger>
+          </div>
+        )}
+      </div>
+    );
+  },
+);
+MaskInput.displayName = "MaskInput";
+
+export { Input, PasswordInput, MaskInput };

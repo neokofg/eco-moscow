@@ -1,4 +1,4 @@
-import { ProfileMenu } from "@/src/widgets/profileMenu/ui/ProfileMenu";
+import { ProfileMenu } from "@/src/widgets/profile-menu";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { FC, PropsWithChildren } from "react";

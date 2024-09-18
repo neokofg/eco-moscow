@@ -1,1 +1,1 @@
-export { ProfileInfoPage as default } from "@/src/pages/profileInfo";
+export { ProfileInfoPage as default } from "@/src/pages/profile-info";

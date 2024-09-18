@@ -29,6 +29,7 @@ interface User {
   about: string;
   gender: string;
   email: string;
+  address: string;
   updated_at: string;
   user_education: {
     id: string;

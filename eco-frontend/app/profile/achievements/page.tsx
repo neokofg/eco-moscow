@@ -1,1 +1,1 @@
-export { ProfileAchievementsPage as default } from "@/src/pages/profileAchievements";
+export { ProfileAchievementsPage as default } from "@/src/pages/profile-achievements";

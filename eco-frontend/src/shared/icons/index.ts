@@ -22,3 +22,8 @@ export { GalleryIcon } from "./gallery";
 export { StarIcon } from "./star";
 export { HeartsIcon } from "./hearts";
 export { CaseIcon } from "./case";
+export { CameraIcon } from "./camera";
+export { ChevronLeftIcon } from "./chevron_left";
+export { ChevronRightIcon } from "./chevron_right";
+export { CalendarIcon } from "./calendar";
+export { PenIcon } from "./pen";
