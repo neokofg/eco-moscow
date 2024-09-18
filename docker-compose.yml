@@ -11,6 +11,7 @@ services:
       - 80:80
       - 443:443
     volumes:
+      - "./eco-frontend:/var/www/eco/eco-frontend"
       - "./config/certs/:/etc/nginx/certs"
       - "./config/nginx/:/etc/nginx/conf.d/"
   backend:
