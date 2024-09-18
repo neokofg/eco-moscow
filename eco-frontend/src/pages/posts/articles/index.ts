@@ -1,0 +1,1 @@
+export {ArticleId} from './ui/id'
