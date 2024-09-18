@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->integer('views')->default(0);
             $table->string('video_url');
+            $table->string('preview_url');
             $table->ulid('user_id');
             $table->ulid('category_id');
         });

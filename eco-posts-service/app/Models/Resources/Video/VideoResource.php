@@ -19,6 +19,7 @@ final class VideoResource extends JsonResource
             'description' => $this->description,
             'views' => $this->views,
             'video_url' => $this->video_url,
+            'preview_url' => $this->preview_url,
             'user' => [
                 'id' => $user->id,
                 'fio' => $user->name . ' ' . $user->surname,

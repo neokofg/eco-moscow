@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->integer('views')->default(0);
+            $table->string('preview_url');
             $table->text('content');
             $table->ulid('user_id');
             $table->ulid('category_id');

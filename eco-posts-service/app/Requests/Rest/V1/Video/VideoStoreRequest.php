@@ -18,6 +18,7 @@ final class VideoStoreRequest extends FormRequest implements RestRequest
             'name' => 'required|string|max:255',
             'category_id' => 'required|ulid|exists:main_db.categories,id',
             'video_url' => 'required|url|max:255',
+            'preview_url' => 'required|url|max:255',
             'description' => 'nullable|string|max:2000'
         ];
     }

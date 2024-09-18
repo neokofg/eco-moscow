@@ -15,7 +15,7 @@ final class PostIndexResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'content' => Str::limit($this->content, 200, '...'),
-            'image_url' => 'thumb',
+            'preview_url' => $this->preview_url,
             'created_at' => $this->created_at,
             'views' => $this->views,
             'user' => [

@@ -8,11 +8,13 @@ final readonly class PostStoreDto extends PostStoreDtoContract
 {
     /**
      * @param string $title
+     * @param string $preview_url
      * @param string $category_id
      * @param string $content
      */
     public function __construct(
         public string $title,
+        public string $preview_url,
         public string $category_id,
         public string $content
     )

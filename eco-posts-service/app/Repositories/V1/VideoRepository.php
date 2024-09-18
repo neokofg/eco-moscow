@@ -22,6 +22,7 @@ final readonly class VideoRepository extends Repository
             'title' => $dto->name,
             'description' => $dto->description,
             'video_url' => $dto->video_url,
+            'preview_url' => $dto->preview_url,
             'category_id' => $dto->category_id,
             'user_id' => $user->id,
         ]);

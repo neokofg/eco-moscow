@@ -15,6 +15,7 @@ final class VideoIndexResource extends JsonResource
             'video_url' => $this->video_url,
             'title' => $this->title,
             'views' => $this->views,
+            'preview_url' => $this->preview_url,
             'user' => [
                 'id' => $user->id,
                 'fio' => $user->name . ' ' . $user->surname,

@@ -16,6 +16,7 @@ final class PostResource extends JsonResource
             'title' => $this->title,
             'content' => $this->content,
             'views' => $this->views,
+            'preview_url' => $this->preview_url,
             'category' => [
                 'id' => $category->id,
                 'title' => $category->title,

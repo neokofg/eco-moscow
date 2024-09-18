@@ -20,6 +20,7 @@ final readonly class PostRepository extends Repository
     {
         return Post::create([
             'title' => $dto->title,
+            'preview_url' => $dto->preview_url,
             'category_id' => $dto->category_id,
             'user_id' => $user->id,
             'content' => $dto->content,
