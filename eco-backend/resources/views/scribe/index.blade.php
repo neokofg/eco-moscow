@@ -136,10 +136,10 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"rcp\",
-    \"surname\": \"zeo\",
-    \"email\": \"oral.medhurst@example.com\",
-    \"password\": \"ikJisR4Acl6#7@\'5vc\"
+    \"name\": \"pzxvkeqfiexamexgpvk\",
+    \"surname\": \"arscvwyointe\",
+    \"email\": \"royce95@example.org\",
+    \"password\": \"bA?&gt;@oskhpOe;\\/T7\"
 }"
 </code></pre></div>
 
@@ -155,10 +155,10 @@ const headers = {
 };
 
 let body = {
-    "name": "rcp",
-    "surname": "zeo",
-    "email": "oral.medhurst@example.com",
-    "password": "ikJisR4Acl6#7@'5vc"
+    "name": "pzxvkeqfiexamexgpvk",
+    "surname": "arscvwyointe",
+    "email": "royce95@example.org",
+    "password": "bA?&gt;@oskhpOe;\/T7"
 };
 
 fetch(url, {
@@ -247,10 +247,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="rcp"
+               value="pzxvkeqfiexamexgpvk"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>rcp</code></p>
+<p>Must not be greater than 35 characters. Example: <code>pzxvkeqfiexamexgpvk</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>surname</code></b>&nbsp;&nbsp;
@@ -258,10 +258,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="surname"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="zeo"
+               value="arscvwyointe"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>zeo</code></p>
+<p>Must not be greater than 35 characters. Example: <code>arscvwyointe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -269,10 +269,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="oral.medhurst@example.com"
+               value="royce95@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>oral.medhurst@example.com</code></p>
+<p>Must be a valid email address. Example: <code>royce95@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -280,10 +280,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="ikJisR4Acl6#7@'5vc"
+               value="bA?>@oskhpOe;/T7"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>ikJisR4Acl6#7@'5vc</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>bA?&gt;@oskhpOe;/T7</code></p>
         </div>
         </form>
 
@@ -304,8 +304,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"roxane.breitenberg@example.com\",
-    \"password\": \"7H[fbWut\"
+    \"email\": \"orau@example.net\",
+    \"password\": \"5M}s@P$Ab(vp\"
 }"
 </code></pre></div>
 
@@ -321,8 +321,8 @@ const headers = {
 };
 
 let body = {
-    "email": "roxane.breitenberg@example.com",
-    "password": "7H[fbWut"
+    "email": "orau@example.net",
+    "password": "5M}s@P$Ab(vp"
 };
 
 fetch(url, {
@@ -411,10 +411,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-client-auth-login"
-               value="roxane.breitenberg@example.com"
+               value="orau@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>roxane.breitenberg@example.com</code></p>
+<p>Must be a valid email address. Example: <code>orau@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -422,10 +422,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-client-auth-login"
-               value="7H[fbWut"
+               value="5M}s@P$Ab(vp"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>7H[fbWut</code></p>
+<p>Must be at least 6 characters. Example: <code>5M}s@P$Ab(vp</code></p>
         </div>
         </form>
 
@@ -446,19 +446,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"lqyyxgraihbcwgfxicn\",
-    \"surname\": \"vmphjllnlyfaxbo\",
-    \"gender\": \"male\",
+    \"name\": \"opzzmafwqtcfsxtgndzfaqegs\",
+    \"surname\": \"iigngprqbuiarzlfzeyn\",
+    \"gender\": \"female\",
     \"birthdate\": \"2024-09-18\",
-    \"address\": \"viqhssgcdzgxafbreenzqw\",
-    \"about\": \"oiqkdgezflikyewnoutjludjp\",
-    \"avatar_url\": \"http:\\/\\/rippin.com\\/aliquid-repudiandae-nostrum-earum-in-blanditiis\",
+    \"address\": \"tur\",
+    \"about\": \"hufnbxbx\",
+    \"avatar_url\": \"https:\\/\\/www.damore.com\\/dignissimos-ut-tempore-cum\",
     \"user_education\": {
-        \"university\": \"vitae\",
-        \"speciality\": \"eligendi\",
-        \"start_year\": \"liuupzftppbibnifqkquveid\",
-        \"end_year\": \"aunhnsxqccqscctdju\",
-        \"for_now\": true
+        \"university\": \"omnis\",
+        \"speciality\": \"totam\",
+        \"start_year\": \"dqgabvltder\",
+        \"end_year\": \"hijfspebhhuvpfexudiald\",
+        \"for_now\": false
     }
 }"
 </code></pre></div>
@@ -475,19 +475,19 @@ const headers = {
 };
 
 let body = {
-    "name": "lqyyxgraihbcwgfxicn",
-    "surname": "vmphjllnlyfaxbo",
-    "gender": "male",
+    "name": "opzzmafwqtcfsxtgndzfaqegs",
+    "surname": "iigngprqbuiarzlfzeyn",
+    "gender": "female",
     "birthdate": "2024-09-18",
-    "address": "viqhssgcdzgxafbreenzqw",
-    "about": "oiqkdgezflikyewnoutjludjp",
-    "avatar_url": "http:\/\/rippin.com\/aliquid-repudiandae-nostrum-earum-in-blanditiis",
+    "address": "tur",
+    "about": "hufnbxbx",
+    "avatar_url": "https:\/\/www.damore.com\/dignissimos-ut-tempore-cum",
     "user_education": {
-        "university": "vitae",
-        "speciality": "eligendi",
-        "start_year": "liuupzftppbibnifqkquveid",
-        "end_year": "aunhnsxqccqscctdju",
-        "for_now": true
+        "university": "omnis",
+        "speciality": "totam",
+        "start_year": "dqgabvltder",
+        "end_year": "hijfspebhhuvpfexudiald",
+        "for_now": false
     }
 };
 
@@ -577,10 +577,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-client-user"
-               value="lqyyxgraihbcwgfxicn"
+               value="opzzmafwqtcfsxtgndzfaqegs"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>lqyyxgraihbcwgfxicn</code></p>
+<p>Must not be greater than 35 characters. Example: <code>opzzmafwqtcfsxtgndzfaqegs</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>surname</code></b>&nbsp;&nbsp;
@@ -588,10 +588,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="surname"                data-endpoint="PUTapi-v1-client-user"
-               value="vmphjllnlyfaxbo"
+               value="iigngprqbuiarzlfzeyn"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>vmphjllnlyfaxbo</code></p>
+<p>Must not be greater than 35 characters. Example: <code>iigngprqbuiarzlfzeyn</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
@@ -599,10 +599,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="gender"                data-endpoint="PUTapi-v1-client-user"
-               value="male"
+               value="female"
                data-component="body">
     <br>
-<p>Example: <code>male</code></p>
+<p>Example: <code>female</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>male</code></li> <li><code>female</code></li></ul>
         </div>
@@ -623,10 +623,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-client-user"
-               value="viqhssgcdzgxafbreenzqw"
+               value="tur"
                data-component="body">
     <br>
-<p>Must not be greater than 300 characters. Example: <code>viqhssgcdzgxafbreenzqw</code></p>
+<p>Must not be greater than 300 characters. Example: <code>tur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>about</code></b>&nbsp;&nbsp;
@@ -634,10 +634,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="about"                data-endpoint="PUTapi-v1-client-user"
-               value="oiqkdgezflikyewnoutjludjp"
+               value="hufnbxbx"
                data-component="body">
     <br>
-<p>Must not be greater than 500 characters. Example: <code>oiqkdgezflikyewnoutjludjp</code></p>
+<p>Must not be greater than 500 characters. Example: <code>hufnbxbx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>avatar_url</code></b>&nbsp;&nbsp;
@@ -645,10 +645,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="avatar_url"                data-endpoint="PUTapi-v1-client-user"
-               value="http://rippin.com/aliquid-repudiandae-nostrum-earum-in-blanditiis"
+               value="https://www.damore.com/dignissimos-ut-tempore-cum"
                data-component="body">
     <br>
-<p>Must be a valid URL. Example: <code>http://rippin.com/aliquid-repudiandae-nostrum-earum-in-blanditiis</code></p>
+<p>Must be a valid URL. Example: <code>https://www.damore.com/dignissimos-ut-tempore-cum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -665,10 +665,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.university"                data-endpoint="PUTapi-v1-client-user"
-               value="vitae"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>vitae</code></p>
+<p>Example: <code>omnis</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>speciality</code></b>&nbsp;&nbsp;
@@ -676,10 +676,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.speciality"                data-endpoint="PUTapi-v1-client-user"
-               value="eligendi"
+               value="totam"
                data-component="body">
     <br>
-<p>Example: <code>eligendi</code></p>
+<p>Example: <code>totam</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>start_year</code></b>&nbsp;&nbsp;
@@ -687,10 +687,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.start_year"                data-endpoint="PUTapi-v1-client-user"
-               value="liuupzftppbibnifqkquveid"
+               value="dqgabvltder"
                data-component="body">
     <br>
-<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2024 characters. Example: <code>liuupzftppbibnifqkquveid</code></p>
+<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2024 characters. Example: <code>dqgabvltder</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>end_year</code></b>&nbsp;&nbsp;
@@ -698,10 +698,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.end_year"                data-endpoint="PUTapi-v1-client-user"
-               value="aunhnsxqccqscctdju"
+               value="hijfspebhhuvpfexudiald"
                data-component="body">
     <br>
-<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2050 characters. Example: <code>aunhnsxqccqscctdju</code></p>
+<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2050 characters. Example: <code>hijfspebhhuvpfexudiald</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>for_now</code></b>&nbsp;&nbsp;
@@ -722,7 +722,7 @@ Must be one of:
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
                     </div>
                                     </details>
         </div>
@@ -758,8 +758,8 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"old_password\": \"yt\",
-    \"new_password\": \"c\"
+    \"old_password\": \"miyiugvzjmnr\",
+    \"new_password\": \"hzualvisnzxamxbezjp\"
 }"
 </code></pre></div>
 
@@ -775,8 +775,8 @@ const headers = {
 };
 
 let body = {
-    "old_password": "yt",
-    "new_password": "c"
+    "old_password": "miyiugvzjmnr",
+    "new_password": "hzualvisnzxamxbezjp"
 };
 
 fetch(url, {
@@ -865,10 +865,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="old_password"                data-endpoint="PATCHapi-v1-client-user-password"
-               value="yt"
+               value="miyiugvzjmnr"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>yt</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>miyiugvzjmnr</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>new_password</code></b>&nbsp;&nbsp;
@@ -876,10 +876,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="new_password"                data-endpoint="PATCHapi-v1-client-user-password"
-               value="c"
+               value="hzualvisnzxamxbezjp"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>c</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>hzualvisnzxamxbezjp</code></p>
         </div>
         </form>
 
@@ -900,8 +900,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"new_email\": \"west.josh@example.org\",
-    \"current_password\": \"qgj\"
+    \"new_email\": \"greenfelder.myriam@example.org\",
+    \"current_password\": \"g\"
 }"
 </code></pre></div>
 
@@ -917,8 +917,8 @@ const headers = {
 };
 
 let body = {
-    "new_email": "west.josh@example.org",
-    "current_password": "qgj"
+    "new_email": "greenfelder.myriam@example.org",
+    "current_password": "g"
 };
 
 fetch(url, {
@@ -1007,10 +1007,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="new_email"                data-endpoint="PATCHapi-v1-client-user-email"
-               value="west.josh@example.org"
+               value="greenfelder.myriam@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>west.josh@example.org</code></p>
+<p>Must be a valid email address. Example: <code>greenfelder.myriam@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>current_password</code></b>&nbsp;&nbsp;
@@ -1018,10 +1018,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="current_password"                data-endpoint="PATCHapi-v1-client-user-email"
-               value="qgj"
+               value="g"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>qgj</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>g</code></p>
         </div>
         </form>
 

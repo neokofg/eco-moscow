@@ -28,7 +28,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 35 characters.'
         required: true
-        example: rcp
+        example: pzxvkeqfiexamexgpvk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         name: surname
         description: 'Must not be greater than 35 characters.'
         required: true
-        example: zeo
+        example: arscvwyointe
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -46,7 +46,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: oral.medhurst@example.com
+        example: royce95@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -55,16 +55,16 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: "ikJisR4Acl6#7@'5vc"
+        example: 'bA?>@oskhpOe;/T7'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: rcp
-      surname: zeo
-      email: oral.medhurst@example.com
-      password: "ikJisR4Acl6#7@'5vc"
+      name: pzxvkeqfiexamexgpvk
+      surname: arscvwyointe
+      email: royce95@example.org
+      password: 'bA?>@oskhpOe;/T7'
     fileParameters: []
     responses: []
     responseFields: []
@@ -98,7 +98,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: roxane.breitenberg@example.com
+        example: orau@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -107,14 +107,14 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: '7H[fbWut'
+        example: '5M}s@P$Ab(vp'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: roxane.breitenberg@example.com
-      password: '7H[fbWut'
+      email: orau@example.net
+      password: '5M}s@P$Ab(vp'
     fileParameters: []
     responses: []
     responseFields: []
@@ -148,7 +148,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 35 characters.'
         required: false
-        example: lqyyxgraihbcwgfxicn
+        example: opzzmafwqtcfsxtgndzfaqegs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -157,7 +157,7 @@ endpoints:
         name: surname
         description: 'Must not be greater than 35 characters.'
         required: false
-        example: vmphjllnlyfaxbo
+        example: iigngprqbuiarzlfzeyn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -166,7 +166,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -186,7 +186,7 @@ endpoints:
         name: address
         description: 'Must not be greater than 300 characters.'
         required: false
-        example: viqhssgcdzgxafbreenzqw
+        example: tur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -195,7 +195,7 @@ endpoints:
         name: about
         description: 'Must not be greater than 500 characters.'
         required: false
-        example: oiqkdgezflikyewnoutjludjp
+        example: hufnbxbx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -204,7 +204,7 @@ endpoints:
         name: avatar_url
         description: 'Must be a valid URL.'
         required: false
-        example: 'http://rippin.com/aliquid-repudiandae-nostrum-earum-in-blanditiis'
+        example: 'https://www.damore.com/dignissimos-ut-tempore-cum'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -222,7 +222,7 @@ endpoints:
         name: user_education.university
         description: ''
         required: false
-        example: vitae
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -231,7 +231,7 @@ endpoints:
         name: user_education.speciality
         description: ''
         required: false
-        example: eligendi
+        example: totam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -240,7 +240,7 @@ endpoints:
         name: user_education.start_year
         description: 'Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2024 characters.'
         required: false
-        example: liuupzftppbibnifqkquveid
+        example: dqgabvltder
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -249,7 +249,7 @@ endpoints:
         name: user_education.end_year
         description: 'Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2050 characters.'
         required: false
-        example: aunhnsxqccqscctdju
+        example: hijfspebhhuvpfexudiald
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -258,7 +258,7 @@ endpoints:
         name: user_education.for_now
         description: ''
         required: false
-        example: true
+        example: false
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -273,19 +273,19 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: lqyyxgraihbcwgfxicn
-      surname: vmphjllnlyfaxbo
-      gender: male
+      name: opzzmafwqtcfsxtgndzfaqegs
+      surname: iigngprqbuiarzlfzeyn
+      gender: female
       birthdate: '2024-09-18'
-      address: viqhssgcdzgxafbreenzqw
-      about: oiqkdgezflikyewnoutjludjp
-      avatar_url: 'http://rippin.com/aliquid-repudiandae-nostrum-earum-in-blanditiis'
+      address: tur
+      about: hufnbxbx
+      avatar_url: 'https://www.damore.com/dignissimos-ut-tempore-cum'
       user_education:
-        university: vitae
-        speciality: eligendi
-        start_year: liuupzftppbibnifqkquveid
-        end_year: aunhnsxqccqscctdju
-        for_now: true
+        university: omnis
+        speciality: totam
+        start_year: dqgabvltder
+        end_year: hijfspebhhuvpfexudiald
+        for_now: false
     fileParameters: []
     responses: []
     responseFields: []
@@ -319,7 +319,7 @@ endpoints:
         name: old_password
         description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: yt
+        example: miyiugvzjmnr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -328,14 +328,14 @@ endpoints:
         name: new_password
         description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: c
+        example: hzualvisnzxamxbezjp
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      old_password: yt
-      new_password: c
+      old_password: miyiugvzjmnr
+      new_password: hzualvisnzxamxbezjp
     fileParameters: []
     responses: []
     responseFields: []
@@ -369,7 +369,7 @@ endpoints:
         name: new_email
         description: 'Must be a valid email address.'
         required: true
-        example: west.josh@example.org
+        example: greenfelder.myriam@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -378,14 +378,14 @@ endpoints:
         name: current_password
         description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: qgj
+        example: g
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      new_email: west.josh@example.org
-      current_password: qgj
+      new_email: greenfelder.myriam@example.org
+      current_password: g
     fileParameters: []
     responses: []
     responseFields: []
