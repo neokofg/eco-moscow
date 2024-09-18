@@ -2,6 +2,12 @@
 
 namespace App\Providers\Bindings;
 
+use App\Contracts\ServiceInterfaces\PostCommentServiceInterface;
+use App\Contracts\ServiceInterfaces\ReactionsServiceInterface;
+use App\Contracts\ServiceInterfaces\VideoCommentServiceInterface;
+use App\Services\PostCommentService;
+use App\Services\ReactionsService;
+use App\Services\VideoCommentService;
 use Illuminate\Support\ServiceProvider;
 
 final class ServiceBindings extends ServiceProvider
@@ -11,6 +17,8 @@ final class ServiceBindings extends ServiceProvider
      */
     public function register(): void
     {
-
+        $this->app->bind(PostCommentServiceInterface::class, PostCommentService::class);
+        $this->app->bind(VideoCommentServiceInterface::class, VideoCommentService::class);
+        $this->app->bind(ReactionsServiceInterface::class, ReactionsService::class);
     }
 }

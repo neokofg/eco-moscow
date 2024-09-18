@@ -98,14 +98,14 @@ services:
       - "5433:5432"
     volumes:
       - "/var/www/eco/postgis-posts-data:/var/lib/postgresql/data"
-  posts-mongodb:
-    container_name: eco-posts-mongodb
+  mongodb:
+    container_name: eco-mongodb
     image: mongo:latest
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
-      MONGO_INITDB_DATABASE: posts_chat
+      MONGO_INITDB_DATABASE: comments
     ports:
       - "27017:27017"
     volumes:
@@ -121,7 +121,7 @@ services:
       REDIS_PASSWORD: root
   rabbitmq:
     container_name: eco-rabbitmq
-    image: rabbitmq:3.9-management-alpine
+    image: rabbitmq:3-management-alpine
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASSWORD: guest

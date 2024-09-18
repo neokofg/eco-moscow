@@ -125,6 +125,11 @@ return [
             'prefix_indexes' => true,
             'search_path' => 'public',
             'sslmode' => 'prefer',
+        ],
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('MONGODB_URL'),
+            'database' => 'comments'
         ]
     ],
 

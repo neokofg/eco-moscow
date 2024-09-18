@@ -9,10 +9,10 @@ use App\Models\Resources\News\NewsResource;
 interface NewsServiceInterface
 {
     /**
-     * @param NewsIndexDto|NewsIndexDtoContract $dto
+     * @param NewsIndexDtoContract $dto
      * @return mixed
      */
-    public function newsIndex(NewsIndexDto|NewsIndexDtoContract $dto): mixed;
+    public function newsIndex(NewsIndexDtoContract $dto): mixed;
 
     /**
      * @param string $id

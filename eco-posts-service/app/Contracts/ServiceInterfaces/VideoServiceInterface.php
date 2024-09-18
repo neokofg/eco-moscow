@@ -11,16 +11,16 @@ use App\Models\Resources\Video\VideoResource;
 interface VideoServiceInterface
 {
     /**
-     * @param VideoStoreDto|VideoStoreDtoContract $dto
+     * @param VideoStoreDtoContract $dto
      * @return VideoResource
      */
-    public function videoStore(VideoStoreDto|VideoStoreDtoContract $dto): VideoResource;
+    public function videoStore(VideoStoreDtoContract $dto): VideoResource;
 
     /**
-     * @param VideoIndexDto|VideoIndexDtoContract $dto
+     * @param VideoIndexDtoContract $dto
      * @return mixed
      */
-    public function videoIndex(VideoIndexDto|VideoIndexDtoContract $dto): mixed;
+    public function videoIndex(VideoIndexDtoContract $dto): mixed;
 
     /**
      * @param string $id

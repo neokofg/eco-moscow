@@ -12,6 +12,10 @@ use Symfony\Component\HttpFoundation\Response;
 final readonly class VideoGetController extends Controller
 {
     use ValidateIdTrait;
+
+    /**
+     * @param VideoServiceInterface $videoService
+     */
     public function __construct(
         private VideoServiceInterface $videoService
     )
@@ -19,6 +23,10 @@ final readonly class VideoGetController extends Controller
         parent::__construct();
     }
 
+    /**
+     * @param string $id
+     * @return JsonResponse
+     */
     public function __invoke(string $id): JsonResponse
     {
         $this->validateVideoId($id);

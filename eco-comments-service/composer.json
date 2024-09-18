@@ -10,6 +10,7 @@
         "laravel/octane": "^2.5",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "mongodb/laravel-mongodb": "^5.0",
         "predis/predis": "^2.2",
         "spiral/roadrunner-cli": "^2.6.0",
         "spiral/roadrunner-http": "^3.3.0"

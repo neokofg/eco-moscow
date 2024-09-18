@@ -13,16 +13,16 @@ use App\Models\Resources\Post\PostResource;
 interface PostServiceInterface
 {
     /**
-     * @param PostStoreDto|PostStoreDtoContract $dto
+     * @param PostStoreDtoContract $dto
      * @return PostResource
      */
-    public function postStore(PostStoreDto|PostStoreDtoContract $dto): PostResource;
+    public function postStore(PostStoreDtoContract $dto): PostResource;
 
     /**
-     * @param PostIndexDto|PostIndexDtoContract $dto
+     * @param PostIndexDtoContract $dto
      * @return mixed
      */
-    public function postIndex(PostIndexDto|PostIndexDtoContract $dto): mixed;
+    public function postIndex(PostIndexDtoContract $dto): mixed;
 
     /**
      * @param string $id
