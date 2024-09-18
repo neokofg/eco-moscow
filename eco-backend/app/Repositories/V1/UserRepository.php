@@ -3,23 +3,33 @@
 namespace App\Repositories\V1;
 
 use App\Exceptions\Custom\Auth\InvalidCredentialsException;
-use App\Models\RegisterUser;
 use App\Models\User;
 use App\Repositories\Repository;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 final readonly class UserRepository extends Repository
 {
     /**
-     * @param RegisterUser $registerUser
+     * @param string $name
+     * @param string $email
+     * @param string|null $password
+     * @param bool $is_oauth
      * @return User
      */
-    public function createUser(RegisterUser $registerUser): User
+    public function createUser(
+        string $name,
+        string $email,
+        ?string $password = null,
+        bool $is_oauth = false
+    ): User
     {
-        return User::create([
-            'name' => $registerUser->name,
-            'email' => $registerUser->email,
-            'password' => appDecrypt($registerUser->password)
+        return User::firstOrCreate([
+            'email' => $email,
+        ],[
+            'name' => $name,
+            'password' => $password ? Hash::make($password) : null,
+            'is_oauth' => $is_oauth,
         ]);
     }
 
@@ -36,5 +46,14 @@ final readonly class UserRepository extends Repository
         } else {
             throw new InvalidCredentialsException();
         }
+    }
+
+    /**
+     * @param int $userId
+     * @return User
+     */
+    public function getUserById(int $userId): User
+    {
+        return User::findOrFail($userId);
     }
 }

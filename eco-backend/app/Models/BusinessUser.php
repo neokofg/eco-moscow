@@ -4,11 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
-class BusinessUser extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+/**
+ * @method static firstOrCreate(string[] $array, string[] $array1)
+ */
+class BusinessUser extends Authenticatable
 {
     use HasFactory;
     use Notifiable;

@@ -1,5 +1,10 @@
 <?php declare(strict_types=1);
 
+use App\Models\AdminUser;
+use App\Models\BusinessUser;
+use App\Models\User;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 
 /**
@@ -40,4 +45,46 @@ function appCrypt(string $input): string
 function appDecrypt(string $input): string
 {
     return Crypt::decrypt($input);
+}
+
+/**
+ * @return User
+ * @throws AuthenticationException
+ */
+function getUser(): User
+{
+    $user = Auth::guard('sanctum')->user();
+    if (get_class($user) == User::class) {
+        return $user;
+    } else {
+        throw new AuthenticationException();
+    }
+}
+
+/**
+ * @return BusinessUser
+ * @throws AuthenticationException
+ */
+function getBusinessUser(): BusinessUser
+{
+    $business_user = Auth::guard('sanctum')->user();
+    if (get_class($business_user) == BusinessUser::class) {
+        return $business_user;
+    } else {
+        throw new AuthenticationException();
+    }
+}
+
+/**
+ * @return AdminUser
+ * @throws AuthenticationException
+ */
+function getAdminUser(): AdminUser
+{
+    $admin_user = Auth::guard('sanctum')->user();
+    if (get_class($admin_user) == AdminUser::class) {
+        return $admin_user;
+    } else {
+        throw new AuthenticationException();
+    }
 }

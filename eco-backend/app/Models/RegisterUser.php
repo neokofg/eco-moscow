@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static create(array $array)
- * @property mixed $code
+ * @property string $code
+ * @property string $name
+ * @property string $email
+ * @property string $password
  */
 class RegisterUser extends Model
 {
