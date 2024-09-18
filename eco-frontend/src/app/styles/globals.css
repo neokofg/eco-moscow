@@ -41,6 +41,9 @@
   --border-error: #ef4444;
   --border-warning: #f59e0b;
   --border-success: #22c55e;
+  --background-red: #fee2e2;
+  --background-orange: #ffedd5;
+  --background-green: #dcfce7;
 }
 
 .dark {
@@ -82,4 +85,7 @@
   --border-error: #ef4444;
   --border-warning: #f59e0b;
   --border-success: #22c55e;
+  --background-red: #fee2e2;
+  --background-orange: #ffedd5;
+  --background-green: #dcfce7;
 }

@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import "@/src/app/styles";
 import { inter } from "../fonts";
 import { MainLayout } from "./MainLayout";
+import { cookies } from "next/headers";
+import { UserProvider } from "../providers";
 
 export const metadata: Metadata = {
   title: "ЭКО МОСКВА",
@@ -14,10 +16,15 @@ export function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = cookies();
+  const token = cookieStore.get("token");
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MainLayout>{children}</MainLayout>
+        <UserProvider cookie_token={token?.value as string}>
+          <MainLayout>{children}</MainLayout>
+        </UserProvider>
       </body>
     </html>
   );

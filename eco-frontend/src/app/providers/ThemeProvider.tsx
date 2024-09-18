@@ -43,6 +43,9 @@ interface ThemeColors {
   borderError: string;
   borderWarning: string;
   borderSuccess: string;
+  backgroundRed: string;
+  backgroundOrange: string;
+  backgroundGreen: string;
 }
 
 interface ThemeContext {
@@ -85,6 +88,9 @@ const defaultValues: ThemeContext = {
     borderError: "",
     borderWarning: "",
     borderSuccess: "",
+    backgroundRed: "",
+    backgroundOrange: "",
+    backgroundGreen: "",
   },
   setup: () => null,
 };
@@ -211,6 +217,15 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
       ),
       borderSuccess: getComputedStyle(document.body).getPropertyValue(
         "--border-success",
+      ),
+      backgroundRed: getComputedStyle(document.body).getPropertyValue(
+        "--background-red",
+      ),
+      backgroundOrange: getComputedStyle(document.body).getPropertyValue(
+        "--background-orange",
+      ),
+      backgroundGreen: getComputedStyle(document.body).getPropertyValue(
+        "--background-green",
       ),
     });
   }, [theme, setColors]);

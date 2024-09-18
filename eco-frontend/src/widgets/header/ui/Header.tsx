@@ -87,7 +87,7 @@ export const Header: FC = () => {
               <BurgerIcon />
             </Button>
           ) : (
-            <Link href="/login">
+            <Link href="/sign-in">
               <Button variant="secondary">Войти</Button>
             </Link>
           )}
