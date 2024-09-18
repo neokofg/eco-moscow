@@ -1,6 +1,6 @@
 "use client";
 
-import { API_URL, publicAPI } from "@/src/shared/api";
+import { API_URL } from "@/src/shared/api";
 import { useToast } from "@/src/shared/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -14,6 +14,7 @@ import {
 import { useForm, UseFormReturn } from "react-hook-form";
 import { z } from "zod";
 import { useUser } from ".";
+import { useRouter } from "next/navigation";
 
 // ====FORMS====
 const loginFormSchema = z.object({
@@ -121,6 +122,7 @@ export const SignInProvider: FC<PropsWithChildren> = ({ children }) => {
   const [step, setStep] = useState(defaultValues.step);
   const { toast } = useToast();
   const { setToken } = useUser();
+  const router = useRouter();
 
   const loginForm = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
@@ -154,23 +156,29 @@ export const SignInProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const json = await res.json();
 
-    console.log(json);
+    if (res.status != 200) {
+      toast({
+        title: json["message"],
+        variant: "destructive",
+      });
+      return;
+    }
 
-    //return publicAPI
-    //  .post("/api/v1/client/auth/login", values)
-    //  .then((res) => {
-    //    setToken(res.data.data.token);
-    //    toast({
-    //      title: res.data.message,
-    //      variant: "success",
-    //    });
-    //  })
-    //  .catch((err) => {
-    //    toast({
-    //      title: err,
-    //      variant: "destructive",
-    //    });
-    //  });
+    const token = json["data"]["token"];
+
+    if (token != undefined) {
+      setToken(token);
+      toast({
+        title: json["message"],
+        variant: "success",
+      });
+      router.push("/");
+    } else {
+      toast({
+        title: json["message"],
+        variant: "destructive",
+      });
+    }
   };
 
   const onRegisterSubmit = async (
@@ -185,10 +193,12 @@ export const SignInProvider: FC<PropsWithChildren> = ({ children }) => {
     });
     const json = await res.json();
 
-    if (json["data"])
+    if (json["data"]) {
       toast({
         title: json["message"],
       });
+      setStep("email");
+    }
   };
 
   const values = {

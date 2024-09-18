@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-content-green text-content-inverse-primary",
-        destructive: "",
+        destructive: "bg-background-red text-border-error",
         secondary: "text-content-primary bg-background-tertiary",
         ghost: "bg-transparent text-content-primary",
       },

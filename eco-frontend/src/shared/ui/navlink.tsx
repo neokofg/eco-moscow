@@ -6,23 +6,26 @@ import { cn } from "../lib/utils";
 
 interface NavLinkProps extends LinkProps {
   children: ReactNode;
+  activeClassName: string;
+  className?: string;
   Icon?: FC;
 }
 
-export const NavLink: FC<NavLinkProps> = ({ children, Icon, ...rest }) => {
+export const NavLink: FC<NavLinkProps> = ({
+  children,
+  activeClassName,
+  className,
+  Icon,
+  ...rest
+}) => {
   const pathname = usePathname();
   return (
     <Link
-      className={cn(
-        "flex gap-1 px-4 py-3 rounded-xl",
-        pathname === rest.href ? "bg-background-primary" : "",
-      )}
+      className={cn(pathname === rest.href ? activeClassName : "", className)}
       {...rest}
     >
       {Icon && <Icon />}
-      <span className="text-base font-medium text-content-primary">
-        {children}
-      </span>
+      {children}
     </Link>
   );
 };

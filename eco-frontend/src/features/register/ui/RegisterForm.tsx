@@ -14,6 +14,7 @@ import { Input, PasswordInput } from "@/src/shared/ui/input";
 import { cn } from "@/src/shared/lib/utils";
 import Link from "next/link";
 import { useSignIn } from "@/src/app/providers";
+import { API_URL } from "@/src/shared/api";
 
 type QualityPassword = "weak" | "none" | "error" | "strong" | "mismatched";
 
@@ -254,7 +255,10 @@ export const RegisterForm: FC = () => {
               <span className="bg-white text-content-tertiary px-4">или</span>
             </div>
           </div>
-          <Button className="mt-6 bg-background-inverse-secondary text-content-inverse-primary">
+          <Button
+            onClick={() => (window.location.href = API_URL + "/oauth/yandex")}
+            className="mt-6 bg-background-inverse-secondary text-content-inverse-primary"
+          >
             <object type="image/svg+xml" data="/yandex_id.svg"></object>
             Войти с Яндекс ID
           </Button>

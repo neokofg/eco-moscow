@@ -1,6 +1,7 @@
 "use client";
 
 import { API_URL, privateAPI } from "@/src/shared/api";
+import { useToast } from "@/src/shared/ui/use-toast";
 import {
   Dispatch,
   FC,
@@ -16,6 +17,7 @@ interface UserContext {
   setToken: Dispatch<SetStateAction<string>>;
   user?: User;
   setUser: Dispatch<SetStateAction<User | undefined>>;
+  logout: () => void;
 }
 
 interface User {
@@ -45,6 +47,7 @@ const defaultValues: UserContext = {
   token: "",
   setToken: () => null,
   setUser: () => null,
+  logout: () => null,
 };
 
 export const UserContext = createContext(defaultValues);
@@ -59,6 +62,7 @@ export const UserProvider: FC<UserProviderProps> = ({
 }) => {
   const [user, setUser] = useState<User>();
   const [token, setToken] = useState<string>(cookie_token);
+  const { toast } = useToast();
 
   const validateToken = async (vToken: string) => {
     if (!vToken) return;
@@ -75,9 +79,22 @@ export const UserProvider: FC<UserProviderProps> = ({
     setUser(json["data"]);
   };
 
-  useEffect(() => {
-    validateToken(cookie_token);
-  }, [cookie_token]);
+  const logout = async () => {
+    const res = await fetch("/api/auth/logout", {
+      method: "GET",
+      credentials: "include",
+    });
+    const json = await res.json();
+
+    if (res.status === 200) {
+      window.location.reload();
+    } else {
+      toast({
+        title: json["message"],
+        variant: "destructive",
+      });
+    }
+  };
 
   useEffect(() => {
     validateToken(token);
@@ -88,6 +105,7 @@ export const UserProvider: FC<UserProviderProps> = ({
     setToken,
     user,
     setUser,
+    logout,
   };
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;

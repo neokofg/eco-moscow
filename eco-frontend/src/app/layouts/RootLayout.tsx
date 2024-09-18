@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "@/src/app/styles";
 import { inter } from "../fonts";
-import { MainLayout } from "./MainLayout";
+import { MainLayout } from ".";
 import { cookies } from "next/headers";
 import { UserProvider } from "../providers";
 

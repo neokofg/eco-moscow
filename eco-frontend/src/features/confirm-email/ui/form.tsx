@@ -1,22 +1,17 @@
 "use client";
 
 import { FC } from "react";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormMessage,
-} from "@/src/shared/ui/form";
 import { Button } from "@/src/shared/ui/button";
 import { sofiaSansCondensed } from "@/src/app/fonts";
-import { Input, PasswordInput } from "@/src/shared/ui/input";
-import { Checkbox } from "@/src/shared/ui/checkbox";
-import Link from "next/link";
+import { Input } from "@/src/shared/ui/input";
 import { useSignIn } from "@/src/app/providers";
 
 export const ConfirmEmailForm: FC = () => {
-  const { setStep, registerForm: form } = useSignIn();
+  const {
+    setStep,
+    registerForm: form,
+    onRegisterSubmit: onSubmit,
+  } = useSignIn();
 
   if (form == undefined) return;
 
@@ -24,17 +19,17 @@ export const ConfirmEmailForm: FC = () => {
     <div className="flex flex-col gap-4 w-full">
       <div className="z-10 pt-8 p-6 rounded-3xl bg-background-primary">
         <h3
-          className="uppercase text-content-primary font-bold text-4xl pb-4 mb-4"
+          className="uppercase text-content-primary font-bold text-4xl pb-2"
           style={sofiaSansCondensed.style}
         >
           ПОДТВЕРДИТЕ ПОЧТУ
         </h3>
-        <p>
+        <p className="text-sm font-medium text-content-tertiary pb-4">
           На почту {form.getValues("email")} отправлено письмо ссылкой для
           подтверждения регистрации. Если вы не можете найти письмо, проверьте,
           пожалуйста, папку спам
         </p>
-        <div>
+        <div className="py-4">
           <Input
             disabled
             type="text"
@@ -43,7 +38,11 @@ export const ConfirmEmailForm: FC = () => {
             withAsterisk
           />
         </div>
-        <Button className="my-4" variant="default">
+        <Button
+          onClick={() => onSubmit(form.getValues())}
+          className="mt-6"
+          variant="default"
+        >
           Отправить письмо повторно
         </Button>
       </div>
