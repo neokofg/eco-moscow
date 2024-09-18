@@ -42,8 +42,9 @@ final readonly class OauthService implements OauthServiceInterface
 
         return DB::transaction(function () use ($data) {
             $user = $this->userRepository->createUser(
-                $data['display_name'],
-                $data['default_email'],
+                name: $data['first_name'] ?? '-',
+                surname: $data['last_name'] ?? '-',
+                email: $data['default_email'],
                 is_oauth: true
             );
 

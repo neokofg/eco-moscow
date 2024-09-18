@@ -6,9 +6,14 @@ use App\Dto\Dto;
 use App\Dto\V1\User\PatchPasswordDto;
 use App\Helpers\RestRequest;
 use Illuminate\Foundation\Http\FormRequest;
+use JetBrains\PhpStorm\ArrayShape;
 
 final class PatchPasswordRequest extends FormRequest implements RestRequest
 {
+    /**
+     * @return array{old_password: string, new_password: string}
+     */
+    #[ArrayShape(['old_password' => "string", 'new_password' => "string"])]
     public function rules(): array
     {
         return [
@@ -17,6 +22,9 @@ final class PatchPasswordRequest extends FormRequest implements RestRequest
         ];
     }
 
+    /**
+     * @return PatchPasswordDto
+     */
     public function getDto(): PatchPasswordDto
     {
         $validated = $this->validated();

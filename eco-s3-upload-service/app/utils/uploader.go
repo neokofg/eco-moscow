@@ -55,7 +55,7 @@ func (u *S3Uploader) UploadFile(file multipart.File, handler *multipart.FileHead
 	// Кодируем хеш в base32 и обрезаем его до удобочитаемого размера
 	hashedName := base32.StdEncoding.EncodeToString(h.Sum(nil))[:12]
 
-	fileName := "sweetify/" + hashedName + ext
+	fileName := "/eco/" + hashedName + ext
 
 	_, err := u.s3Client.PutObject(&s3.PutObjectInput{
 		Bucket:             aws.String(u.bucket),
@@ -68,6 +68,6 @@ func (u *S3Uploader) UploadFile(file multipart.File, handler *multipart.FileHead
 		return "", err
 	}
 
-	url := "https://cdn.sweetify.ru/" + fileName
+	url := "https://0c59c59e-ccf2-4cfd-bb1e-8f08197d105d.selcdn.net" + fileName
 	return url, nil
 }

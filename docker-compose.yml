@@ -9,6 +9,8 @@ services:
       - backend
     ports:
       - 80:80
+      - 3000:3000
+      - 8001:8001
     volumes:
       - "./eco-backend:/var/www/eco/eco-backend"
       - "./config/nginx/:/etc/nginx/conf.d/"
@@ -20,19 +22,19 @@ services:
       context: "./eco-backend"
       dockerfile: Dockerfile
     volumes:
-      - "./config/php:/etc/php83"
+      - "./config/php/php.ini:/usr/local/etc/php/php.ini"
       - "./eco-backend:/var/www/eco/eco-backend"
   frontend:
-    container_name: frontend
+    container_name: eco-frontend
+    working_dir: "/var/www/eco/eco-frontend"
+    restart: unless-stopped
     build:
       context: "./eco-frontend"
-    env_file:
-      - "./eco-frontend/.env.production"
-    restart: always
-    ports:
-      - 3000:3000
+      dockerfile: Dockerfile
+    volumes:
+      - "./eco-frontend:/var/www/eco/eco-frontend"
   s3-upload-service:
-    container_name: s3-upload-service
+    container_name: eco-s3-upload-service
     working_dir: "/var/www/eco/eco-s3-upload-service"
     restart: unless-stopped
     build:

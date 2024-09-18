@@ -13,7 +13,7 @@ RUN apk update && apk add \
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions pdo_pgsql intl sockets bcmath pcntl zip swoole opcache
+    install-php-extensions pdo_pgsql intl sockets bcmath pcntl zip swoole
 
 RUN install-php-extensions @composer
 
@@ -24,6 +24,8 @@ RUN apk update && \
     		libpng-dev && \
     docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
     docker-php-ext-install gd
+
+RUN touch /usr/local/etc/php/php.ini
 
 ENV DB_HOST db
 ENV REDIS_HOST redis

@@ -5,7 +5,7 @@ namespace App\Controllers\Rest\V1\Auth\User;
 use App\Contracts\ServiceInterfaces\AuthServiceInterface;
 use App\Controllers\Controller;
 use App\Exceptions\Custom\Auth\InvalidCodeException;
-use App\Requests\Rest\V1\Auth\User\RegisterValidateRequest;
+use App\Requests\Rest\V1\Public\TokenRequest;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -22,10 +22,10 @@ final readonly class RegisterValidateController extends Controller
     }
 
     /**
-     * @param RegisterValidateRequest $request
+     * @param TokenRequest $request
      * @return JsonResponse
      */
-    public function __invoke(RegisterValidateRequest $request): JsonResponse
+    public function __invoke(TokenRequest $request): JsonResponse
     {
         try {
             $data = $this->authService->registerValidateUser($request->getDto());

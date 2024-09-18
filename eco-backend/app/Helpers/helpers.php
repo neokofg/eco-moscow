@@ -74,3 +74,8 @@ function getAdminUser(): AdminUser
         throw new AuthenticationException();
     }
 }
+
+function generateToken()
+{
+    return hash_hmac('sha256', now()->format('Y-m-d H:i:s') . str()->random(5), config('app.key'));
+}

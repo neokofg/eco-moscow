@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Rest\V1\User;
 
+use App\Contracts\ServiceInterfaces\UserServiceInterface;
 use App\Controllers\Controller;
 use App\Requests\Rest\V1\User\PutRequest;
-use App\Services\V1\UserService;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,10 +12,10 @@ use Symfony\Component\HttpFoundation\Response;
 final readonly class PutController extends Controller
 {
     /**
-     * @param UserService $userService
+     * @param UserServiceInterface $userService
      */
     public function __construct(
-        private UserService $userService
+        private UserServiceInterface $userService
     )
     {
         parent::__construct();

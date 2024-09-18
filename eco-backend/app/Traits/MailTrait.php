@@ -24,9 +24,9 @@ trait MailTrait
      * @param string $email
      * @return void
      */
-    public function sendAuthTokenMail(string $token, string $email): void
+    public function sendAuthTokenMail(string $token, string $email, string $view = 'emails.token'): void
     {
-        Mail::send('emails.token', ['token' => $token], function ($message) use ($email) {
+        Mail::send($view, ['token' => $token], function ($message) use ($email) {
             $message->to($email);
             $message->subject(__('Email verification'));
         });

@@ -4,7 +4,7 @@ namespace App\Contracts\ServiceInterfaces;
 
 use App\Contracts\DtoContracts\V1\Auth\LoginDtoContract;
 use App\Contracts\DtoContracts\V1\Auth\RegisterDtoContract;
-use App\Contracts\DtoContracts\V1\Auth\RegisterValidateDtoContract;
+use App\Contracts\DtoContracts\V1\Public\TokenDtoContract;
 
 interface AuthServiceInterface
 {
@@ -15,10 +15,10 @@ interface AuthServiceInterface
     public function registerUser(RegisterDtoContract $dto): bool;
 
     /**
-     * @param RegisterValidateDtoContract $dto
+     * @param TokenDtoContract $dto
      * @return array
      */
-    public function registerValidateUser(RegisterValidateDtoContract $dto): array;
+    public function registerValidateUser(TokenDtoContract $dto): array;
 
     /**
      * @param LoginDtoContract $dto

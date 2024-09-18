@@ -16,7 +16,8 @@ final readonly class PutDto extends PutDtoContract
         public ?UserGenderEnum $gender = null,
         public ?string $birthdate = null,
         public ?string $address = null,
-        public ?string $about = null
+        public ?string $about = null,
+        public ?string $avatar_url = null
     )
     {
         parent::__construct();
@@ -31,6 +32,7 @@ final readonly class PutDto extends PutDtoContract
             'birthdate' => $this->birthdate,
             'address' => $this->address,
             'about' => $this->about,
+            'avatar_url' => $this->avatar_url,
         ];
 
         return $this->filterData($data);

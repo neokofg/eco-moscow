@@ -4,11 +4,11 @@ namespace App\Services\V1;
 
 use App\Contracts\DtoContracts\V1\Auth\LoginDtoContract;
 use App\Contracts\DtoContracts\V1\Auth\RegisterDtoContract;
-use App\Contracts\DtoContracts\V1\Auth\RegisterValidateDtoContract;
+use App\Contracts\DtoContracts\V1\Public\TokenDtoContract;
 use App\Contracts\ServiceInterfaces\AuthServiceInterface;
 use App\Dto\V1\Auth\User\LoginDto;
 use App\Dto\V1\Auth\User\RegisterDto;
-use App\Dto\V1\Auth\User\RegisterValidateDto;
+use App\Dto\V1\Public\TokenDto;
 use App\Exceptions\Custom\Auth\InvalidCodeException;
 use App\Exceptions\Custom\Auth\InvalidCredentialsException;
 use App\Exceptions\Custom\ServiceUnavailableException;
@@ -63,12 +63,12 @@ final readonly class AuthService implements AuthServiceInterface
     }
 
     /**
-     * @param RegisterValidateDto|RegisterValidateDtoContract $dto
+     * @param TokenDto|TokenDtoContract $dto
      * @return array{token: string}
      * @throws InvalidCodeException
      */
     #[ArrayShape(['token' => "string"])]
-    public function registerValidateUser(RegisterValidateDto|RegisterValidateDtoContract $dto): array
+    public function registerValidateUser(TokenDto|TokenDtoContract $dto): array
     {
         $register_user = $this->authRepository->findRegisterUser($dto->token);
 

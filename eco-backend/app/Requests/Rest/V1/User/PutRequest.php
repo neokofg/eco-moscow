@@ -6,9 +6,13 @@ use App\Dto\V1\User\PutDto;
 use App\Helpers\RestRequest;
 use App\Models\Enums\UserGenderEnum;
 use Illuminate\Foundation\Http\FormRequest;
+use JetBrains\PhpStorm\ArrayShape;
 
 final class PutRequest extends FormRequest implements RestRequest
 {
+    /**
+     * @return string[]
+     */
     public function rules(): array
     {
         return [
@@ -18,9 +22,13 @@ final class PutRequest extends FormRequest implements RestRequest
             'birthdate' => 'nullable|date_format:Y-m-d',
             'address' => 'nullable|string|max:300',
             'about' => 'nullable|string|max:500',
+            'avatar_url' => 'nullable|url',
         ];
     }
 
+    /**
+     * @return PutDto
+     */
     public function getDto(): PutDto
     {
         $validated = $this->validated();

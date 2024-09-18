@@ -21,7 +21,7 @@ final readonly class AuthRepository extends Repository
      */
     public function createRegisterUser(string $email, RegisterUserEnum $type, string $name, string $surname, string $password): RegisterUser
     {
-        $token = hash_hmac('sha256', now()->format('Y-m-d H:i:s'), config('app.key'));
+        $token = generateToken();
 
         return RegisterUser::create([
             'type' => $type,

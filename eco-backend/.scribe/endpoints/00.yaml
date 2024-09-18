@@ -3,6 +3,343 @@ description: ''
 endpoints:
   -
     httpMethods:
+      - GET
+    uri: sanctum/csrf-cookie
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Return an empty response simply to trigger the storage of the CSRF cookie in the browser.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 204
+        content: ''
+        headers:
+          cache-control: 'no-cache, private'
+          access-control-allow-origin: '*'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IitGN2M0NE5IbUNwNU9WWlVFZnJabWc9PSIsInZhbHVlIjoiS0NoVHpETy9tTk9CNWI3WitVWUIvRjMyN0JINEtUcXIwRHZLVWd4VjNJbGxUTm9DZnN5ckZGaHVISUtidXpvRVdBcTl6aldhR3B6QlNCRkhBTFc1ZW9XS25yL1FQTW00NkVnT21WME5aQmtUZTlLT1NEU01zSk4wMVFNY244K3oiLCJtYWMiOiI4ZjM2ODFhZmI1NDA3NTBmMDEwOTdkNjQ1ZTA0ODI5MjI5MWQzZWFiYTFmOGVmYzUyMTA5NDcwZjEyNjFmYTIwIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6InNvN3NLZ2RBaU5pU0hjeFVhK1pDV3c9PSIsInZhbHVlIjoiSENBUlVBbXVJdHNBNjlzWjhpbW9BRnpQemwxbnIxWTZpQTlMM1Q0UWRqRnFEeFQvTGJVb1NpcGZMOWVNUFg2NTE0UnVRVy9DOFc2TE4zNytIaXVsb1pNU3VuRUFLTjdDOC9KZ1JKcXFhZCtoMXlhQ0NjL3M3UmJGSldyaUxmU3EiLCJtYWMiOiI3YjU0MTQyMTFlNTc0NjUzZjAwZjRlYTRlNzkzNzJmMjc5MTgxM2FjNjgxM2I2M2FmMDQ1Y2QyMWQ1YmQwZGU5IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: up
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          <!DOCTYPE html>
+          <html lang="en">
+              <head>
+                  <meta charset="utf-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                  <title>Laravel</title>
+
+                  <!-- Fonts -->
+                  <link rel="preconnect" href="https://fonts.bunny.net">
+                  <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+                  <!-- Styles -->
+                  <script src="https://cdn.tailwindcss.com"></script>
+
+                  <script>
+                      tailwind.config = {
+                          theme: {
+                              extend: {
+                                  fontFamily: {
+                                      sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji"],
+                                  }
+                              }
+                          }
+                      }
+                  </script>
+              </head>
+              <body class="antialiased">
+                  <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-gray-100 selection:bg-red-500 selection:text-white">
+                      <div class="w-full sm:w-3/4 xl:w-1/2 mx-auto p-6">
+                          <div class="px-6 py-4 bg-white from-gray-700/50 via-transparent rounded-lg shadow-2xl shadow-gray-500/20 flex items-center focus:outline focus:outline-2 focus:outline-red-500">
+                              <div class="relative flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-400"></span>
+                              </div>
+
+                              <div class="ml-6">
+                                  <h2 class="text-xl font-semibold text-gray-900">Application up</h2>
+
+                                  <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                      HTTP request received.
+
+                                                                      Response successfully rendered in 759ms.
+                                                              </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </body>
+          </html>
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: /
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |
+          <!doctype html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport"
+                    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+              <meta http-equiv="X-UA-Compatible" content="ie=edge">
+              <title>ECO</title>
+          </head>
+          <style>
+              .text-center {
+                  text-align: center;
+              }
+              .my-auto {
+                  margin-top: auto;
+                  margin-bottom: auto;
+              }
+              .w-screen {
+                  width: 100vw;
+              }
+              .h-screen {
+                  height: 100vh;
+              }
+          </style>
+          <body>
+              <p class="text-center my-auto w-screen h-screen">Всем привет</p>
+          </body>
+          </html>
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkRWWlFJN25ncVpkbHNSVzM3YWpsU1E9PSIsInZhbHVlIjoiek81dXh5cHhQejJ6eHVHVkpLb2ZTUkpqZ0J4U3RxT2JwQkVwbVhnUXhZWHBYRHhBVmFXaEcxOThidmVnbHdBU2JUbTBpWngzcUc1a3AyejhodXFiTlJDdkhmakVTYUFhM1BiK0xkUzRHUEg4KzNWZnNldnQ4M2VLcE1hOWR1N1ciLCJtYWMiOiJkMWFlYzA3MmZhZjQ4M2U0MjhlOTk3OTk4NDAxNmQzMmIyOWI1MjJmODJkZGE5N2YwZWVkMTc3MTBkZDc5MjEyIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlVnR2pJNmtDVzVWaTNmbmZ2bHV4Znc9PSIsInZhbHVlIjoiRkN4RUNuS3dWZkpCbkJrV25lcUlOc0NEMU5iM09KRUNib1AxYWtLTmJVYVoyek9JbmhSZzR0NXRsbVdlMVFCNVlBUnVnOW5wMWhycnh5ZFZyVzdUVHROZGZqMm1kZzdEdHlSNFVRSWRydHFSZUozRzZUM3dTYWtuWFlSMUhJS1ciLCJtYWMiOiIzZjE2ZTM4YzBhNTc0YzkwMGFhZWUwZTI2NGMzZDAxNWNlZjQxOGNmNjQ0NGVjNjRlYTEzMTUyNWZlZTRhODU3IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: auth/validate
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      token:
+        name: token
+        description: ''
+        required: true
+        example: pariatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      token: pariatur
+    fileParameters: []
+    responses:
+      -
+        status: 403
+        content: '{"data":false,"message":"Invalid token"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6InFCNnRYYm9mUjhublovQUpkckovTGc9PSIsInZhbHVlIjoiTXMza1NDSGNlK2phK3hVbm4vUjFEZDM1TmFaL25jMitCMWJzOEhlTUhoRGJ5SzJRMGl4KzREcXh1azcycE9NOUxPZE8wbzhiWVBIWFY2cVJ0QlFsZC82SytDQWl6anFQc1NrTzNpL0dlTDJiYXpIbDNZL0JvREZyd2VuaVVreXMiLCJtYWMiOiIxYzY2MjEwODkxYThmZGZmOTA2ZGQxZDQ4OWUxNDdkOTdlNDY1MzVlOTgzZjk0NDFlNDZmZGYxMmUzMzdkNWM0IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlB5ZjhoMVdVUFhSeGwwbEV1VUdXcEE9PSIsInZhbHVlIjoiVkxJVW90K3ZRc25PSHE0TXNJcDQ5RUFySmkrZXU5MDJBYWV5VHdPR21kYVFFV0dqU3FwR0pIem1jWjBteVBaOEU5YlBzZ3pydlNSK3ZEZTJuck15dUwyNjQ2eENIOXA1Tm9qNE90YS8wUThwaFdQNzRobVM3ald6WDBBd3RveDQiLCJtYWMiOiJlZTVmZGY2ZDNmMTAzMjkyYjAyODEyNDdmMTk1YjE1YzQyNGNkYmYxODY0YjRlY2Q4MDlkMjY3MGY0ZjcwZDc3IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: oauth/yandex
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 302
+        content: |-
+          <!DOCTYPE html>
+          <html>
+              <head>
+                  <meta charset="UTF-8" />
+                  <meta http-equiv="refresh" content="0;url='https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m'" />
+
+                  <title>Redirecting to https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m</title>
+              </head>
+              <body>
+                  Redirecting to <a href="https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m">https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m</a>.
+              </body>
+          </html>
+        headers:
+          cache-control: 'no-cache, private'
+          location: 'https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&scope=&response_type=code&state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m'
+          content-type: 'text/html; charset=utf-8'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ijd6TTNzby85WnJGUVFkUnZyQU05eEE9PSIsInZhbHVlIjoiT2FZY05ZREhhOWd1YjJUQy90YWJQd21TcXlVRWVLd2JCOGhzOC9ZdEZPajJKbXU3MDJJcldCcUpoS21lVGtuMnQxYlZSYVlMZ3liZG9yRVl0bmYwN20yb1hVTGhmTjVyRkdwZkFpRnd4VDliU251TDJCdEYzcE5ML0t4TC9hRzEiLCJtYWMiOiI2YmUzN2Y1MjdjYjRmMzVhMTMyN2M1MDdmZmZlN2E4OTMxZDM0Y2RiMzllYjFlYTlmNzU3MzJjYTI2YWY5MTBjIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IkNqbEJLWjVFWTg4SWdreFNZTmlMSXc9PSIsInZhbHVlIjoieng4N3FNV21UQ2dzME5wVVVSQm5BcDJGNTFGd2tZVG5QMytKTzg0aVRBVG5yL2dkUWtIM2RMUFpRV3k2dlBZOEYxbXlrN1VSZkZZZk5xbnNZNFRZZGw1ZG4rVCszSys0ZzlKVmh2L2d1Lzk4cWwzRmRPZXpnVGFrNkMzWndlYXIiLCJtYWMiOiIyMTQ5NzVjMDRhNzY2Mjc2NjA4MmY0MDc5MDk0MTY4NDlhMTMyOTMwZGMyMWIwMmNlODNiYTRkOGMzZTA2OGVjIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: oauth/yandex/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 500
+        content: |-
+          {
+              "message": "Server Error"
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6InBuc1NwUjJzK1hpdHdZYnJZbTVDL3c9PSIsInZhbHVlIjoieTdQZkhJTERGQ3JlQzIrZW1DRndBT1F1ZW5JK01ROGVxUDI5OXAyc3FVei9IVkJjVHhnbk8yQ2dGdDZOTWxyYlNZYklWTTEyMU10dWw4TkNkYUp6TmxpenNNdHRFM21PMjRFNlRiSG9XcUt2dHBKVG53MENyZ24zcUtKclg0cUMiLCJtYWMiOiJlYjE3OGQ0Y2JiZTk2NjNiYmUzZmU3YTIzM2JmNTg0MzFmODZhYjUwZWQ0YzRiYmNmYmVjZTJiMzJmYjQ4N2I2IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlAvVVkyZXdZU2hLWWs3VEpjNWhldnc9PSIsInZhbHVlIjoiZHBQNnRhSmQwTWp6NE1SQlpVUnUrYnVyZVpIUHpVYjcyaTR5WXZId1NuNENhRUt0OEZlVFJKSjF4MmNrZlB1aTNlbEVlSC8ySDJvQWNISzBkWlY3K2FjZEFzbGVhak1aT0hYS21lMHVVdVpDbHVyVlR5Nm9LUUNOOHZ2YXRvNXkiLCJtYWMiOiIwYzEzNWRkOGRhY2FmYjcwMDBkNDdjNmUyOGI0MWU4MTA1NWRhMzE5YzQ2YmQzODI4YWIxNDdjYzVjMTVkMDliIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
       - POST
     uri: api/v1/client/auth/register
     metadata:
@@ -26,7 +363,16 @@ endpoints:
         name: name
         description: 'Must not be greater than 35 characters.'
         required: true
-        example: vgabcmtgus
+        example: ohttmgvyvnngizcorq
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      surname:
+        name: surname
+        description: 'Must not be greater than 35 characters.'
+        required: true
+        example: qmzkpgrkmzdwwznhqljqkpac
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,74 +381,25 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: macey.hauck@example.com
+        example: mraz.adrian@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
       password:
         name: password
-        description: 'Must be at least 6 characters.'
+        description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: ')</NPI0SxH$j(Z-{1Q'
+        example: '&%E@@A6h4'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: vgabcmtgus
-      email: macey.hauck@example.com
-      password: ')</NPI0SxH$j(Z-{1Q'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/client/auth/register/validate
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      code:
-        name: code
-        description: 'Must be 4 digits.'
-        required: true
-        example: '2761'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: romaguera.johanna@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      code: '2761'
-      email: romaguera.johanna@example.net
+      name: ohttmgvyvnngizcorq
+      surname: qmzkpgrkmzdwwznhqljqkpac
+      email: mraz.adrian@example.net
+      password: '&%E@@A6h4'
     fileParameters: []
     responses: []
     responseFields: []
@@ -136,7 +433,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: kunze.neva@example.net
+        example: champlin.rebecca@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -145,14 +442,14 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: HSUv4wiipn
+        example: 'fDifa;#bhX(b'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: kunze.neva@example.net
-      password: HSUv4wiipn
+      email: champlin.rebecca@example.net
+      password: 'fDifa;#bhX(b'
     fileParameters: []
     responses: []
     responseFields: []
@@ -163,8 +460,47 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/v1/business/auth/register
+      - GET
+    uri: api/v1/client/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthorized"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: api/v1/client/user
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -185,34 +521,66 @@ endpoints:
       name:
         name: name
         description: 'Must not be greater than 35 characters.'
-        required: true
-        example: fjayyxeenzg
+        required: false
+        example: hsg
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: bonita.von@example.org
+      surname:
+        name: surname
+        description: 'Must not be greater than 35 characters.'
+        required: false
+        example: iohl
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      password:
-        name: password
-        description: 'Must be at least 6 characters.'
-        required: true
-        example: 'uqj?AN;8K"*0e?rPE`n'
+      gender:
+        name: gender
+        description: ''
+        required: false
+        example: male
+        type: string
+        enumValues:
+          - male
+          - female
+        exampleWasSpecified: false
+        custom: []
+      birthdate:
+        name: birthdate
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2024-09-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      address:
+        name: address
+        description: 'Must not be greater than 300 characters.'
+        required: false
+        example: forlxgucrjt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      about:
+        name: about
+        description: 'Must not be greater than 500 characters.'
+        required: false
+        example: mjbr
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: fjayyxeenzg
-      email: bonita.von@example.org
-      password: 'uqj?AN;8K"*0e?rPE`n'
+      name: hsg
+      surname: iohl
+      gender: male
+      birthdate: '2024-09-15'
+      address: forlxgucrjt
+      about: mjbr
     fileParameters: []
     responses: []
     responseFields: []
@@ -223,8 +591,8 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/v1/business/auth/register/validate
+      - PATCH
+    uri: api/v1/client/user/password
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -242,77 +610,27 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      code:
-        name: code
-        description: 'Must be 4 digits.'
+      old_password:
+        name: old_password
+        description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: '3822'
+        example: hfkbttcuvplsc
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address.'
+      new_password:
+        name: new_password
+        description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: shaniya.marvin@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      code: '3822'
-      email: shaniya.marvin@example.net
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/business/auth/login
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: beatty.americo@example.com
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: 'Must be at least 6 characters.'
-        required: true
-        example: 'RmAt/R,{H3{sWO0kT67U'
+        example: ulolxvnnhybteiud
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: beatty.americo@example.com
-      password: 'RmAt/R,{H3{sWO0kT67U'
+      old_password: hfkbttcuvplsc
+      new_password: ulolxvnnhybteiud
     fileParameters: []
     responses: []
     responseFields: []

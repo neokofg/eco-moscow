@@ -5,12 +5,11 @@ namespace App\Controllers\Rest\V1\User;
 use App\Contracts\ServiceInterfaces\UserServiceInterface;
 use App\Controllers\Controller;
 use App\Exceptions\Custom\Auth\InvalidCredentialsException;
-use App\Requests\Rest\V1\User\PatchPasswordRequest;
-use Illuminate\Auth\AuthenticationException;
+use App\Requests\Rest\V1\User\PatchEmailRequest;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-final readonly class PatchPasswordController extends Controller
+final readonly class PatchEmailController extends Controller
 {
     /**
      * @param UserServiceInterface $userService
@@ -23,17 +22,17 @@ final readonly class PatchPasswordController extends Controller
     }
 
     /**
-     * @param PatchPasswordRequest $request
+     * @param PatchEmailRequest $request
      * @return JsonResponse
-     * @throws AuthenticationException
      */
-    public function __invoke(PatchPasswordRequest $request): JsonResponse
+    public function __invoke(PatchEmailRequest $request): JsonResponse
     {
         try {
-            $user = $this->userService->patchPassword($request->getDto());
+            $response = $this->userService->patchEmail($request->getDto());
         } catch (InvalidCredentialsException $exception) {
-            return $this->presenter->present(false, __('Invalid old password'), Response::HTTP_UNPROCESSABLE_ENTITY);
+            return $this->presenter->present(false, __('Invalid password'), Response::HTTP_FORBIDDEN);
         }
-        return $this->presenter->present($user, __('Successfully updated password.'), Response::HTTP_OK);
+
+        return $this->presenter->present($response, __('Successfully sent mail'), Response::HTTP_CREATED);
     }
 }
