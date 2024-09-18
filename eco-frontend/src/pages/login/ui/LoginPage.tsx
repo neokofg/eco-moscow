@@ -1,6 +1,5 @@
 import { LoginForm } from "@/src/features/login";
 import { IllustrationAsset } from "@/src/shared/assets";
-import { LoginCard } from "@/src/widgets/loginCard";
 import Link from "next/link";
 import { FC } from "react";
 
