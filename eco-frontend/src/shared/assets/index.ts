@@ -3,3 +3,5 @@ export interface AssetType {
   height?: number;
   color?: string;
 }
+
+export { IllustrationAsset } from "./illustration";

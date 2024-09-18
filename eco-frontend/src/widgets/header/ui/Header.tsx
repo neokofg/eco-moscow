@@ -49,7 +49,7 @@ export const Header: FC = () => {
 
   return (
     <header className="bg-white">
-      <div className="container flex py-5 xl:py-4 justify-between items-center">
+      <div className="container h-[88px] flex py-5 xl:py-4 justify-between items-center">
         <Link href="/" className="flex gap-2 items-center w-[250px]">
           <div className="w-8 h-8">
             <LogoIcon />

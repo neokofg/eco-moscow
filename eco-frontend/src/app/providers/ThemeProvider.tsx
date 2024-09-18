@@ -40,6 +40,9 @@ interface ThemeColors {
   borderHoverOverlay: string;
   borderInverseHoverOverlay: string;
   contentGreen: string;
+  borderError: string;
+  borderWarning: string;
+  borderSuccess: string;
 }
 
 interface ThemeContext {
@@ -79,6 +82,9 @@ const defaultValues: ThemeContext = {
     borderHoverOverlay: "",
     borderInverseHoverOverlay: "",
     contentGreen: "",
+    borderError: "",
+    borderWarning: "",
+    borderSuccess: "",
   },
   setup: () => null,
 };
@@ -194,9 +200,17 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
       borderInverseHoverOverlay: getComputedStyle(
         document.body,
       ).getPropertyValue("--border-inverse-hover-overlay"),
-
       contentGreen: getComputedStyle(document.body).getPropertyValue(
         "--content-green",
+      ),
+      borderError: getComputedStyle(document.body).getPropertyValue(
+        "--border-error",
+      ),
+      borderWarning: getComputedStyle(document.body).getPropertyValue(
+        "--border-warning",
+      ),
+      borderSuccess: getComputedStyle(document.body).getPropertyValue(
+        "--border-success",
       ),
     });
   }, [theme, setColors]);

@@ -38,6 +38,9 @@
   --border-inverse-hover-overlay: #ffffff1a;
 
   --content-green: #16a34a;
+  --border-error: #ef4444;
+  --border-warning: #f59e0b;
+  --border-success: #22c55e;
 }
 
 .dark {
@@ -76,28 +79,7 @@
   --border-inverse-hover-overlay: #00000033;
 
   --content-green: #16a34a;
+  --border-error: #ef4444;
+  --border-warning: #f59e0b;
+  --border-success: #22c55e;
 }
-
-/*:root {*/
-/*  --background: #ffffff;*/
-/*  --foreground: #171717;*/
-/*}*/
-/**/
-/*@media (prefers-color-scheme: dark) {*/
-/*  :root {*/
-/*    --background: #0a0a0a;*/
-/*    --foreground: #ededed;*/
-/*  }*/
-/*}*/
-/**/
-/*body {*/
-/*  color: var(--foreground);*/
-/*  background: var(--background);*/
-/*  font-family: Arial, Helvetica, sans-serif;*/
-/*}*/
-/**/
-/*@layer utilities {*/
-/*  .text-balance {*/
-/*    text-wrap: balance;*/
-/*  }*/
-/*}*/
