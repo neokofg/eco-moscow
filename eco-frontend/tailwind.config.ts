@@ -44,9 +44,12 @@ const config: Config = {
         "border-error": "var(--border-error)",
         "border-warning": "var(--border-warning)",
         "border-success": "var(--border-success)",
+        "background-red": "var(--background-red)",
+        "background-orange": "var(--background-orange)",
+        "background-green": "var(--background-green)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
