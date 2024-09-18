@@ -1,0 +1,16 @@
+{
+    "Successfully got data": "Данные получены успешно",
+    "Token is successfully sent": "Письмо отправлено",
+    "Invalid credentials": "Неверные данные",
+    "Invalid token": "Неверный токен",
+    "Successfully logged in": "Вход выполнен успешно",
+    "Successfully updated email": "Почта обновлена успешно",
+    "Invalid password": "Неверный пароль",
+    "Successfully updated password": "Пароль обновлен успешно",
+    "Successfully updated user": "Пользователь обновлен успешно",
+    "Failed to get token": "Не удалость получить токен",
+    "Unauthenticated": "Вы не авторизованы",
+    "Service unavailable": "Портал недоступен",
+    "Email verification": "Подтверждение почты",
+    "Not found": "Не найдено"
+}

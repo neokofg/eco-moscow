@@ -32,8 +32,8 @@ final readonly class PatchPasswordController extends Controller
         try {
             $user = $this->userService->patchPassword($request->getDto());
         } catch (InvalidCredentialsException $exception) {
-            return $this->presenter->present(false, __('Invalid old password'), Response::HTTP_UNPROCESSABLE_ENTITY);
+            return $this->presenter->present(false, __('Invalid password'), Response::HTTP_UNPROCESSABLE_ENTITY);
         }
-        return $this->presenter->present($user, __('Successfully updated password.'), Response::HTTP_OK);
+        return $this->presenter->present($user, __('Successfully updated password'), Response::HTTP_OK);
     }
 }

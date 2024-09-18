@@ -33,6 +33,6 @@ final readonly class PatchEmailController extends Controller
             return $this->presenter->present(false, __('Invalid password'), Response::HTTP_FORBIDDEN);
         }
 
-        return $this->presenter->present($response, __('Successfully sent mail'), Response::HTTP_CREATED);
+        return $this->presenter->present($response, __('Token is successfully sent'), Response::HTTP_CREATED);
     }
 }
