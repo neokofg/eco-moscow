@@ -9,11 +9,19 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 final readonly class CompetitionPresenter
 {
+    /**
+     * @param Competition $event
+     * @return CompetitionResource
+     */
     public function present(Competition $event): CompetitionResource
     {
         return new CompetitionResource($event);
     }
 
+    /**
+     * @param LengthAwarePaginator $events
+     * @return mixed
+     */
     public function presentIndex(LengthAwarePaginator $events): mixed
     {
         return CompetitionIndexResource::collection($events)->response()->getData();

@@ -27,7 +27,13 @@ final class UserResource extends JsonResource
             'user_education' => $this->userEducation,
             'achievements' => $this->achievements,
             'subscribers' => $this->subscribers()->count(),
-            'subscriptions' => $this->subscriptions()->count()
+            'subscriptions' => $this->subscriptions()->count(),
+            'is_organizer' => $this->is_organizer,
+            'company' => $this->company,
+            'inn' => $this->inn,
+            'ogrn' => $this->ogrn,
+            'kpp' => $this->kpp,
+            'okpo' => $this->okpo,
         ];
     }
 }

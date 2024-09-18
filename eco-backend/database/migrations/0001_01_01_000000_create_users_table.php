@@ -21,6 +21,13 @@ return new class extends Migration
             $table->enum('gender',['male','female'])->default('male');
             $table->string('avatar_url')->nullable();
 
+            $table->boolean('is_organizer')->default(false);
+            $table->string('company')->nullable();
+            $table->string('inn')->nullable();
+            $table->string('ogrn')->nullable();
+            $table->string('kpp')->nullable();
+            $table->string('okpo')->nullable();
+
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->boolean('is_oauth')->default(false);

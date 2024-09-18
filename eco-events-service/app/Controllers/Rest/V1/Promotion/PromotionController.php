@@ -10,12 +10,17 @@ use App\Requests\Rest\V1\Promotion\DonateRequest;
 use App\Requests\Rest\V1\Promotion\IndexRequest;
 use App\Requests\Rest\V1\Promotion\StoreRequest;
 use App\Traits\ValidateIdTrait;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 final readonly class PromotionController extends Controller
 {
     use ValidateIdTrait;
+
+    /**
+     * @param PromotionPresenter $promotionPresenter
+     */
     public function __construct(
         private PromotionPresenter $promotionPresenter
     )
@@ -23,6 +28,11 @@ final readonly class PromotionController extends Controller
         parent::__construct();
     }
 
+    /**
+     * @param StoreRequest $request
+     * @return JsonResponse
+     * @throws AuthenticationException
+     */
     public function store(StoreRequest $request): JsonResponse
     {
         $validated = $request->validated();
@@ -40,6 +50,10 @@ final readonly class PromotionController extends Controller
         return $this->presenter->present($promotion, __('Successfully created event'), Response::HTTP_CREATED);
     }
 
+    /**
+     * @param IndexRequest $request
+     * @return JsonResponse
+     */
     public function index(IndexRequest $request): JsonResponse
     {
         $validated = $request->validated();
@@ -68,17 +82,31 @@ final readonly class PromotionController extends Controller
         return $this->presenter->present($events, __('Successfully got data'), Response::HTTP_OK);
     }
 
+    /**
+     * @param string $id
+     * @return JsonResponse
+     */
     public function get(string $id): JsonResponse
     {
         $this->validatePromotionId($id);
 
         $event = Promotion::find($id);
 
+        $event->update([
+            'views' => $event->views + 1,
+        ]);
+
         $event = $this->promotionPresenter->present($event);
 
         return $this->presenter->present($event, __('Successfully got data'), Response::HTTP_OK);
     }
 
+    /**
+     * @param DonateRequest $request
+     * @param string $id
+     * @return JsonResponse
+     * @throws AuthenticationException
+     */
     public function donate(DonateRequest $request, string $id): JsonResponse
     {
         $validated = $request->validated();

@@ -7,6 +7,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 final class StoreRequest extends FormRequest implements RestRequest
 {
+    /**
+     * @return string[]
+     */
     public function rules(): array
     {
         return [

@@ -10,6 +10,7 @@ use App\Requests\Rest\V1\Event\IndexRequest;
 use App\Requests\Rest\V1\Event\StoreRequest;
 use App\Traits\ValidateIdTrait;
 use Clickbar\Magellan\Data\Geometries\Point;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -23,6 +24,11 @@ final readonly class EventController extends Controller
         parent::__construct();
     }
 
+    /**
+     * @param StoreRequest $request
+     * @return JsonResponse
+     * @throws AuthenticationException
+     */
     public function store(StoreRequest $request): JsonResponse
     {
         $validated = $request->validated();
@@ -41,6 +47,10 @@ final readonly class EventController extends Controller
         return $this->presenter->present($event, __('Successfully created event'), Response::HTTP_CREATED);
     }
 
+    /**
+     * @param IndexRequest $request
+     * @return JsonResponse
+     */
     public function index(IndexRequest $request): JsonResponse
     {
         $validated = $request->validated();
@@ -69,17 +79,30 @@ final readonly class EventController extends Controller
         return $this->presenter->present($events, __('Successfully got data'), Response::HTTP_OK);
     }
 
+    /**
+     * @param string $id
+     * @return JsonResponse
+     */
     public function get(string $id): JsonResponse
     {
         $this->validateEventId($id);
 
         $event = Event::find($id);
 
+        $event->update([
+            'views' => $event->views + 1,
+        ]);
+
         $event = $this->eventPresenter->present($event);
 
         return $this->presenter->present($event, __('Successfully got data'), Response::HTTP_OK);
     }
 
+    /**
+     * @param string $id
+     * @return JsonResponse
+     * @throws AuthenticationException
+     */
     public function participate(string $id): JsonResponse
     {
         $this->validateEventId($id);

@@ -9,7 +9,11 @@ use Illuminate\Support\Str;
 
 final class CompetitionIndexResource extends JsonResource
 {
-    public function toArray(Request $request)
+    /**
+     * @param Request $request
+     * @return array
+     */
+    public function toArray(Request $request): array
     {
         $user = $this->user();
         $category = $this->category();

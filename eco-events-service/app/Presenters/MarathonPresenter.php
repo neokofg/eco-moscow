@@ -9,11 +9,19 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 final readonly class MarathonPresenter
 {
+    /**
+     * @param Marathon $event
+     * @return MarathonResource
+     */
     public function present(Marathon $event): MarathonResource
     {
         return new MarathonResource($event);
     }
 
+    /**
+     * @param LengthAwarePaginator $events
+     * @return mixed
+     */
     public function presentIndex(LengthAwarePaginator $events): mixed
     {
         return MarathonIndexResource::collection($events)->response()->getData();

@@ -10,6 +10,7 @@ use App\Exceptions\Custom\Auth\InvalidCredentialsException;
 use App\Models\Resources\V1\User\UserResource;
 use App\Models\User;
 use App\Models\UserChangeEmail;
+use App\Models\UserModeration;
 use App\Repositories\Repository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
@@ -66,15 +67,28 @@ final readonly class UserRepository extends Repository
      */
     public function updateUser(User $user, PutDto $dto): User
     {
-        $user->update($dto->toArray());
+        DB::transaction(function () use ($user, $dto) {
+            $user->update($dto->toArray());
 
-        if (isset($dto->user_education)) {
-            $user->userEducation->update($dto->user_education);
-        }
+            if (isset($dto->user_education)) {
+                $user->userEducation->update($dto->user_education);
+            }
 
-        if (isset($dto->categories)) {
-            $user->categories()->sync($dto->categories);
-        }
+            if (isset($dto->categories)) {
+                $user->categories()->sync($dto->categories);
+            }
+
+            if (isset($dto->organizer)) {
+                UserModeration::create([
+                    'company' => $dto->organizer['company'],
+                    'inn' => $dto->organizer['inn'],
+                    'ogrn' => $dto->organizer['ogrn'],
+                    'kpp' => $dto->organizer['kpp'],
+                    'okpo' => $dto->organizer['okpo'],
+                    'user_id' => $user->id,
+                ]);
+            }
+        });
 
         return $user;
     }
