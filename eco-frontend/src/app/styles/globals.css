@@ -3,25 +3,101 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #ffffff;
+  --black: #000000;
+
+  --content-primary: #09090b;
+  --content-secondary: #71717a;
+  --content-tertiary: #a1a1aa;
+
+  --content-inverse-primary: #ffffff;
+  --content-inverse-secondary: #71717a;
+  --content-inverse-tertiary: #a1a1aa;
+
+  --background-primary: #ffffff;
+  --background-secondary: #fafafa;
+  --background-tertiary: #f4f4f5;
+
+  --background-inverse-primary: #18181b;
+  --background-inverse-secondary: #27272a;
+  --background-inverse-tertiary: #52525b;
+
+  --background-hover: #3b82f6;
+  --background-hover-overlay: #00000006;
+  --background-inverse-hover-overlay: #ffffff0d;
+
+  --border-primary: #e4e4e7;
+  --border-secondary: #f4f4f5;
+  --border-tertiary: #fafafa;
+
+  --border-inverse-primary: #3f3f46;
+  --border-inverse-secondary: #27272a;
+  --border-inverse-tertiary: #09090b;
+
+  --border-hover-overlay: #00000033;
+  --border-inverse-hover-overlay: #ffffff1a;
+
+  --content-green: #16a34a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --white: #000000;
+  --black: #ffffff;
+
+  --content-primary: #ffffff;
+  --content-secondary: #71717a;
+  --content-tertiary: #a1a1aa;
+
+  --content-inverse-primary: #ffffff;
+  --content-inverse-secondary: #d4d4d8;
+  --content-inverse-tertiary: #a1a1aa;
+
+  --background-primary: #18181b;
+  --background-secondary: #27272a;
+  --background-tertiary: #3f3f46;
+
+  --background-inverse-primary: #52525b;
+  --background-inverse-secondary: #a1a1aa;
+  --background-inverse-tertiary: #e4e4e7;
+
+  --background-hover: #3b82f6;
+  --background-hover-overlay: #ffffff0d;
+  --background-inverse-hover-overlay: #00000006;
+
+  --border-primary: #3f3f46;
+  --border-secondary: #27272a;
+  --border-tertiary: #09090b;
+
+  --border-inverse-primary: #3f3f46;
+  --border-inverse-secondary: #27272a;
+  --border-inverse-tertiary: #3f3f46;
+
+  --border-hover-overlay: #ffffff1a;
+  --border-inverse-hover-overlay: #00000033;
+
+  --content-green: #16a34a;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+/*:root {*/
+/*  --background: #ffffff;*/
+/*  --foreground: #171717;*/
+/*}*/
+/**/
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    --background: #0a0a0a;*/
+/*    --foreground: #ededed;*/
+/*  }*/
+/*}*/
+/**/
+/*body {*/
+/*  color: var(--foreground);*/
+/*  background: var(--background);*/
+/*  font-family: Arial, Helvetica, sans-serif;*/
+/*}*/
+/**/
+/*@layer utilities {*/
+/*  .text-balance {*/
+/*    text-wrap: balance;*/
+/*  }*/
+/*}*/

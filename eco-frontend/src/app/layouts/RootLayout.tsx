@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "@/src/app/styles";
 import { inter } from "../fonts";
+import { MainLayout } from "./MainLayout";
 
 export const metadata: Metadata = {
   title: "ЭКО МОСКВА",
@@ -15,7 +16,9 @@ export function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={inter.className}>
+        <MainLayout>{children}</MainLayout>
+      </body>
     </html>
   );
 }
