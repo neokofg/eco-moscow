@@ -2,6 +2,9 @@
 
 use App\Controllers\Rest\V1\News\NewsGetController;
 use App\Controllers\Rest\V1\News\NewsIndexController;
+use App\Controllers\Rest\V1\Notes\NoteGetController;
+use App\Controllers\Rest\V1\Notes\NoteIndexController;
+use App\Controllers\Rest\V1\Notes\NoteStoreController;
 use App\Controllers\Rest\V1\Post\PostGetController;
 use App\Controllers\Rest\V1\Post\PostIndexController;
 use App\Controllers\Rest\V1\Post\PostStoreController;
@@ -26,5 +29,11 @@ Route::prefix('v1')->group(function () {
         Route::get('/{id}', VideoGetController::class);
         Route::middleware(['auth:sanctum','type.client'])
             ->post('/',     VideoStoreController::class);
+    });
+    Route::prefix('/notes')->group(function () {
+        Route::get('/',     NoteIndexController::class);
+        Route::get('/{id}', NoteGetController::class);
+        Route::middleware(['auth:sanctum','type.client'])
+            ->post('/',     NoteStoreController::class);
     });
 });

@@ -8,7 +8,11 @@ use Illuminate\Support\Str;
 
 final class NewsIndexResource extends JsonResource
 {
-    public function toArray(Request $request)
+    /**
+     * @param Request $request
+     * @return array
+     */
+    public function toArray(Request $request): array
     {
         $category = $this->category();
 

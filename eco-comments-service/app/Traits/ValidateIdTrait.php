@@ -48,4 +48,26 @@ trait ValidateIdTrait
             'id' => 'required|exists:mongodb.video_comment_replies,_id'
         ])->validate();
     }
+
+    /**
+     * @param string $id
+     * @return void
+     */
+    public function validateNoteCommentId(string $id): void
+    {
+        Validator::make(['id' => $id], [
+            'id' => 'required|exists:mongodb.note_comments,_id'
+        ])->validate();
+    }
+
+    /**
+     * @param string $id
+     * @return void
+     */
+    public function validateNoteCommentReplyId(string $id): void
+    {
+        Validator::make(['id' => $id], [
+            'id' => 'required|exists:mongodb.note_comment_replies,_id'
+        ])->validate();
+    }
 }

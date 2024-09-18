@@ -9,7 +9,6 @@ use MongoDB\Laravel\Eloquent\Model;
 
 /**
  * @method static create(array $array)
- * @method static where(array $conditions)
  */
 class Dislike extends Model
 {

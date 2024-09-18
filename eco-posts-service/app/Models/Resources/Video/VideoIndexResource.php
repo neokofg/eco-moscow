@@ -7,7 +7,11 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 final class VideoIndexResource extends JsonResource
 {
-    public function toArray(Request $request)
+    /**
+     * @param Request $request
+     * @return array
+     */
+    public function toArray(Request $request): array
     {
         $user = $this->user();
 

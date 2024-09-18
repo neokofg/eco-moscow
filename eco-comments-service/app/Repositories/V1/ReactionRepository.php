@@ -7,6 +7,8 @@ use App\Dto\V1\Reactions\ReactionStoreDto;
 use App\Exceptions\Custom\Reactions\AlreadyReactionedException;
 use App\Models\Dislike;
 use App\Models\Like;
+use App\Models\NoteComment;
+use App\Models\NoteCommentReply;
 use App\Models\PostComment;
 use App\Models\PostCommentReply;
 use App\Models\User;
@@ -29,6 +31,8 @@ final readonly class ReactionRepository extends Repository
             'video_comment' => VideoComment::class,
             'post_comment_reply' => PostCommentReply::class,
             'video_comment_reply' => VideoCommentReply::class,
+            'note_comment' => NoteComment::class,
+            'note_comment_reply' => NoteCommentReply::class,
         };
 
         $this->reactionExists($user->id, $commentable, $dto->id);

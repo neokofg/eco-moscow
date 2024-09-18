@@ -20,7 +20,7 @@ final class ReactionStoreRequest extends FormRequest implements RestRequest
     public function rules(): array
     {
         return [
-            'type' => 'required|in:post_comment,video_comment,post_comment_reply,video_comment_reply',
+            'type' => 'required|in:post_comment,video_comment,post_comment_reply,video_comment_reply,note_comment,note_comment_reply',
             'id' => 'required|string',
             'reaction_type' => 'required|in:like,dislike',
         ];
@@ -44,6 +44,12 @@ final class ReactionStoreRequest extends FormRequest implements RestRequest
                 break;
             case 'video_comment_reply':
                 $this->validateVideoCommentReplyId($validated['id']);
+                break;
+            case 'note_comment':
+                $this->validateNoteCommentId($validated['id']);
+                break;
+            case 'note_comment_reply':
+                $this->validateNoteCommentReplyId($validated['id']);
                 break;
         }
 

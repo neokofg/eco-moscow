@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('post_comments_collection');
+        Schema::dropIfExists('post_comments');
     }
 };
