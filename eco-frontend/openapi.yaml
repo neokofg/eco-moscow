@@ -1,0 +1,214 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/client/auth/register:
+    post:
+      summary: ''
+      operationId: postApiV1ClientAuthRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 35 characters.'
+                  example: rcp
+                surname:
+                  type: string
+                  description: 'Must not be greater than 35 characters.'
+                  example: zeo
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: oral.medhurst@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
+                  example: "ikJisR4Acl6#7@'5vc"
+              required:
+                - name
+                - surname
+                - email
+                - password
+      security: []
+  /api/v1/client/auth/login:
+    post:
+      summary: ''
+      operationId: postApiV1ClientAuthLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: roxane.breitenberg@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: '7H[fbWut'
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/client/user:
+    put:
+      summary: ''
+      operationId: putApiV1ClientUser
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 35 characters.'
+                  example: lqyyxgraihbcwgfxicn
+                surname:
+                  type: string
+                  description: 'Must not be greater than 35 characters.'
+                  example: vmphjllnlyfaxbo
+                gender:
+                  type: string
+                  description: ''
+                  example: male
+                  enum:
+                    - male
+                    - female
+                birthdate:
+                  type: string
+                  description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+                  example: '2024-09-18'
+                address:
+                  type: string
+                  description: 'Must not be greater than 300 characters.'
+                  example: viqhssgcdzgxafbreenzqw
+                about:
+                  type: string
+                  description: 'Must not be greater than 500 characters.'
+                  example: oiqkdgezflikyewnoutjludjp
+                avatar_url:
+                  type: string
+                  description: 'Must be a valid URL.'
+                  example: 'http://rippin.com/aliquid-repudiandae-nostrum-earum-in-blanditiis'
+                user_education:
+                  type: object
+                  description: ''
+                  example: null
+                  properties:
+                    university:
+                      type: string
+                      description: ''
+                      example: vitae
+                    speciality:
+                      type: string
+                      description: ''
+                      example: eligendi
+                    start_year:
+                      type: string
+                      description: 'Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2024 characters.'
+                      example: liuupzftppbibnifqkquveid
+                    end_year:
+                      type: string
+                      description: 'Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2050 characters.'
+                      example: aunhnsxqccqscctdju
+                    for_now:
+                      type: boolean
+                      description: ''
+                      example: true
+                categories:
+                  type: array
+                  description: ''
+                  example: null
+                  items:
+                    type: string
+      security: []
+  /api/v1/client/user/password:
+    patch:
+      summary: ''
+      operationId: patchApiV1ClientUserPassword
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                old_password:
+                  type: string
+                  description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
+                  example: yt
+                new_password:
+                  type: string
+                  description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
+                  example: c
+              required:
+                - old_password
+                - new_password
+      security: []
+  /api/v1/client/user/email:
+    patch:
+      summary: ''
+      operationId: patchApiV1ClientUserEmail
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                new_email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: west.josh@example.org
+                current_password:
+                  type: string
+                  description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
+                  example: qgj
+              required:
+                - new_email
+                - current_password
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

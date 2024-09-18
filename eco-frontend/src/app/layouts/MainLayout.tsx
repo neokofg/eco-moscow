@@ -8,9 +8,10 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <ThemeProvider>
       <MobileProvider>
-        <main className="bg-background-secondary">
+        <main className="bg-background-secondary flex flex-col min-h-screen">
           <Header />
           {children}
+          <div className="flex-1" />
           <Footer />
         </main>
         <Toaster />

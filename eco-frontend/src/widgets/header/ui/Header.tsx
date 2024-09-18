@@ -7,7 +7,6 @@ import {
   BurgerIcon,
   GalleryIcon,
   LogoIcon,
-  LogoutIcon,
   SearchIcon,
   ShieldStarIcon,
   StarIcon,
@@ -41,14 +40,9 @@ const navLinks = [
     label: "Публикации",
   },
   {
-    href: "/contest",
-    title: "Конкурсы",
+    href: "/community",
+    title: "Сообщество",
     label: "Конкурсы",
-  },
-  {
-    href: "/learn",
-    title: "Обучение",
-    label: "Обучение",
   },
   {
     href: "/about",
@@ -61,7 +55,7 @@ const navLinks = [
 export const Header: FC = () => {
   const pathname = usePathname();
   const isMobile = useMobile();
-  const { user, logout } = useUser();
+  const { user } = useUser();
 
   return (
     <header className="bg-white z-30">

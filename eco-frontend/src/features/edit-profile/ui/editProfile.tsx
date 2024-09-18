@@ -44,7 +44,7 @@ const formSchema = z.object({
 });
 
 function convertDateFormatAgain(dateString: string): string {
-  if (dateString.length != 10) return "";
+  if (!dateString || dateString.length != 10) return "";
   const [year, month, day] = dateString.split("-");
   return `${day.padStart(2, "0")}.${month.padStart(2, "0")}.${year}`;
 }
