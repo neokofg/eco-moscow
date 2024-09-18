@@ -17,7 +17,9 @@ final class NoteIndexRequest extends FormRequest implements RestRequest
         return [
             'first' => 'required|integer|min:1|max:30',
             'page' => 'nullable|integer|min:1',
-            'search' => 'nullable|string|max:255'
+            'search' => 'nullable|string|max:255',
+            'user_id' => 'nullable|ulid|exists:main_db.users,id',
+            'category_id' => 'nullable|ulid|exists:main_db.categories,id',
         ];
     }
 

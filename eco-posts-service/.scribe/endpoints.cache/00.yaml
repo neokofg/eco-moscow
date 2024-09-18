@@ -28,7 +28,7 @@ endpoints:
         name: first
         description: 'Must be at least 1. Must not be greater than 30.'
         required: true
-        example: 3
+        example: 8
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -37,7 +37,7 @@ endpoints:
         name: page
         description: 'Must be at least 1.'
         required: false
-        example: 32
+        example: 36
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -46,15 +46,15 @@ endpoints:
         name: search
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: fizltiavgnx
+        example: c
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first: 3
-      page: 32
-      search: fizltiavgnx
+      first: 8
+      page: 36
+      search: c
     fileParameters: []
     responses:
       -
@@ -96,13 +96,13 @@ endpoints:
         name: id
         description: 'The ID of the newse.'
         required: true
-        example: ipsum
+        example: minus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: ipsum
+      id: minus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -149,7 +149,7 @@ endpoints:
         name: first
         description: 'Must be at least 1. Must not be greater than 30.'
         required: true
-        example: 24
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -158,7 +158,7 @@ endpoints:
         name: page
         description: 'Must be at least 1.'
         required: false
-        example: 22
+        example: 34
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -167,15 +167,24 @@ endpoints:
         name: search
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: zfuskapzf
+        example: mwnuju
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_id:
+        name: user_id
+        description: ''
+        required: false
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first: 24
-      page: 22
-      search: zfuskapzf
+      first: 3
+      page: 34
+      search: mwnuju
     fileParameters: []
     responses:
       -
@@ -217,13 +226,13 @@ endpoints:
         name: id
         description: 'The ID of the post.'
         required: true
-        example: et
+        example: labore
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: et
+      id: labore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -270,7 +279,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: tsrhodkthhlmbfrtcdphsol
+        example: ndzbcgedhowyioplcjus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -279,7 +288,7 @@ endpoints:
         name: preview_url
         description: 'Must be a valid URL. Must not be greater than 255 characters.'
         required: true
-        example: 'http://batz.com/'
+        example: 'http://www.flatley.com/ullam-qui-ipsam-molestiae-autem-rerum-esse-quod.html'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -288,7 +297,7 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: velit
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -297,16 +306,16 @@ endpoints:
         name: content
         description: 'Must not be greater than 5000 characters.'
         required: true
-        example: crjezlrzlikdoixplzot
+        example: sv
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: tsrhodkthhlmbfrtcdphsol
-      preview_url: 'http://batz.com/'
-      category_id: velit
-      content: crjezlrzlikdoixplzot
+      title: ndzbcgedhowyioplcjus
+      preview_url: 'http://www.flatley.com/ullam-qui-ipsam-molestiae-autem-rerum-esse-quod.html'
+      category_id: et
+      content: sv
     fileParameters: []
     responses: []
     responseFields: []
@@ -340,7 +349,7 @@ endpoints:
         name: first
         description: 'Must be at least 1. Must not be greater than 30.'
         required: true
-        example: 2
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -349,7 +358,7 @@ endpoints:
         name: page
         description: 'Must be at least 1.'
         required: false
-        example: 74
+        example: 25
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -358,15 +367,24 @@ endpoints:
         name: search
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: vgbycxhokrmbjmxmjkzlua
+        example: gjtkxuujjecfjlcmum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_id:
+        name: user_id
+        description: ''
+        required: false
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first: 2
-      page: 74
-      search: vgbycxhokrmbjmxmjkzlua
+      first: 17
+      page: 25
+      search: gjtkxuujjecfjlcmum
     fileParameters: []
     responses:
       -
@@ -408,13 +426,13 @@ endpoints:
         name: id
         description: 'The ID of the video.'
         required: true
-        example: vero
+        example: earum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: vero
+      id: earum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -461,7 +479,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: cjgynaitendavytndi
+        example: icnfdekbiddqj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -470,7 +488,7 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: aliquam
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -479,7 +497,7 @@ endpoints:
         name: video_url
         description: 'Must be a valid URL. Must not be greater than 255 characters.'
         required: true
-        example: 'https://auer.biz/reiciendis-quis-facilis-saepe-ea-accusamus-animi.html'
+        example: 'http://www.collier.net/delectus-et-quia-est-quos-ut'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -488,7 +506,7 @@ endpoints:
         name: preview_url
         description: 'Must be a valid URL. Must not be greater than 255 characters.'
         required: true
-        example: 'http://bartell.biz/perspiciatis-rem-eius-praesentium-ipsum-et.html'
+        example: 'http://prohaska.com/tempora-omnis-illo-saepe-corporis-iste-et-corrupti'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -497,17 +515,17 @@ endpoints:
         name: description
         description: 'Must not be greater than 2000 characters.'
         required: false
-        example: 'Quas dolorum fugit cupiditate non.'
+        example: 'Quia vel adipisci earum deserunt quisquam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: cjgynaitendavytndi
-      category_id: aliquam
-      video_url: 'https://auer.biz/reiciendis-quis-facilis-saepe-ea-accusamus-animi.html'
-      preview_url: 'http://bartell.biz/perspiciatis-rem-eius-praesentium-ipsum-et.html'
-      description: 'Quas dolorum fugit cupiditate non.'
+      name: icnfdekbiddqj
+      category_id: non
+      video_url: 'http://www.collier.net/delectus-et-quia-est-quos-ut'
+      preview_url: 'http://prohaska.com/tempora-omnis-illo-saepe-corporis-iste-et-corrupti'
+      description: 'Quia vel adipisci earum deserunt quisquam.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -541,7 +559,7 @@ endpoints:
         name: first
         description: 'Must be at least 1. Must not be greater than 30.'
         required: true
-        example: 20
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -550,7 +568,7 @@ endpoints:
         name: page
         description: 'Must be at least 1.'
         required: false
-        example: 11
+        example: 24
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -559,15 +577,24 @@ endpoints:
         name: search
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: bwwtj
+        example: zlovbvavlkdjgxgsckacwtu
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_id:
+        name: user_id
+        description: ''
+        required: false
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      first: 20
-      page: 11
-      search: bwwtj
+      first: 11
+      page: 24
+      search: zlovbvavlkdjgxgsckacwtu
     fileParameters: []
     responses:
       -
@@ -609,13 +636,13 @@ endpoints:
         name: id
         description: 'The ID of the note.'
         required: true
-        example: aliquid
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: aliquid
+      id: omnis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -665,7 +692,7 @@ endpoints:
         name: title
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: weedkvmfglzksmbcxhbx
+        example: ghtyszxszaabhmlj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -674,7 +701,7 @@ endpoints:
         name: image_url
         description: 'Must be a valid URL. Must not be greater than 255 characters.'
         required: true
-        example: 'http://www.funk.com/adipisci-sit-in-aspernatur-eius-tempora-repellendus-consequuntur-quod'
+        example: 'http://barton.com/et-eius-cupiditate-voluptatibus-vitae'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -683,7 +710,7 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: qui
+        example: officia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -692,16 +719,16 @@ endpoints:
         name: content
         description: 'Must not be greater than 5000 characters.'
         required: true
-        example: vxnycnqjvstnhzfxnysgmacp
+        example: xxwiiijbqleanseajijalpxn
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title: weedkvmfglzksmbcxhbx
-      image_url: 'http://www.funk.com/adipisci-sit-in-aspernatur-eius-tempora-repellendus-consequuntur-quod'
-      category_id: qui
-      content: vxnycnqjvstnhzfxnysgmacp
+      title: ghtyszxszaabhmlj
+      image_url: 'http://barton.com/et-eius-cupiditate-voluptatibus-vitae'
+      category_id: officia
+      content: xxwiiijbqleanseajijalpxn
     fileParameters: []
     responses: []
     responseFields: []

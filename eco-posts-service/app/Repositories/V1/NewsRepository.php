@@ -17,6 +17,10 @@ final readonly class NewsRepository extends Repository
     {
         $news = News::query();
 
+        if (isset($dto->category_id)) {
+            $news->where('category_id', '=', $dto->category_id);
+        }
+
         if (isset($dto->search)) {
             $news->where(function ($query) use($dto){
                 $query->where('header', 'ILIKE', '%' . $dto->search . '%')

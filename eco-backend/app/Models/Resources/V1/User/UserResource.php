@@ -25,7 +25,9 @@ final class UserResource extends JsonResource
             'email' => $this->email,
             'updated_at' => $this->updated_at,
             'user_education' => $this->userEducation,
-            'achievements' => $this->achievements
+            'achievements' => $this->achievements,
+            'subscribers' => $this->subscribers()->count(),
+            'subscriptions' => $this->subscriptions()->count()
         ];
     }
 }

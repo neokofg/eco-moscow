@@ -36,6 +36,14 @@ final readonly class VideoRepository extends Repository
     {
         $videos = Video::query();
 
+        if (isset($dto->user_id)) {
+            $videos->where('user_id', '=', $dto->user_id);
+        }
+
+        if (isset($dto->category_id)) {
+            $videos->where('category_id', '=', $dto->category_id);
+        }
+
         if (isset($dto->search)) {
             $videos->where(function ($query) use($dto){
                 $query->where('title', 'ILIKE', '%' . $dto->search . '%')

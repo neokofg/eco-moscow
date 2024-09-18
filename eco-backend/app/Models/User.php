@@ -102,4 +102,14 @@ class User extends Authenticatable
 
         return $totalFields == $filledFields;
     }
+
+    public function subscribers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'user_subscriptions', 'user_id', 'subscribed_user_id', 'id', 'id');
+    }
+
+    public function subscriptions(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'user_subscriptions', 'subscribed_user_id', 'user_id', 'id', 'id');
+    }
 }

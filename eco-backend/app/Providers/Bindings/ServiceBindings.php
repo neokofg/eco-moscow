@@ -2,10 +2,12 @@
 
 namespace App\Providers\Bindings;
 
+use App\Contracts\ServiceInterfaces\AchievementServiceInterface;
 use App\Contracts\ServiceInterfaces\AuthServiceInterface;
 use App\Contracts\ServiceInterfaces\CategoryServiceInterface;
 use App\Contracts\ServiceInterfaces\OauthServiceInterface;
 use App\Contracts\ServiceInterfaces\UserServiceInterface;
+use App\Services\V1\AchievementService;
 use App\Services\V1\AuthService;
 use App\Services\V1\CategoryService;
 use App\Services\V1\OauthService;
@@ -23,5 +25,6 @@ final class ServiceBindings extends ServiceProvider
         $this->app->bind(OauthServiceInterface::class,          OauthService::class);
         $this->app->bind(UserServiceInterface::class,           UserService::class);
         $this->app->bind(CategoryServiceInterface::class,       CategoryService::class);
+        $this->app->bind(AchievementServiceInterface::class,    AchievementService::class);
     }
 }

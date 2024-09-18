@@ -35,6 +35,14 @@ final readonly class PostRepository extends Repository
     {
         $posts = Post::query();
 
+        if (isset($dto->user_id)) {
+            $posts->where('user_id', '=', $dto->user_id);
+        }
+
+        if (isset($dto->category_id)) {
+            $posts->where('category_id', '=', $dto->category_id);
+        }
+
         if (isset($dto->search)) {
             $posts->where(function ($query) use($dto){
                 $query->where('title', 'ILIKE', '%' . $dto->search . '%')
