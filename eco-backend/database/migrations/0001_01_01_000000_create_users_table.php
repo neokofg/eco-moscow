@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->boolean('is_oauth')->default(false);
 
+            $table->boolean('is_was_filled')->default(false);
+
             $table->timestamps();
         });
     }

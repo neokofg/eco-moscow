@@ -1,0 +1,19 @@
+version: "3"
+
+server:
+  command: "php grpc-worker.php"
+
+grpc:
+  listen: "tcp://0.0.0.0:9090"
+  proto:
+    - "protos/achievement.proto"
+  pool:
+    num_workers: 4
+    debug: true
+    command: "php grpc-worker.php"
+
+  max_connection_idle: 0s
+
+  max_connection_age: 0s
+
+  max_send_msg_size: 50

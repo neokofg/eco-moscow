@@ -23,6 +23,12 @@ final class PutRequest extends FormRequest implements RestRequest
             'address' => 'nullable|string|max:300',
             'about' => 'nullable|string|max:500',
             'avatar_url' => 'nullable|url',
+            'user_education' => 'nullable|array',
+            'user_education.university' => 'nullable|string',
+            'user_education.speciality' => 'nullable|string',
+            'user_education.start_year' => 'nullable|numeric|digits:4|min:1900|max:'.now()->format('Y'),
+            'user_education.end_year' => 'nullable|numeric|digits:4|min:1900|max:2050|gt:user_education.start_year',
+            'user_education.for_now' => 'nullable|bool',
         ];
     }
 

@@ -11,6 +11,7 @@ services:
       - 80:80
       - 3000:3000
       - 8001:8001
+      - 9090:9090
     volumes:
       - "./eco-backend:/var/www/eco/eco-backend"
       - "./config/nginx/:/etc/nginx/conf.d/"
@@ -42,6 +43,15 @@ services:
       dockerfile: Dockerfile
     volumes:
       - "./eco-s3-upload-service:/var/www/eco/eco-s3-upload-service"
+  achievement-service:
+    container_name: eco-achievement-service
+    working_dir: "/var/www/eco/eco-achievement-service"
+    restart: unless-stopped
+    build:
+      context: "./eco-achievement-service"
+      dockerfile: Dockerfile
+    volumes:
+      - "./eco-achievement-service:/var/www/eco/eco-achievement-service"
   db:
     container_name: eco-database
     image: postgis/postgis:16-3.4-alpine
@@ -63,6 +73,25 @@ services:
       - "/var/www/eco/redis/redis.conf:/usr/local/etc/redis/redis.conf"
     environment:
       REDIS_PASSWORD: root
+  rabbitmq:
+    container_name: eco-rabbitmq
+    image: rabbitmq:3.9-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASSWORD: guest
+      RABBITMQ_DEFAULT_VHOST: /
+    ports:
+      - 5672:5672
+      - 15672:15672
+  supervisor:
+    container_name: eco-supervisor
+    build:
+      context: ./config/supervisor
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - ./eco-achievement-service:/var/www/eco/eco-achievement-service
+      - ./config/supervisor/default.conf:/etc/supervisor/supervisord.conf
   composer:
     <<: *backend
     restart: no
@@ -74,16 +103,4 @@ services:
     restart: on-failure
     container_name: eco-setup-dotenv
     command: '/bin/sh -c "cp -n .env.example .env"'
-    working_dir: "/var/www/eco/eco-backend"
-  key-generate:
-    <<: *backend
-    restart: on-failure
-    container_name: eco-key-generate
-    command: '/bin/sh -c "php artisan key:generate"'
-    working_dir: "/var/www/eco/eco-backend"
-  migrate:
-    <<: *backend
-    restart: on-failure
-    container_name: eco-migrate
-    command: '/bin/sh -c "php artisan migrate:fresh --seed --force"'
     working_dir: "/var/www/eco/eco-backend"

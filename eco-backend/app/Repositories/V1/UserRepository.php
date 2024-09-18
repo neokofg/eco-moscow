@@ -68,6 +68,10 @@ final readonly class UserRepository extends Repository
     {
         $user->update($dto->toArray());
 
+        if (isset($dto->user_education)) {
+            $user->userEducation->update($dto->user_education);
+        }
+
         return $user;
     }
 

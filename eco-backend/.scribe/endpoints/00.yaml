@@ -31,7 +31,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           access-control-allow-origin: '*'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IitGN2M0NE5IbUNwNU9WWlVFZnJabWc9PSIsInZhbHVlIjoiS0NoVHpETy9tTk9CNWI3WitVWUIvRjMyN0JINEtUcXIwRHZLVWd4VjNJbGxUTm9DZnN5ckZGaHVISUtidXpvRVdBcTl6aldhR3B6QlNCRkhBTFc1ZW9XS25yL1FQTW00NkVnT21WME5aQmtUZTlLT1NEU01zSk4wMVFNY244K3oiLCJtYWMiOiI4ZjM2ODFhZmI1NDA3NTBmMDEwOTdkNjQ1ZTA0ODI5MjI5MWQzZWFiYTFmOGVmYzUyMTA5NDcwZjEyNjFmYTIwIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6InNvN3NLZ2RBaU5pU0hjeFVhK1pDV3c9PSIsInZhbHVlIjoiSENBUlVBbXVJdHNBNjlzWjhpbW9BRnpQemwxbnIxWTZpQTlMM1Q0UWRqRnFEeFQvTGJVb1NpcGZMOWVNUFg2NTE0UnVRVy9DOFc2TE4zNytIaXVsb1pNU3VuRUFLTjdDOC9KZ1JKcXFhZCtoMXlhQ0NjL3M3UmJGSldyaUxmU3EiLCJtYWMiOiI3YjU0MTQyMTFlNTc0NjUzZjAwZjRlYTRlNzkzNzJmMjc5MTgxM2FjNjgxM2I2M2FmMDQ1Y2QyMWQ1YmQwZGU5IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ik9EN0huaDhhRUhaSWpGaldoUk8yRlE9PSIsInZhbHVlIjoiRVdoME5Ka0pocXBBVUx3RTNDaytWQlBJeUN3L1VlV2dYSlZpWjlEOTYwOXpBQWRwUFEwcUxLM3pLZXF4ZHFHK21iQXdVODh3dTFFYi82TWRsUDQxdm45RHhXOEJPVUd2YldGOFF3bVp5U05kbEQ3ZnZMZUhYOVIwUXdFdnJwZ1QiLCJtYWMiOiJlZDc1Mzk3ZmYzNWI3OWViZmQ5ZjY2YTZiOWY4YzVhYTRiMDcxMzQxNDk2Y2QzYzIwZjU4ZWYzZWExZmRhZDI4IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IndPQXJ4MEdSVytqSVJRaGJzQ0RYeUE9PSIsInZhbHVlIjoidXFpQThxN2RnN0ZyR3Z6NDBZNFFxMUJDdGFLckkvQi9XVFlmeC9QdlhrUUIyZkRBQ2lHRVJ2V1dUcXhZME0rVUlEdjZLcXNESVZuYmVJY2pkY1Q0aTY2QVN1WkYvb0RtWUpIZGl5VzBRbDlUR1poTjhOUWw5OFNHRTUwR2JIN1UiLCJtYWMiOiJmZjc3MGFkNzE4Y2RhMjNkZjI3ODg1Yzg1ZjM0YzJlY2MzODAxOGZiYjYzMTYzNmVjYzNjMzkxZDg3ODVmZjA4IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -109,7 +109,7 @@ endpoints:
                                   <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                                       HTTP request received.
 
-                                                                      Response successfully rendered in 759ms.
+                                                                      Response successfully rendered in 437ms.
                                                               </p>
                               </div>
                           </div>
@@ -186,7 +186,7 @@ endpoints:
         headers:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkRWWlFJN25ncVpkbHNSVzM3YWpsU1E9PSIsInZhbHVlIjoiek81dXh5cHhQejJ6eHVHVkpLb2ZTUkpqZ0J4U3RxT2JwQkVwbVhnUXhZWHBYRHhBVmFXaEcxOThidmVnbHdBU2JUbTBpWngzcUc1a3AyejhodXFiTlJDdkhmakVTYUFhM1BiK0xkUzRHUEg4KzNWZnNldnQ4M2VLcE1hOWR1N1ciLCJtYWMiOiJkMWFlYzA3MmZhZjQ4M2U0MjhlOTk3OTk4NDAxNmQzMmIyOWI1MjJmODJkZGE5N2YwZWVkMTc3MTBkZDc5MjEyIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlVnR2pJNmtDVzVWaTNmbmZ2bHV4Znc9PSIsInZhbHVlIjoiRkN4RUNuS3dWZkpCbkJrV25lcUlOc0NEMU5iM09KRUNib1AxYWtLTmJVYVoyek9JbmhSZzR0NXRsbVdlMVFCNVlBUnVnOW5wMWhycnh5ZFZyVzdUVHROZGZqMm1kZzdEdHlSNFVRSWRydHFSZUozRzZUM3dTYWtuWFlSMUhJS1ciLCJtYWMiOiIzZjE2ZTM4YzBhNTc0YzkwMGFhZWUwZTI2NGMzZDAxNWNlZjQxOGNmNjQ0NGVjNjRlYTEzMTUyNWZlZTRhODU3IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ind1RXVSZWh3a0FySU80TWkvWWdnb3c9PSIsInZhbHVlIjoibS9LRkJwc01QVEpGaHZUcGtCNUZKNXNHWUpuS1l3QmRIR2p6OEVVOGxTeHUzN3M2L2prT1JkVEZNcm5uN3k1M29UOUQ2b2RwNWlucVlZODkxRVZSdFpNQzhsSGpWNDYzMHo5SnJNN2w4aXM4bEhlK1NXVTl1TXdieENHUEdDYjYiLCJtYWMiOiI1Zjg3NWYwYjA1YjQxNzMwNzFkN2QxNDYzNjNhZGJlM2E2OGE0OWVmMWZhYjUyN2IwMzQ4OTE5NTM3MmRlNDhmIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6Ik9HVEV3dEJ5N2ZOcUlKMGIzZVVzZXc9PSIsInZhbHVlIjoiRTZ2U3VUYlUzdUJlTlNrRUpYVEJKN1BxclVFeWo2ZW9RMU5zSGc5YjlXaDhCb3RQYlJLbTlWaE5KVHlDc3hHdlZJdCswc1NFdDRBU3VwdmtxR3FwT1BJSkZsNWhHcnM2S0tPRy8zVFZWZ2tXRzV5L3pIcm9odmQ1WFYrTWk2WlgiLCJtYWMiOiI0MDljY2I2Y2I2YzAyYTYxZjU4NGQxMmQ0OTAxOTQ3ZTNiYmQxNmUzYTJlOWUxYTFhYTNkNTk1MDUxYWVkNjE4IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -220,13 +220,13 @@ endpoints:
         name: token
         description: ''
         required: true
-        example: pariatur
+        example: tempore
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: pariatur
+      token: tempore
     fileParameters: []
     responses:
       -
@@ -235,7 +235,56 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6InFCNnRYYm9mUjhublovQUpkckovTGc9PSIsInZhbHVlIjoiTXMza1NDSGNlK2phK3hVbm4vUjFEZDM1TmFaL25jMitCMWJzOEhlTUhoRGJ5SzJRMGl4KzREcXh1azcycE9NOUxPZE8wbzhiWVBIWFY2cVJ0QlFsZC82SytDQWl6anFQc1NrTzNpL0dlTDJiYXpIbDNZL0JvREZyd2VuaVVreXMiLCJtYWMiOiIxYzY2MjEwODkxYThmZGZmOTA2ZGQxZDQ4OWUxNDdkOTdlNDY1MzVlOTgzZjk0NDFlNDZmZGYxMmUzMzdkNWM0IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlB5ZjhoMVdVUFhSeGwwbEV1VUdXcEE9PSIsInZhbHVlIjoiVkxJVW90K3ZRc25PSHE0TXNJcDQ5RUFySmkrZXU5MDJBYWV5VHdPR21kYVFFV0dqU3FwR0pIem1jWjBteVBaOEU5YlBzZ3pydlNSK3ZEZTJuck15dUwyNjQ2eENIOXA1Tm9qNE90YS8wUThwaFdQNzRobVM3ald6WDBBd3RveDQiLCJtYWMiOiJlZTVmZGY2ZDNmMTAzMjkyYjAyODEyNDdmMTk1YjE1YzQyNGNkYmYxODY0YjRlY2Q4MDlkMjY3MGY0ZjcwZDc3IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImZtVS9hdVJzWGtDaHp6OFU0b3VLaHc9PSIsInZhbHVlIjoiSCtITkJqOG5ocDE0TjNSSk1kT0lrK1BiMkdCdnhwZTNlSko2d1pUdzVyaVBiU1ZZc1BwTDNCK3QvbytSWks2QkFGMHVzNXpnL2IrSk1qVEhiQ1NtM0tucUJ3Sm8vK1hhWXFEQjZSYVNvZTFJMEcwVHliR0V2RVZZU21NZGR6czgiLCJtYWMiOiJjMDczY2M3OWYzNjEyMTc2NGZlYWYyNDQxZjZlNDdjMzIwZDMwYTc4YjFlZmU1YWJiMDZmM2Q1YWI2MWRkNWJlIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IjBPYzdVTzZya2s0VWMvR0l2Y05ZYkE9PSIsInZhbHVlIjoicldQSGt3UWJJWllrVkhsTUR0VWtjTTJNS3VHMHNzeWw5N1Q2ZE4yUGJQVzFJVm5xTTNOYjQ0K1BTQ1BVR25uWjlZcDYxL0tpQ2V1dmdpU0w4RGFLUktIY1FKRTZWNEhhU1R6dmFoUklPN1lNZWtXd1FUOXFwTmp1Mkt5QjZ2cEEiLCJtYWMiOiIwNWE1ZGRlNmY1MmE2NDQ0Njc2ZDM5OGE4OWIwMDZhZTA4NjY3NWQ2ZmYyOGRjNDRhMTMwYmRlNWNmYzcyZDY5IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: user/email/validate
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      token:
+        name: token
+        description: ''
+        required: true
+        example: voluptas
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      token: voluptas
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"data":false,"message":"Invalid token"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IkoveGRvSHYvUCtHSCtDMXhjbXpVYlE9PSIsInZhbHVlIjoib0lHUXZXbTZBQnBGRFBIbXNHOHFPTHNTK0lGeFJMdzErdUlneE9DVFRvRlQzR1U1cWlyZVllUU5TZkFKQWNZSU1NZUFkTjNNZ2dES3ZhSTliMkRtTEIwdDlNWTRSMExrS1hDRXV0d0V2blJ6Z2FvMDJQbjdGaTE1c3I3MVlrNlYiLCJtYWMiOiJhODc3YzVkNDQ1Mjc1ZTJjMzU5MGY4N2M1MjNmOTQzZDQxZmRhMDlhYzE2ZmRlNzcyMzdhMTYyYzZkZjE5ZmViIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6ImMxa2FWYWpJd2VGa0hXYTNYRDlaL2c9PSIsInZhbHVlIjoiNm1yRG9JYmd1MzBMeDI2TjRQb3dYbTBLQjdWYzl3SHVCZlBQU04xZ1ZsMmo2VFNTMkpjQzhia1R4a1VleTl3b2QvUHhvRHFJYnp3cjRuRENKcTd3ZjZ4aTN6YWg4eXVOQmhza1ljRFZoTXlGaFdQQzdIemEvKzdpRjhldWxXdUkiLCJtYWMiOiJlNjcyMGQ4YTcyYjVkMmE1MTVhNjEyZmE4NDI2MWFkNmQ5NmM2YTA1NzA1ZmU1YmQwMzRmZmI2MjEwNTgxMDM5IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -275,19 +324,19 @@ endpoints:
           <html>
               <head>
                   <meta charset="UTF-8" />
-                  <meta http-equiv="refresh" content="0;url='https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m'" />
+                  <meta http-equiv="refresh" content="0;url='https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7'" />
 
-                  <title>Redirecting to https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m</title>
+                  <title>Redirecting to https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7</title>
               </head>
               <body>
-                  Redirecting to <a href="https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m">https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m</a>.
+                  Redirecting to <a href="https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7">https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7</a>.
               </body>
           </html>
         headers:
           cache-control: 'no-cache, private'
-          location: 'https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&scope=&response_type=code&state=FRVyjEi28OpHML4mziBeDDZLRnnypKeiVRtZaj9m'
+          location: 'https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&scope=&response_type=code&state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7'
           content-type: 'text/html; charset=utf-8'
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6Ijd6TTNzby85WnJGUVFkUnZyQU05eEE9PSIsInZhbHVlIjoiT2FZY05ZREhhOWd1YjJUQy90YWJQd21TcXlVRWVLd2JCOGhzOC9ZdEZPajJKbXU3MDJJcldCcUpoS21lVGtuMnQxYlZSYVlMZ3liZG9yRVl0bmYwN20yb1hVTGhmTjVyRkdwZkFpRnd4VDliU251TDJCdEYzcE5ML0t4TC9hRzEiLCJtYWMiOiI2YmUzN2Y1MjdjYjRmMzVhMTMyN2M1MDdmZmZlN2E4OTMxZDM0Y2RiMzllYjFlYTlmNzU3MzJjYTI2YWY5MTBjIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IkNqbEJLWjVFWTg4SWdreFNZTmlMSXc9PSIsInZhbHVlIjoieng4N3FNV21UQ2dzME5wVVVSQm5BcDJGNTFGd2tZVG5QMytKTzg0aVRBVG5yL2dkUWtIM2RMUFpRV3k2dlBZOEYxbXlrN1VSZkZZZk5xbnNZNFRZZGw1ZG4rVCszSys0ZzlKVmh2L2d1Lzk4cWwzRmRPZXpnVGFrNkMzWndlYXIiLCJtYWMiOiIyMTQ5NzVjMDRhNzY2Mjc2NjA4MmY0MDc5MDk0MTY4NDlhMTMyOTMwZGMyMWIwMmNlODNiYTRkOGMzZTA2OGVjIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6IjZPNmh0RERJUGhER3JZRmRoa1E3S1E9PSIsInZhbHVlIjoiTVJCd1lRenlpN2lvRlA3MmcwQ0wxdUpiRnpkSzZXUnRlUUxLTXVSRm9mdTFadlJvNFF2WVZad25xTUpyL09qTTlBMldWc2RUam82dzRVYlZ1anpkT0NGbEdHcVp4YnRTaXcyemIvQjZ6L0w1U0NhT1hIOENhYVFmdzJDNEsxdVUiLCJtYWMiOiIyN2YzZGI5NmY0NzUyZmRmYjhhNmUwYTkwMzFlOTAwNGVhMmNhNGRkMzc4NDM3M2RkMWUxMDU1OTZmYWJlMjdkIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6InMrZ3F6U3JzaWo2UEkwYkZjV0hxSVE9PSIsInZhbHVlIjoiY09jZTdyVXVOTUQ1S0toS0tQelE1RmJGa21Yd0hXN3VUS3JPbkNzRkE3VlpKcnpMa1E2TWltTk9KVXU5VEdXS00rR0Q1RzgwZUNsYzFaYUxJSTNUM01acWYwZnlselUxNTlMeUh1VmVSMVovYVFYZFJsUGJSSFhqV2VNa285VUIiLCJtYWMiOiJlNWFjYzVmY2QzNGI1NmE1OGRjYzM5OThkNzI3ZGM0ZDMzNTNjZjg4N2Y3MGY3Y2M3ZDcwOWIyZjJmMmRjN2Q0IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -329,7 +378,7 @@ endpoints:
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          set-cookie: 'XSRF-TOKEN=eyJpdiI6InBuc1NwUjJzK1hpdHdZYnJZbTVDL3c9PSIsInZhbHVlIjoieTdQZkhJTERGQ3JlQzIrZW1DRndBT1F1ZW5JK01ROGVxUDI5OXAyc3FVei9IVkJjVHhnbk8yQ2dGdDZOTWxyYlNZYklWTTEyMU10dWw4TkNkYUp6TmxpenNNdHRFM21PMjRFNlRiSG9XcUt2dHBKVG53MENyZ24zcUtKclg0cUMiLCJtYWMiOiJlYjE3OGQ0Y2JiZTk2NjNiYmUzZmU3YTIzM2JmNTg0MzFmODZhYjUwZWQ0YzRiYmNmYmVjZTJiMzJmYjQ4N2I2IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlAvVVkyZXdZU2hLWWs3VEpjNWhldnc9PSIsInZhbHVlIjoiZHBQNnRhSmQwTWp6NE1SQlpVUnUrYnVyZVpIUHpVYjcyaTR5WXZId1NuNENhRUt0OEZlVFJKSjF4MmNrZlB1aTNlbEVlSC8ySDJvQWNISzBkWlY3K2FjZEFzbGVhak1aT0hYS21lMHVVdVpDbHVyVlR5Nm9LUUNOOHZ2YXRvNXkiLCJtYWMiOiIwYzEzNWRkOGRhY2FmYjcwMDBkNDdjNmUyOGI0MWU4MTA1NWRhMzE5YzQ2YmQzODI4YWIxNDdjYzVjMTVkMDliIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 14:34:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
+          set-cookie: 'XSRF-TOKEN=eyJpdiI6ImVIMFV4a2VabWVvR2FZOHh3aGlpMkE9PSIsInZhbHVlIjoicXhCaGV3TnJMcjR0ZklxdFMxSHkwSktyNEQ0SXAyUEZYZWRmTjJCY2x6MjFGV2VwY21iaVo1cWtQeGpYYlc3T3FDNXRHYS9DcEJwbGV6ZUF5c3FJeExyL1g4d0VCSS9jdjBCNldkZnBtUHNabUFoenF0SUpFM1REdVpSQ09OdG4iLCJtYWMiOiI2ZDJkNjBhODc2Y2Q5YWJjNDIyOTEzOTU0Yzk4ZmVhYzBiMjM1MjJkNTAyMmJhZGE5N2M5NjFiMjQ2YjVhMWIwIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6Inh4VlR3bExuM0JPMENzWWpvNlpDNmc9PSIsInZhbHVlIjoiMUc1bkk3RWxxc05SNjc2NEVwb01VRUlnUGlvUlRJU0ZBZVJBM2oxbmcvcC8weE9pY0pmNzlDclVoQlg4bUM3R0RDSXdraTRjS29iMER2M0lXWWdCVWIwT1NGb3VtTytYNi9GNnl5ZHBwV2FHRm5QRUZwdE5vSkY3Uk5wYzFQSnUiLCJtYWMiOiIwMzc2MzMzMTc2ZGM3OTkyODBlZDE2NGZlY2M3MmUxZjlmYTkyYTRkN2FkNWU2ZWVkNjZlYmYxMTBmNjhkMzAwIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax'
         description: null
         custom: []
     responseFields: []
@@ -363,7 +412,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 35 characters.'
         required: true
-        example: ohttmgvyvnngizcorq
+        example: ggtwxcrs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -372,7 +421,7 @@ endpoints:
         name: surname
         description: 'Must not be greater than 35 characters.'
         required: true
-        example: qmzkpgrkmzdwwznhqljqkpac
+        example: ndvpktliwrerzhsjlfomf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -381,7 +430,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: mraz.adrian@example.net
+        example: alessandra.considine@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -390,16 +439,16 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: '&%E@@A6h4'
+        example: i^3zFG
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: ohttmgvyvnngizcorq
-      surname: qmzkpgrkmzdwwznhqljqkpac
-      email: mraz.adrian@example.net
-      password: '&%E@@A6h4'
+      name: ggtwxcrs
+      surname: ndvpktliwrerzhsjlfomf
+      email: alessandra.considine@example.com
+      password: i^3zFG
     fileParameters: []
     responses: []
     responseFields: []
@@ -433,7 +482,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: champlin.rebecca@example.net
+        example: magdalen88@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -442,14 +491,14 @@ endpoints:
         name: password
         description: 'Must be at least 6 characters.'
         required: true
-        example: 'fDifa;#bhX(b'
+        example: '.%{si:BPd<mq%*F^bK\'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: champlin.rebecca@example.net
-      password: 'fDifa;#bhX(b'
+      email: magdalen88@example.net
+      password: '.%{si:BPd<mq%*F^bK\'
     fileParameters: []
     responses: []
     responseFields: []
@@ -522,7 +571,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 35 characters.'
         required: false
-        example: hsg
+        example: waiajuixakwylvp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -531,7 +580,7 @@ endpoints:
         name: surname
         description: 'Must not be greater than 35 characters.'
         required: false
-        example: iohl
+        example: yhluerorrderydqlawhbzt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -540,7 +589,7 @@ endpoints:
         name: gender
         description: ''
         required: false
-        example: male
+        example: female
         type: string
         enumValues:
           - male
@@ -560,7 +609,7 @@ endpoints:
         name: address
         description: 'Must not be greater than 300 characters.'
         required: false
-        example: forlxgucrjt
+        example: cdticpuhygugnutidf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -569,18 +618,88 @@ endpoints:
         name: about
         description: 'Must not be greater than 500 characters.'
         required: false
-        example: mjbr
+        example: cotofi
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
+      avatar_url:
+        name: avatar_url
+        description: 'Must be a valid URL.'
+        required: false
+        example: 'http://quigley.com/temporibus-qui-repellendus-inventore-non'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_education:
+        name: user_education
+        description: ''
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_education.university:
+        name: user_education.university
+        description: ''
+        required: false
+        example: non
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_education.speciality:
+        name: user_education.speciality
+        description: ''
+        required: false
+        example: fugiat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_education.start_year:
+        name: user_education.start_year
+        description: 'Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2024 characters.'
+        required: false
+        example: hb
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_education.end_year:
+        name: user_education.end_year
+        description: 'Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2050 characters.'
+        required: false
+        example: iavlytlfnuwcnc
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      user_education.for_now:
+        name: user_education.for_now
+        description: ''
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
     cleanBodyParameters:
-      name: hsg
-      surname: iohl
-      gender: male
+      name: waiajuixakwylvp
+      surname: yhluerorrderydqlawhbzt
+      gender: female
       birthdate: '2024-09-15'
-      address: forlxgucrjt
-      about: mjbr
+      address: cdticpuhygugnutidf
+      about: cotofi
+      avatar_url: 'http://quigley.com/temporibus-qui-repellendus-inventore-non'
+      user_education:
+        university: non
+        speciality: fugiat
+        start_year: hb
+        end_year: iavlytlfnuwcnc
+        for_now: false
     fileParameters: []
     responses: []
     responseFields: []
@@ -614,7 +733,7 @@ endpoints:
         name: old_password
         description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: hfkbttcuvplsc
+        example: oegkhlgytngzengpehphucfs
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -623,14 +742,64 @@ endpoints:
         name: new_password
         description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
         required: true
-        example: ulolxvnnhybteiud
+        example: apdllguorrtkmrpuiwsq
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      old_password: hfkbttcuvplsc
-      new_password: ulolxvnnhybteiud
+      old_password: oegkhlgytngzengpehphucfs
+      new_password: apdllguorrtkmrpuiwsq
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PATCH
+    uri: api/v1/client/user/email
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      new_email:
+        name: new_email
+        description: 'Must be a valid email address.'
+        required: true
+        example: braxton79@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      current_password:
+        name: current_password
+        description: 'Must be at least 6 characters. Must not be greater than 30 characters.'
+        required: true
+        example: zajflnlcx
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      new_email: braxton79@example.org
+      current_password: zajflnlcx
     fileParameters: []
     responses: []
     responseFields: []

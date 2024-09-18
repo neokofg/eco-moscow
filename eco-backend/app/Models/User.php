@@ -2,10 +2,15 @@
 
 namespace App\Models;
 
+use App\Controllers\Grpc\Clients\AchievementClient;
+use App\Controllers\Grpc\Controllers\AchievementController;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\App;
 use Laravel\Sanctum\HasApiTokens;
 
 /**
@@ -14,6 +19,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static findOrFail(int $userId)
  * @property string $password
  * @property string $id
+ * @property UserEducation $userEducation
  */
 class User extends Authenticatable
 {
@@ -21,6 +27,29 @@ class User extends Authenticatable
     use Notifiable;
     use HasApiTokens;
     use HasUlids;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($user) {
+            UserEducation::create([
+                'user_id' => $user->id
+            ]);
+        });
+
+        static::updated(function ($user) {
+            if ($user->isFilled() && !$user->is_was_filled) {
+                $client = App::make(AchievementClient::class);
+                $controller = new AchievementController($client);
+                if ($controller->addAchievement($user, 'PROFILE_FILLED')) {
+                    $user->update([
+                        'is_was_filled' => true
+                    ]);
+                }
+            }
+        });
+    }
 
     protected $guarded = [
         'id',
@@ -37,5 +66,35 @@ class User extends Authenticatable
         return [
             'password' => 'hashed',
         ];
+    }
+
+    public function userEducation(): HasOne
+    {
+        return $this->hasOne(UserEducation::class, 'user_id', 'id');
+    }
+
+    public function achievements(): BelongsToMany
+    {
+        return $this->belongsToMany(Achievement::class, 'user_achievement');
+    }
+
+    public function isFilled(): bool
+    {
+        $fields = [
+            'name',
+            'surname',
+            'birthdate',
+            'about'
+        ];
+        $totalFields = count($fields);
+        $filledFields = 0;
+
+        foreach ($fields as $field) {
+            if (!empty($this->$field)) {
+                $filledFields++;
+            }
+        }
+
+        return $totalFields == $filledFields;
     }
 }
