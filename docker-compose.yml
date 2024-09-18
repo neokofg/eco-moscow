@@ -9,14 +9,9 @@ services:
       - backend
     ports:
       - 80:80
-      - 3000:3000
-      - 8001:8001
-      - 8031:8031
-      - 8041:8041
-      - 8051:8051
-      - 9090:9090
+      - 443:443
     volumes:
-      - "./eco-backend:/var/www/eco/eco-backend"
+      - "./config/certs/:/etc/nginx/certs"
       - "./config/nginx/:/etc/nginx/conf.d/"
   backend:
     container_name: eco-backend
