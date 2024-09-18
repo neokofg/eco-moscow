@@ -3,6 +3,7 @@ services:
     container_name: eco-nginx
     image: nginx:1.27-alpine
     restart: unless-stopped
+    user: root
     depends_on:
       - backend
     links:
