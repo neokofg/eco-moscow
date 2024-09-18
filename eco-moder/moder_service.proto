@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package moder;
+
+service ModerService {
+  rpc PredictModer (ModerRequest) returns (ModerResponse) {}
+}
+
+message ModerRequest {
+  string text = 1;
+}
+
+message ModerResponse {
+  bool isTrue = 2;
+}

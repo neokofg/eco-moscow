@@ -1,0 +1,4 @@
+grpcio==1.66.1
+grpcio-tools==1.66.1
+joblib==1.4.2
+nltk==3.9.1
