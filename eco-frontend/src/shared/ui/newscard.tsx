@@ -6,15 +6,15 @@ const NewsCard = ({
   image = "",
   time = "3 часа назад",
   name = "Обновления Leader-ID в мае 2024",
+  isBig=false,
   desc = "Привет! Это команда Leader-ID с майскими обновлениями. Добавили переговорные комнаты и фильтр прошедших мероприятий, исправили сортировку в кабинете организатора и еще кое-что.",
 }) => {
   return (
-    <div className="p-2 bg-background-primary rounded-3xl flex flex-col gap-2 w-[490px] h-[388px] items-center justify-center">
+    <div className={`flex flex-col p-2 rounded-3xl ${isBig ? 'w-[490px]': "w-[364px]"} gap-2 bg-background-primary`}>
       <Image
         alt="cardImage"
         src={image}
-        width={474}
-        height={216}
+        width={isBig ?474 :348} height={isBig?256:216} 
         className="rounded-xl bg-background-secondary mt-2"
       />
       <div className="flex flex-col gap-2 p-2">

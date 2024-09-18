@@ -1,0 +1,1 @@
+export {NewsId} from "./ui/id"
