@@ -1,2 +1,68 @@
 services:
-
+  nginx:
+    container_name: eco-nginx
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      - backend
+    links:
+      - backend
+    ports:
+      - 80:80
+    volumes:
+      - './eco-backend:/var/www/eco/eco-backend'
+      - './config/nginx/:/etc/nginx/conf.d/'
+  backend: &backend
+    container_name: eco-backend
+    working_dir: '/var/www/eco/eco-backend'
+    restart: unless-stopped
+    build:
+      context: './eco-backend'
+      dockerfile: Dockerfile
+    volumes:
+      - './eco-backend:/var/www/eco/eco-backend'
+  db:
+    container_name: eco-database
+    image: postgis/postgis:16-3.4-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - '/var/www/eco/postgis-data:/var/lib/postgresql/data'
+  redis:
+    container_name: eco-redis
+    image: redis:latest
+    restart: always
+    volumes:
+      - '/var/www/eco/redis:/root/redis'
+      - '/var/www/eco/redis/redis.conf:/usr/local/etc/redis/redis.conf'
+    environment:
+      REDIS_PASSWORD: root
+  composer:
+    <<: *backend
+    restart: no
+    container_name: eco-composer-install
+    command: '/bin/sh -c "composer install"'
+    working_dir: '/var/www/eco/eco-backend'
+  setup-dotenv:
+    <<: *backend
+    restart: on-failure
+    container_name: eco-setup-dotenv
+    command: '/bin/sh -c "cp -n .env.example .env"'
+    working_dir: '/var/www/eco/eco-backend'
+  key-generate:
+    <<: *backend
+    restart: on-failure
+    container_name: eco-key-generate
+    command: '/bin/sh -c "php artisan key:generate"'
+    working_dir: '/var/www/eco/eco-backend'
+  migrate:
+    <<: *backend
+    restart: on-failure
+    container_name: eco-migrate
+    command: '/bin/sh -c "php artisan migrate:fresh --seed --force"'
+    working_dir: '/var/www/eco/eco-backend'

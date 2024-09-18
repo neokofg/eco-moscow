@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Controllers\Controller;
+use App\Helpers\JsonPresenter;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+final class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
