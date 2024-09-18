@@ -57,7 +57,6 @@ services:
       - "./eco-social-service:/var/www/eco/eco-social-service"
   frontend:
     container_name: eco-frontend
-    working_dir: "/var/www/eco/eco-frontend"
     restart: unless-stopped
     build:
       context: "./eco-frontend"
