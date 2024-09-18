@@ -1,0 +1,460 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/newses:
+    get:
+      summary: ''
+      operationId: getApiV1Newses
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first:
+                  type: integer
+                  description: 'Must be at least 1. Must not be greater than 30.'
+                  example: 21
+                page:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 73
+                search:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: gswnhzhvvqsftptdhyoyubjpa
+              required:
+                - first
+      security: []
+  '/api/v1/newses/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1NewsesId
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The id field must be a valid ULID.'
+                  errors:
+                    id:
+                      - 'The id field must be a valid ULID.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The id field must be a valid ULID.'
+                  errors:
+                    type: object
+                    properties:
+                      id:
+                        type: array
+                        example:
+                          - 'The id field must be a valid ULID.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the newse.'
+        example: delectus
+        required: true
+        schema:
+          type: string
+  /api/v1/posts:
+    get:
+      summary: ''
+      operationId: getApiV1Posts
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first:
+                  type: integer
+                  description: 'Must be at least 1. Must not be greater than 30.'
+                  example: 10
+                page:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 79
+                search:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: fo
+              required:
+                - first
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Posts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: wly
+                preview_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 255 characters.'
+                  example: 'http://hagenes.net/quo-eum-aut-nemo-dolor'
+                category_id:
+                  type: string
+                  description: ''
+                  example: repellendus
+                content:
+                  type: string
+                  description: 'Must not be greater than 5000 characters.'
+                  example: vu
+              required:
+                - title
+                - preview_url
+                - category_id
+                - content
+      security: []
+  '/api/v1/posts/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1PostsId
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The id field must be a valid ULID.'
+                  errors:
+                    id:
+                      - 'The id field must be a valid ULID.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The id field must be a valid ULID.'
+                  errors:
+                    type: object
+                    properties:
+                      id:
+                        type: array
+                        example:
+                          - 'The id field must be a valid ULID.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the post.'
+        example: accusantium
+        required: true
+        schema:
+          type: string
+  /api/v1/videos:
+    get:
+      summary: ''
+      operationId: getApiV1Videos
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first:
+                  type: integer
+                  description: 'Must be at least 1. Must not be greater than 30.'
+                  example: 20
+                page:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 66
+                search:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: bhalvymnmqszkafv
+              required:
+                - first
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Videos
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: resttzhcl
+                category_id:
+                  type: string
+                  description: ''
+                  example: corrupti
+                video_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 255 characters.'
+                  example: 'http://koelpin.com/exercitationem-libero-debitis-ipsam-deserunt-vitae-est-sint'
+                preview_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 255 characters.'
+                  example: 'https://kuphal.com/quam-nihil-debitis-ad-qui-aut-facilis-error.html'
+                description:
+                  type: string
+                  description: 'Must not be greater than 2000 characters.'
+                  example: 'Numquam itaque sint voluptas reiciendis quis est aliquid.'
+              required:
+                - name
+                - category_id
+                - video_url
+                - preview_url
+      security: []
+  '/api/v1/videos/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1VideosId
+      description: ''
+      parameters: []
+      responses:
+        422:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'The id field must be a valid ULID.'
+                  errors:
+                    id:
+                      - 'The id field must be a valid ULID.'
+                properties:
+                  message:
+                    type: string
+                    example: 'The id field must be a valid ULID.'
+                  errors:
+                    type: object
+                    properties:
+                      id:
+                        type: array
+                        example:
+                          - 'The id field must be a valid ULID.'
+                        items:
+                          type: string
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the video.'
+        example: in
+        required: true
+        schema:
+          type: string
+  /api/v1/notes:
+    get:
+      summary: ''
+      operationId: getApiV1Notes
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first:
+                  type: integer
+                  description: 'Must be at least 1. Must not be greater than 30.'
+                  example: 3
+                page:
+                  type: integer
+                  description: 'Must be at least 1.'
+                  example: 74
+                search:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: pdtxzse
+              required:
+                - first
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Notes
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: meaijxavdmyfkmaofhpnqjze
+                image_url:
+                  type: string
+                  description: 'Must be a valid URL. Must not be greater than 255 characters.'
+                  example: 'http://www.ledner.com/repellat-sapiente-eligendi-expedita-cum-rerum-aperiam-molestiae.html'
+                category_id:
+                  type: string
+                  description: ''
+                  example: et
+                content:
+                  type: string
+                  description: 'Must not be greater than 5000 characters.'
+                  example: gdslrjkcgoxibdrazuoxvznne
+              required:
+                - title
+                - image_url
+                - category_id
+                - content
+      security: []
+  '/api/v1/notes/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1NotesId
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the note.'
+        example: sed
+        required: true
+        schema:
+          type: string
+tags:
+  -
+    name: Endpoints
+    description: ''

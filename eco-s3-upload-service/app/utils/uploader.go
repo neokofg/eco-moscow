@@ -68,6 +68,6 @@ func (u *S3Uploader) UploadFile(file multipart.File, handler *multipart.FileHead
 		return "", err
 	}
 
-	url := "https://0c59c59e-ccf2-4cfd-bb1e-8f08197d105d.selcdn.net" + fileName
+	url := "https://cdn.eco-mos.ru" + fileName
 	return url, nil
 }
