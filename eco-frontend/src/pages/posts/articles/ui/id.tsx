@@ -2,7 +2,12 @@ import { AvatarIcon } from "@/src/shared/icons";
 import { Avatar } from "@/src/shared/ui/avatar";
 import Image from "next/image";
 
-const ArticleId = ({
+const ArticleId = () => {
+  return(
+    <Article/>
+  )
+}
+const Article = ({
   name = "фамилия имя",
   subs = "",
   article = "",

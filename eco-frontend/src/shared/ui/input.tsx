@@ -19,7 +19,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   withAsterisk?: boolean;
   Icon?: FC<IconType>;
   IconStart?: FC<IconType>;
-  FullWidth?: bool
+  FullWidth?: boolean;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface AchievementCardProps {
-  k;
+
 }
 export const AchievementCard: FC = () => {
   return (
