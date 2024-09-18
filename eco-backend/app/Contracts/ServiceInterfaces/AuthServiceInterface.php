@@ -16,9 +16,9 @@ interface AuthServiceInterface
 
     /**
      * @param TokenDtoContract $dto
-     * @return array
+     * @return string
      */
-    public function registerValidateUser(TokenDtoContract $dto): array;
+    public function registerValidateUser(TokenDtoContract $dto): string;
 
     /**
      * @param LoginDtoContract $dto

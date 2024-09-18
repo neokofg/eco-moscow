@@ -27,10 +27,10 @@ final readonly class OauthService implements OauthServiceInterface
 
     /**
      * @param int $code
-     * @return array
+     * @return string
      * @throws FailedToGetTokenException
      */
-    public function oauthYandex(int $code): array
+    public function oauthYandex(int $code): string
     {
         try {
             $accessToken = $this->getToken($code);
@@ -48,9 +48,7 @@ final readonly class OauthService implements OauthServiceInterface
                 is_oauth: true
             );
 
-            return [
-                'token' => $this->createUserToken($user)
-            ];
+            return $this->createUserToken($user);
         });
     }
 

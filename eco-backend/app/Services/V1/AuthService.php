@@ -68,7 +68,7 @@ final readonly class AuthService implements AuthServiceInterface
      * @throws InvalidCodeException
      */
     #[ArrayShape(['token' => "string"])]
-    public function registerValidateUser(TokenDto|TokenDtoContract $dto): array
+    public function registerValidateUser(TokenDto|TokenDtoContract $dto): string
     {
         $register_user = $this->authRepository->findRegisterUser($dto->token);
 
@@ -81,9 +81,7 @@ final readonly class AuthService implements AuthServiceInterface
             );
             $this->authRepository->deleteRegisterUser($register_user);
 
-            return [
-                'token' => $this->createUserToken($user)
-            ];
+            return $this->createUserToken($user);
         });
     }
 

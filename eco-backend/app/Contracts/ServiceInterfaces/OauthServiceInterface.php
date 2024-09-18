@@ -6,7 +6,7 @@ interface OauthServiceInterface
 {
     /**
      * @param int $code
-     * @return array
+     * @return string
      */
-    public function oauthYandex(int $code): array;
+    public function oauthYandex(int $code): string;
 }
