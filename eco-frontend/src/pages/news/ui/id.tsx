@@ -1,7 +1,12 @@
 import { NewsCard } from "@/src/shared/ui/newscard";
 import Image from "next/image";
 
-const NewsId = ({
+const NewsId = () => {
+  return(
+    <News/>
+  )
+}
+const News = ({
   name = "Шнобелевская премия 2024: плавательные способности мертвой форели",
   cat = "Категория",
   time = "3 часа назад",
