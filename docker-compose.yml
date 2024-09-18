@@ -55,6 +55,16 @@ services:
     volumes:
       - "./config/php/php.ini:/usr/local/etc/php/php.ini"
       - "./eco-social-service:/var/www/eco/eco-social-service"
+  events-service:
+    container_name: eco-events-service
+    working_dir: "/var/www/eco/eco-events-service"
+    restart: unless-stopped
+    build:
+      context: "./eco-events-service"
+      dockerfile: Dockerfile
+    volumes:
+      - "./config/php/php.ini:/usr/local/etc/php/php.ini"
+      - "./eco-events-service:/var/www/eco/eco-events-service"
   frontend:
     container_name: eco-frontend
     restart: unless-stopped
@@ -105,6 +115,18 @@ services:
       - "5433:5432"
     volumes:
       - "/var/www/eco/postgis-posts-data:/var/lib/postgresql/data"
+  events-db:
+    container_name: eco-events-db
+    image: postgis/postgis:16-3.4-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: postgres
+    ports:
+      - "5434:5432"
+    volumes:
+      - "/var/www/eco/postgis-events-data:/var/lib/postgresql/data"
   mongodb:
     container_name: eco-mongodb
     image: mongo:latest
