@@ -26,7 +26,7 @@ class ModerService(moder_service_pb2_grpc.ModerServiceServicer):
         self.model = joblib.load('moder_text_model.joblib')
 
     def PredictModer(self, request, context):
-        comment = request.comment
+        comment = request.text
         preprocessed_comment = preprocess_text(comment)
         toxicity = self.model.predict([preprocessed_comment])[0]
     
