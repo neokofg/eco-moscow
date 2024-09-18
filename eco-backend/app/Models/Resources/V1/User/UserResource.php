@@ -23,7 +23,8 @@ final class UserResource extends JsonResource
             'gender' => $this->gender,
             'email' => $this->email,
             'updated_at' => $this->updated_at,
-            'user_education' => $this->userEducation
+            'user_education' => $this->userEducation,
+            'achievements' => $this->achievements
         ];
     }
 }

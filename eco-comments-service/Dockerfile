@@ -19,14 +19,6 @@ RUN install-php-extensions grpc
 RUN install-php-extensions mongodb
 RUN install-php-extensions @composer
 
-RUN apk update && \
-    apk add freetype-dev \
-    		libjpeg-turbo-dev \
-            php-zip \
-    		libpng-dev && \
-    docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
-    docker-php-ext-install gd
-
 RUN touch /usr/local/etc/php/php.ini
 
 ENV DB_HOST posts-db

@@ -13,6 +13,7 @@ services:
       - 8001:8001
       - 8031:8031
       - 8041:8041
+      - 8051:8051
       - 9090:9090
     volumes:
       - "./eco-backend:/var/www/eco/eco-backend"
@@ -47,6 +48,16 @@ services:
     volumes:
       - "./config/php/php.ini:/usr/local/etc/php/php.ini"
       - "./eco-comments-service:/var/www/eco/eco-comments-service"
+  social-service:
+    container_name: eco-social-service
+    working_dir: "/var/www/eco/eco-social-service"
+    restart: unless-stopped
+    build:
+      context: "./eco-social-service"
+      dockerfile: Dockerfile
+    volumes:
+      - "./config/php/php.ini:/usr/local/etc/php/php.ini"
+      - "./eco-social-service:/var/www/eco/eco-social-service"
   frontend:
     container_name: eco-frontend
     working_dir: "/var/www/eco/eco-frontend"
