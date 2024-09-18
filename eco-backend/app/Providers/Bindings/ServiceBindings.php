@@ -19,9 +19,8 @@ final class ServiceBindings extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(AuthServiceInterface::class, AuthService::class);
-        $this->app->bind(OauthServiceInterface::class, OauthService::class);
-        $this->app->bind(UserServiceInterface::class, UserService::class);
-        $this->app->bind(BusinessUserServiceInterface::class, BusinessUserService::class);
+        $this->app->bind(AuthServiceInterface::class,           AuthService::class);
+        $this->app->bind(OauthServiceInterface::class,          OauthService::class);
+        $this->app->bind(UserServiceInterface::class,           UserService::class);
     }
 }

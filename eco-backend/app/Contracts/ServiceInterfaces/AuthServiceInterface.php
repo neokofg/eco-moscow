@@ -25,22 +25,4 @@ interface AuthServiceInterface
      * @return array
      */
     public function loginUser(LoginDtoContract $dto): array;
-
-    /**
-     * @param RegisterDtoContract $dto
-     * @return bool
-     */
-    public function registerBusinessUser(RegisterDtoContract $dto): bool;
-
-    /**
-     * @param RegisterValidateDtoContract $dto
-     * @return array
-     */
-    public function registerValidateBusinessUser(RegisterValidateDtoContract $dto): array;
-
-    /**
-     * @param LoginDtoContract $dto
-     * @return array
-     */
-    public function loginBusinessUser(LoginDtoContract $dto): array;
 }

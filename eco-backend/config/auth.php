@@ -44,10 +44,6 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'business_users' => [
-            'driver' => 'session',
-            'provider' => 'business_users',
-        ],
         'admin' => [
             'driver' => 'session',
             'provider' => 'admin_users',
@@ -76,10 +72,6 @@ return [
             'driver' => 'eloquent',
             'model' => User::class,
         ],
-         'business_users' => [
-            'driver' => 'eloquent',
-            'model' => BusinessUser::class,
-         ],
         'admin_users' => [
             'driver' => 'eloquent',
             'model' => AdminUser::class,
