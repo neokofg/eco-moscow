@@ -18,7 +18,8 @@ final readonly class PutDto extends PutDtoContract
         public ?string $address = null,
         public ?string $about = null,
         public ?string $avatar_url = null,
-        public ?array  $user_education = null
+        public ?array  $user_education = null,
+        public ?array  $categories = null
     )
     {
         parent::__construct();

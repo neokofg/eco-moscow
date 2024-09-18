@@ -78,6 +78,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Achievement::class, 'user_achievement');
     }
 
+    public function categories(): BelongsToMany
+    {
+        return $this->belongsToMany(Category::class, 'user_category');
+    }
+
     public function isFilled(): bool
     {
         $fields = [

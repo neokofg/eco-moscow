@@ -74,6 +74,9 @@
                                                     <li class="tocify-item level-2" data-unique="endpoints-GETsanctum-csrf-cookie">
                                 <a href="#endpoints-GETsanctum-csrf-cookie">Return an empty response simply to trigger the storage of the CSRF cookie in the browser.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-categories">
+                                <a href="#endpoints-GETapi-v1-categories">GET api/v1/categories</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETup">
                                 <a href="#endpoints-GETup">GET up</a>
                             </li>
@@ -121,7 +124,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: September 15, 2024</li>
+        <li>Last updated: September 16, 2024</li>
     </ul>
 </div>
 
@@ -188,7 +191,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 access-control-allow-origin: *
-set-cookie: XSRF-TOKEN=eyJpdiI6Ik9EN0huaDhhRUhaSWpGaldoUk8yRlE9PSIsInZhbHVlIjoiRVdoME5Ka0pocXBBVUx3RTNDaytWQlBJeUN3L1VlV2dYSlZpWjlEOTYwOXpBQWRwUFEwcUxLM3pLZXF4ZHFHK21iQXdVODh3dTFFYi82TWRsUDQxdm45RHhXOEJPVUd2YldGOFF3bVp5U05kbEQ3ZnZMZUhYOVIwUXdFdnJwZ1QiLCJtYWMiOiJlZDc1Mzk3ZmYzNWI3OWViZmQ5ZjY2YTZiOWY4YzVhYTRiMDcxMzQxNDk2Y2QzYzIwZjU4ZWYzZWExZmRhZDI4IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IndPQXJ4MEdSVytqSVJRaGJzQ0RYeUE9PSIsInZhbHVlIjoidXFpQThxN2RnN0ZyR3Z6NDBZNFFxMUJDdGFLckkvQi9XVFlmeC9QdlhrUUIyZkRBQ2lHRVJ2V1dUcXhZME0rVUlEdjZLcXNESVZuYmVJY2pkY1Q0aTY2QVN1WkYvb0RtWUpIZGl5VzBRbDlUR1poTjhOUWw5OFNHRTUwR2JIN1UiLCJtYWMiOiJmZjc3MGFkNzE4Y2RhMjNkZjI3ODg1Yzg1ZjM0YzJlY2MzODAxOGZiYjYzMTYzNmVjYzNjMzkxZDg3ODVmZjA4IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IlJlQ0dmVTk5MGNsdEpFNHJ1blBhWGc9PSIsInZhbHVlIjoiMnY3ZmJ1YUhGaEdiSnVJWnYzbEw5V3hBTTFJMXZRU1NTc1VRNU1FbTY5Qkgyb0daOUhGSDZ4cEovcWoxUFM5UTZ0aVE4WEpuMUMvOU90TloyT3ZUQkNMVE9Vb0NadGU0OVAzaWYxU0Q3akdKVHhLMzdOb2FMUmpKZ3ltSUNUQ2ciLCJtYWMiOiJhMDFhMDgyMGVmMDliM2FhNzlkZWMzNjZlN2M1ZGJjMDg5OWI4NDdjMjA4MDk2NjJmNWRmYjVmNjNiOTQyZmQwIiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IkphM04wZHBnRnVISzBLUzdkSTk5akE9PSIsInZhbHVlIjoiUjEvUVhieHcvUHlxTlN2RnhTZUwzMkhEeHFNdVVlaVg0TWZiZkNqeFNTaXptUGRsdW8rQmdlSGw5TzFMeGhxQWhSQlY2bURzbTl1RDBTUjhONC9heXRvbjJHTUIreUtyVnBtbDJLbGoxWGdjZERYZkVvMDRXZ2l6UlpnRjFoUDgiLCJtYWMiOiIzYjE3Yzk2NDg1NzJiZTc5NDI2YTgxMjAyODk5Mjc1NDQ3ZDA3ZmNjMjkwZjczMzc1MTdhNjYzZDdmNDJmM2IwIiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 <code>Empty response</code>
  </pre>
@@ -263,6 +266,212 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                    <h2 id="endpoints-GETapi-v1-categories">GET api/v1/categories</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-categories">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/categories" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"first\": 11,
+    \"page\": 50,
+    \"search\": \"ooktjgwdceqmh\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/categories"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first": 11,
+    "page": 50,
+    "search": "ooktjgwdceqmh"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-categories">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;data&quot;: [],
+        &quot;links&quot;: {
+            &quot;first&quot;: &quot;http://localhost/api/v1/categories?first=11&amp;page=1&quot;,
+            &quot;last&quot;: &quot;http://localhost/api/v1/categories?first=11&amp;page=1&quot;,
+            &quot;prev&quot;: &quot;http://localhost/api/v1/categories?first=11&amp;page=49&quot;,
+            &quot;next&quot;: null
+        },
+        &quot;meta&quot;: {
+            &quot;current_page&quot;: 50,
+            &quot;from&quot;: null,
+            &quot;last_page&quot;: 1,
+            &quot;links&quot;: [
+                {
+                    &quot;url&quot;: &quot;http://localhost/api/v1/categories?first=11&amp;page=49&quot;,
+                    &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                    &quot;active&quot;: false
+                },
+                {
+                    &quot;url&quot;: &quot;http://localhost/api/v1/categories?first=11&amp;page=1&quot;,
+                    &quot;label&quot;: &quot;1&quot;,
+                    &quot;active&quot;: false
+                },
+                {
+                    &quot;url&quot;: null,
+                    &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                    &quot;active&quot;: false
+                }
+            ],
+            &quot;path&quot;: &quot;http://localhost/api/v1/categories&quot;,
+            &quot;per_page&quot;: 11,
+            &quot;to&quot;: null,
+            &quot;total&quot;: 0
+        }
+    },
+    &quot;message&quot;: &quot;Successfully got data&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-categories" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-categories"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-categories"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-categories" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-categories">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-categories" data-method="GET"
+      data-path="api/v1/categories"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-categories', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-categories"
+                    onclick="tryItOut('GETapi-v1-categories');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-categories"
+                    onclick="cancelTryOut('GETapi-v1-categories');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-categories"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/categories</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-categories"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-categories"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>first</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="first"                data-endpoint="GETapi-v1-categories"
+               value="11"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Must not be greater than 50. Example: <code>11</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-v1-categories"
+               value="50"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>50</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-v1-categories"
+               value="ooktjgwdceqmh"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>ooktjgwdceqmh</code></p>
+        </div>
+        </form>
 
                     <h2 id="endpoints-GETup">GET up</h2>
 
@@ -353,7 +562,7 @@ cache-control: no-cache, private
                         &lt;p class=&quot;mt-2 text-gray-500 dark:text-gray-400 text-sm leading-relaxed&quot;&gt;
                             HTTP request received.
 
-                                                            Response successfully rendered in 437ms.
+                                                            Response successfully rendered in 640ms.
                                                     &lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -480,7 +689,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
-set-cookie: XSRF-TOKEN=eyJpdiI6Ind1RXVSZWh3a0FySU80TWkvWWdnb3c9PSIsInZhbHVlIjoibS9LRkJwc01QVEpGaHZUcGtCNUZKNXNHWUpuS1l3QmRIR2p6OEVVOGxTeHUzN3M2L2prT1JkVEZNcm5uN3k1M29UOUQ2b2RwNWlucVlZODkxRVZSdFpNQzhsSGpWNDYzMHo5SnJNN2w4aXM4bEhlK1NXVTl1TXdieENHUEdDYjYiLCJtYWMiOiI1Zjg3NWYwYjA1YjQxNzMwNzFkN2QxNDYzNjNhZGJlM2E2OGE0OWVmMWZhYjUyN2IwMzQ4OTE5NTM3MmRlNDhmIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6Ik9HVEV3dEJ5N2ZOcUlKMGIzZVVzZXc9PSIsInZhbHVlIjoiRTZ2U3VUYlUzdUJlTlNrRUpYVEJKN1BxclVFeWo2ZW9RMU5zSGc5YjlXaDhCb3RQYlJLbTlWaE5KVHlDc3hHdlZJdCswc1NFdDRBU3VwdmtxR3FwT1BJSkZsNWhHcnM2S0tPRy8zVFZWZ2tXRzV5L3pIcm9odmQ1WFYrTWk2WlgiLCJtYWMiOiI0MDljY2I2Y2I2YzAyYTYxZjU4NGQxMmQ0OTAxOTQ3ZTNiYmQxNmUzYTJlOWUxYTFhYTNkNTk1MDUxYWVkNjE4IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IjFjN0JMWUNOWnp0VERaS2NQaGRFeUE9PSIsInZhbHVlIjoiczVFajkwM2UxTkhzZi9oSFBiYzlMS3N1bmRuMHpLYkU3WHVqWTQ2bmVCcVh4MmxwTXBHQ0x1bzc0NlBoemdUSktVei9TSjVsZzJHMEI3c28rNkMxSGt2UmdocWJPeGFQVE01MGxMajYwT0pSZVBwR01GTzVqQmZFbmVxRDNOR1EiLCJtYWMiOiJkN2I5ODI0NjRiNzQxY2RiYTU1NWM4ODU4OWQ5ZWM1YjA0NTM2NzJhOGU3ZTlmNzAyMDRhNmViY2IwOTNiMjQ1IiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6InRVL1RhRW4zZloxT0o3bXpLZmZHQXc9PSIsInZhbHVlIjoiSnJ4R0NUMFBYNytiTkRMTHZBY2V2MXRUYmpQTy9xbHBoTC9SWUovc0lra0hKWlBzdjBCNlBpWXp4Q3NkTDZYVndrYldhVHFINXpwZEFJZlludTM0c2hrYnQzUEEybTZMWFVLUi9nNS94bi9uYXdPT3I3VUVGcWMyNGl5TWQ2OFIiLCJtYWMiOiI2ZTgxNTk4ZDUyY2YxZWU4ZTY2ZDEwMGQ5Nzk0NjBlMGFiZWU1YjlhZTk4MzVhODM1ZDQzZjYwMjljODFmMTA2IiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">&lt;!doctype html&gt;
@@ -602,7 +811,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"tempore\"
+    \"token\": \"similique\"
 }"
 </code></pre></div>
 
@@ -618,7 +827,7 @@ const headers = {
 };
 
 let body = {
-    "token": "tempore"
+    "token": "similique"
 };
 
 fetch(url, {
@@ -639,7 +848,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-set-cookie: XSRF-TOKEN=eyJpdiI6ImZtVS9hdVJzWGtDaHp6OFU0b3VLaHc9PSIsInZhbHVlIjoiSCtITkJqOG5ocDE0TjNSSk1kT0lrK1BiMkdCdnhwZTNlSko2d1pUdzVyaVBiU1ZZc1BwTDNCK3QvbytSWks2QkFGMHVzNXpnL2IrSk1qVEhiQ1NtM0tucUJ3Sm8vK1hhWXFEQjZSYVNvZTFJMEcwVHliR0V2RVZZU21NZGR6czgiLCJtYWMiOiJjMDczY2M3OWYzNjEyMTc2NGZlYWYyNDQxZjZlNDdjMzIwZDMwYTc4YjFlZmU1YWJiMDZmM2Q1YWI2MWRkNWJlIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IjBPYzdVTzZya2s0VWMvR0l2Y05ZYkE9PSIsInZhbHVlIjoicldQSGt3UWJJWllrVkhsTUR0VWtjTTJNS3VHMHNzeWw5N1Q2ZE4yUGJQVzFJVm5xTTNOYjQ0K1BTQ1BVR25uWjlZcDYxL0tpQ2V1dmdpU0w4RGFLUktIY1FKRTZWNEhhU1R6dmFoUklPN1lNZWtXd1FUOXFwTmp1Mkt5QjZ2cEEiLCJtYWMiOiIwNWE1ZGRlNmY1MmE2NDQ0Njc2ZDM5OGE4OWIwMDZhZTA4NjY3NWQ2ZmYyOGRjNDRhMTMwYmRlNWNmYzcyZDY5IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6InMxTzJhTXZ3bXY5ak5qR1VObFJQZXc9PSIsInZhbHVlIjoiczFGdFVMdGNHRmVmYUhULzJUTmttcFR3NnM5dER0WGFvL1JObVIrR0ROZnAyTkJRUEFWeG1yRDNNZ0Zhem9iUkdMK290R010LzZCZVp1aTF1N25BRkwrZjVzUDRSOHpOL29yTThHVklFZklxZ2ZSVEh1UjZsWjlob1hPbkcrZDkiLCJtYWMiOiJjNTkzNDg4YWU4NzYwZmIyMDUyNDJiZDA2Y2ZjOWVjMmE5NjFmN2FiOWE2YmZkMDZjNDEyOWRiMTkwZTM1YTQ5IiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlJUOFladUZNMWU1RlRIUVU2Wk1CYlE9PSIsInZhbHVlIjoiVVllYkNJUFdhOU9DdXNIZlhlZ05RTzc4bDE4emJMYU5VaUJiME1yOUc5VGhlcE9BSDZTdG1VMVFXbG8xS0dQeWpXclc0cFNpa2RzQzg0KzJ0WXJwS2tYZWg0MjhLYjRTWEQ3aGkrRXIvR1M3bkVZby9LUlluTjAzL01DV1RxeVUiLCJtYWMiOiI5NGJlODg4ODZiZTk1YzBjODY5OGVhZTQ5MmIzMWQ3NmIyMzBhNThiZWExY2U4NTRjNzdhNTIzZGYzZWJjZmNhIiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -724,10 +933,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="GETauth-validate"
-               value="tempore"
+               value="similique"
                data-component="body">
     <br>
-<p>Example: <code>tempore</code></p>
+<p>Example: <code>similique</code></p>
         </div>
         </form>
 
@@ -748,7 +957,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"voluptas\"
+    \"token\": \"nihil\"
 }"
 </code></pre></div>
 
@@ -764,7 +973,7 @@ const headers = {
 };
 
 let body = {
-    "token": "voluptas"
+    "token": "nihil"
 };
 
 fetch(url, {
@@ -785,7 +994,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-set-cookie: XSRF-TOKEN=eyJpdiI6IkoveGRvSHYvUCtHSCtDMXhjbXpVYlE9PSIsInZhbHVlIjoib0lHUXZXbTZBQnBGRFBIbXNHOHFPTHNTK0lGeFJMdzErdUlneE9DVFRvRlQzR1U1cWlyZVllUU5TZkFKQWNZSU1NZUFkTjNNZ2dES3ZhSTliMkRtTEIwdDlNWTRSMExrS1hDRXV0d0V2blJ6Z2FvMDJQbjdGaTE1c3I3MVlrNlYiLCJtYWMiOiJhODc3YzVkNDQ1Mjc1ZTJjMzU5MGY4N2M1MjNmOTQzZDQxZmRhMDlhYzE2ZmRlNzcyMzdhMTYyYzZkZjE5ZmViIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6ImMxa2FWYWpJd2VGa0hXYTNYRDlaL2c9PSIsInZhbHVlIjoiNm1yRG9JYmd1MzBMeDI2TjRQb3dYbTBLQjdWYzl3SHVCZlBQU04xZ1ZsMmo2VFNTMkpjQzhia1R4a1VleTl3b2QvUHhvRHFJYnp3cjRuRENKcTd3ZjZ4aTN6YWg4eXVOQmhza1ljRFZoTXlGaFdQQzdIemEvKzdpRjhldWxXdUkiLCJtYWMiOiJlNjcyMGQ4YTcyYjVkMmE1MTVhNjEyZmE4NDI2MWFkNmQ5NmM2YTA1NzA1ZmU1YmQwMzRmZmI2MjEwNTgxMDM5IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IkRxMDVzU2kwbnpoNFUwcjRXdEhwV3c9PSIsInZhbHVlIjoiU3BIRjl4OXNHazlpQmxQOXZzQjRweU9ZT09KQTVGYm90aGd0dVhVZ2VraWFyQnU0T0cvbjllSlFydmNiZGxDaTBJaElyRWhqUmFwa0JJUFcwYXVhdTFVVEgvR1k5K25mMHRRQmZCWkRRbnZsMldqdGh4UVlmVGtEUGZMMHNoamIiLCJtYWMiOiJmYzhiNDY0YTk3YjYxZTU3MzM1MGUzOWUyZTJiMDMwZjYzZmIwNGUwNjNjNjRlNjViZGI2ZjVmODhmOTZjYjc1IiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlNUMEIzZFphMlR6WEtPVHk4NlpzclE9PSIsInZhbHVlIjoiMDRBMXVaK2dUMTRlaUxzUitKeWRxU2xxeitiUy9kc25mY20zZWUrSHNDZWRhNEZITHpUTlFaNG1vQjQ0aXAwYTlGYmdBb0I2b3JIRTZZVU45R0VPY2lmMHlURTUzSjVGcnZrZU8wbWthNVZnT2ovd1JOZkJyemZ4dEtzbmNMQ1UiLCJtYWMiOiJkOWQ5YTIzNWJkZTA4MmVhMmRkYmZhZTc1ZDBiNDRhZDM3NDBiOTlmMjM2ZjEzYmQ3ZGRlZjZlMDA0Zjg3Y2I4IiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -870,10 +1079,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="GETuser-email-validate"
-               value="voluptas"
+               value="nihil"
                data-component="body">
     <br>
-<p>Example: <code>voluptas</code></p>
+<p>Example: <code>nihil</code></p>
         </div>
         </form>
 
@@ -921,21 +1130,21 @@ fetch(url, {
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
-location: https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7
+location: https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;scope=&amp;response_type=code&amp;state=6BOdUiSU7KTpGrXiwupQEZJWWZa1D88lWmSZHm8H
 content-type: text/html; charset=utf-8
-set-cookie: XSRF-TOKEN=eyJpdiI6IjZPNmh0RERJUGhER3JZRmRoa1E3S1E9PSIsInZhbHVlIjoiTVJCd1lRenlpN2lvRlA3MmcwQ0wxdUpiRnpkSzZXUnRlUUxLTXVSRm9mdTFadlJvNFF2WVZad25xTUpyL09qTTlBMldWc2RUam82dzRVYlZ1anpkT0NGbEdHcVp4YnRTaXcyemIvQjZ6L0w1U0NhT1hIOENhYVFmdzJDNEsxdVUiLCJtYWMiOiIyN2YzZGI5NmY0NzUyZmRmYjhhNmUwYTkwMzFlOTAwNGVhMmNhNGRkMzc4NDM3M2RkMWUxMDU1OTZmYWJlMjdkIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6InMrZ3F6U3JzaWo2UEkwYkZjV0hxSVE9PSIsInZhbHVlIjoiY09jZTdyVXVOTUQ1S0toS0tQelE1RmJGa21Yd0hXN3VUS3JPbkNzRkE3VlpKcnpMa1E2TWltTk9KVXU5VEdXS00rR0Q1RzgwZUNsYzFaYUxJSTNUM01acWYwZnlselUxNTlMeUh1VmVSMVovYVFYZFJsUGJSSFhqV2VNa285VUIiLCJtYWMiOiJlNWFjYzVmY2QzNGI1NmE1OGRjYzM5OThkNzI3ZGM0ZDMzNTNjZjg4N2Y3MGY3Y2M3ZDcwOWIyZjJmMmRjN2Q0IiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6IkFEY09ScnlvU2VHazk4d3pTS2VyZVE9PSIsInZhbHVlIjoiMThkWGpIa00yNmttOGlQRisxQkhyelVLbDRyZUV2MVIwc3lzdUJVckEvdFNYRUlxZGVsTEgzTHVKRHl1bW51MWZOZXpLVktzRFlRUFZjZzRzSmFweUFqUHA1d2dORTNacld0aEVMaldrcTZYNEZCYlNiYnRwYlhOeUYxMWhQMjYiLCJtYWMiOiJjOTY3ZmVkNzMxMzJjZTUwZjE0OWM2NjU5NjZmYjJhZmEzYTVlZGE1OTRhMTMxNDcwNDNmMTU0YjZmMWYyODQ1IiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IjZwQ0VZMVZrckt0c2JpdUorZVpwTUE9PSIsInZhbHVlIjoiVWZFcVBsUWhRd0w3Wkt5VkFJT0RQS0NTT2V5MHBSTU5adVQyelRVQkhZTXNFbUlXNW5hMnBuZWdJcEp6aGRIKzVWWnQ0aVNCNVRCcWJTbjFlblVNVU03b2JZNkE3WVFjdzZtZEZYblB2MFBBOGNCdHJaS3dhRGpReFI5SHE2TngiLCJtYWMiOiJhZWI0Njc5NDMxOTBmOGM5YmZkNmJkNzg2MGQ3NTRmZjk5OTg4YzlkOWQ2NDBhODQzNGE0ZjdlZGQxYTcwZWYwIiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;meta charset=&quot;UTF-8&quot; /&gt;
-        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&#039;https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7&#039;&quot; /&gt;
+        &lt;meta http-equiv=&quot;refresh&quot; content=&quot;0;url=&#039;https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=6BOdUiSU7KTpGrXiwupQEZJWWZa1D88lWmSZHm8H&#039;&quot; /&gt;
 
-        &lt;title&gt;Redirecting to https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7&lt;/title&gt;
+        &lt;title&gt;Redirecting to https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=6BOdUiSU7KTpGrXiwupQEZJWWZa1D88lWmSZHm8H&lt;/title&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        Redirecting to &lt;a href=&quot;https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7&quot;&gt;https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=SdVOZjltgnaNv0CX1LHNqs6rOi4DGSLnhKrWD2L7&lt;/a&gt;.
+        Redirecting to &lt;a href=&quot;https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=6BOdUiSU7KTpGrXiwupQEZJWWZa1D88lWmSZHm8H&quot;&gt;https://oauth.yandex.ru/authorize?client_id=9baefde8ce044107a7e2aeb8808613c0&amp;amp;redirect_uri=http%3A%2F%2Flocalhost%2Foauth%2Fyandex%2Flogin&amp;amp;scope=&amp;amp;response_type=code&amp;amp;state=6BOdUiSU7KTpGrXiwupQEZJWWZa1D88lWmSZHm8H&lt;/a&gt;.
     &lt;/body&gt;
 &lt;/html&gt;</code>
  </pre>
@@ -1056,7 +1265,7 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-set-cookie: XSRF-TOKEN=eyJpdiI6ImVIMFV4a2VabWVvR2FZOHh3aGlpMkE9PSIsInZhbHVlIjoicXhCaGV3TnJMcjR0ZklxdFMxSHkwSktyNEQ0SXAyUEZYZWRmTjJCY2x6MjFGV2VwY21iaVo1cWtQeGpYYlc3T3FDNXRHYS9DcEJwbGV6ZUF5c3FJeExyL1g4d0VCSS9jdjBCNldkZnBtUHNabUFoenF0SUpFM1REdVpSQ09OdG4iLCJtYWMiOiI2ZDJkNjBhODc2Y2Q5YWJjNDIyOTEzOTU0Yzk4ZmVhYzBiMjM1MjJkNTAyMmJhZGE5N2M5NjFiMjQ2YjVhMWIwIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6Inh4VlR3bExuM0JPMENzWWpvNlpDNmc9PSIsInZhbHVlIjoiMUc1bkk3RWxxc05SNjc2NEVwb01VRUlnUGlvUlRJU0ZBZVJBM2oxbmcvcC8weE9pY0pmNzlDclVoQlg4bUM3R0RDSXdraTRjS29iMER2M0lXWWdCVWIwT1NGb3VtTytYNi9GNnl5ZHBwV2FHRm5QRUZwdE5vSkY3Uk5wYzFQSnUiLCJtYWMiOiIwMzc2MzMzMTc2ZGM3OTkyODBlZDE2NGZlY2M3MmUxZjlmYTkyYTRkN2FkNWU2ZWVkNjZlYmYxMTBmNjhkMzAwIiwidGFnIjoiIn0%3D; expires=Sun, 15 Sep 2024 20:03:16 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+set-cookie: XSRF-TOKEN=eyJpdiI6ImpGQ3JhKzgrd0FEUU5CTm1Bem1Cb3c9PSIsInZhbHVlIjoiRWErQWJBZmI3cStCRnNnVExYR25uM3BseGhPbG54eTVzUzlHNGorM1VnR25OUFZPMGVEckNpNWh2d1grZlIySkQ2OXNCTktJTEdQcDBaM2JhUDFZdDNtNXF3N1V6Uy82Q1gySGpnbnJwTEdRTU9PS1VJdlh6MjhtNzBZRnZ6UTQiLCJtYWMiOiI1ZGFiZjM4NjYxN2FhMjFjNzg3YTBjMDY1M2ViZWE1MmRjN2UzZDdmNzEzYjllZGFhM2RhMDZhOTgwNjRlMDYzIiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; samesite=lax; laravel_session=eyJpdiI6IlV5NUw2bExCY3B6NHBrUThKbCtaMUE9PSIsInZhbHVlIjoiMHBINHNYVzdGQi91czNMdmJFVWIvRVc3Tk43RE5mWTN4ckVYaWVqK1dNY3VNWFhwZHRXYkZFWXJ5QmZCMkxKZEtrUHlKZjRHaG1EL3JPeGtCZ0g2ZWh2UE5UWmk3VUgyTzQvV0ZDRDR2RFFmV051T2NzaE9RYjYwaDdaamM5MTEiLCJtYWMiOiI1Y2VkNzIwZGYwYzViNmJmNGY3YTQwNzBjODI0Nzc0YTRjNzc4YTM1N2JhM2VkNjMwOTVkNzBjM2EzZTIzNGZiIiwidGFnIjoiIn0%3D; expires=Mon, 16 Sep 2024 17:49:09 GMT; Max-Age=7200; path=/; httponly; samesite=lax
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
@@ -1152,10 +1361,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ggtwxcrs\",
-    \"surname\": \"ndvpktliwrerzhsjlfomf\",
-    \"email\": \"alessandra.considine@example.com\",
-    \"password\": \"i^3zFG\"
+    \"name\": \"mcqejxyiekyr\",
+    \"surname\": \"wpbhj\",
+    \"email\": \"buckridge.walker@example.com\",
+    \"password\": \"(dDJnR]IUt@7t%`_\"
 }"
 </code></pre></div>
 
@@ -1171,10 +1380,10 @@ const headers = {
 };
 
 let body = {
-    "name": "ggtwxcrs",
-    "surname": "ndvpktliwrerzhsjlfomf",
-    "email": "alessandra.considine@example.com",
-    "password": "i^3zFG"
+    "name": "mcqejxyiekyr",
+    "surname": "wpbhj",
+    "email": "buckridge.walker@example.com",
+    "password": "(dDJnR]IUt@7t%`_"
 };
 
 fetch(url, {
@@ -1263,10 +1472,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="ggtwxcrs"
+               value="mcqejxyiekyr"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>ggtwxcrs</code></p>
+<p>Must not be greater than 35 characters. Example: <code>mcqejxyiekyr</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>surname</code></b>&nbsp;&nbsp;
@@ -1274,10 +1483,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="surname"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="ndvpktliwrerzhsjlfomf"
+               value="wpbhj"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>ndvpktliwrerzhsjlfomf</code></p>
+<p>Must not be greater than 35 characters. Example: <code>wpbhj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -1285,10 +1494,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="alessandra.considine@example.com"
+               value="buckridge.walker@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>alessandra.considine@example.com</code></p>
+<p>Must be a valid email address. Example: <code>buckridge.walker@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1296,10 +1505,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-client-auth-register"
-               value="i^3zFG"
+               value="(dDJnR]IUt@7t%`_"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>i^3zFG</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>(dDJnR]IUt@7t%</code>_`</p>
         </div>
         </form>
 
@@ -1320,8 +1529,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"magdalen88@example.net\",
-    \"password\": \".%{si:BPd&lt;mq%*F^bK\\\\\"
+    \"email\": \"jlesch@example.com\",
+    \"password\": \"d~o@QKP:!&amp;9=)x{v\\\\3\\/\"
 }"
 </code></pre></div>
 
@@ -1337,8 +1546,8 @@ const headers = {
 };
 
 let body = {
-    "email": "magdalen88@example.net",
-    "password": ".%{si:BPd&lt;mq%*F^bK\\"
+    "email": "jlesch@example.com",
+    "password": "d~o@QKP:!&amp;9=)x{v\\3\/"
 };
 
 fetch(url, {
@@ -1427,10 +1636,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-v1-client-auth-login"
-               value="magdalen88@example.net"
+               value="jlesch@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>magdalen88@example.net</code></p>
+<p>Must be a valid email address. Example: <code>jlesch@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1438,10 +1647,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-v1-client-auth-login"
-               value=".%{si:BPd<mq%*F^bK\"
+               value="d~o@QKP:!&9=)x{v\3/"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Example: <code>.%{si:BPd&lt;mq%*F^bK\</code></p>
+<p>Must be at least 6 characters. Example: <code>d~o@QKP:!&amp;9=)x{v\3/</code></p>
         </div>
         </form>
 
@@ -1586,18 +1795,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"waiajuixakwylvp\",
-    \"surname\": \"yhluerorrderydqlawhbzt\",
-    \"gender\": \"female\",
-    \"birthdate\": \"2024-09-15\",
-    \"address\": \"cdticpuhygugnutidf\",
-    \"about\": \"cotofi\",
-    \"avatar_url\": \"http:\\/\\/quigley.com\\/temporibus-qui-repellendus-inventore-non\",
+    \"name\": \"ulpzidsotzmqij\",
+    \"surname\": \"rjykvauzneic\",
+    \"gender\": \"male\",
+    \"birthdate\": \"2024-09-16\",
+    \"address\": \"potqupiagtzklsloby\",
+    \"about\": \"nkxplovynnnfweg\",
+    \"avatar_url\": \"http:\\/\\/gerlach.net\\/nobis-non-facilis-hic-dignissimos-ex-rerum\",
     \"user_education\": {
-        \"university\": \"non\",
-        \"speciality\": \"fugiat\",
-        \"start_year\": \"hb\",
-        \"end_year\": \"iavlytlfnuwcnc\",
+        \"university\": \"qui\",
+        \"speciality\": \"id\",
+        \"start_year\": \"cdtnzaduqfoyhfjmzt\",
+        \"end_year\": \"cknqdzosklcvbj\",
         \"for_now\": false
     }
 }"
@@ -1615,18 +1824,18 @@ const headers = {
 };
 
 let body = {
-    "name": "waiajuixakwylvp",
-    "surname": "yhluerorrderydqlawhbzt",
-    "gender": "female",
-    "birthdate": "2024-09-15",
-    "address": "cdticpuhygugnutidf",
-    "about": "cotofi",
-    "avatar_url": "http:\/\/quigley.com\/temporibus-qui-repellendus-inventore-non",
+    "name": "ulpzidsotzmqij",
+    "surname": "rjykvauzneic",
+    "gender": "male",
+    "birthdate": "2024-09-16",
+    "address": "potqupiagtzklsloby",
+    "about": "nkxplovynnnfweg",
+    "avatar_url": "http:\/\/gerlach.net\/nobis-non-facilis-hic-dignissimos-ex-rerum",
     "user_education": {
-        "university": "non",
-        "speciality": "fugiat",
-        "start_year": "hb",
-        "end_year": "iavlytlfnuwcnc",
+        "university": "qui",
+        "speciality": "id",
+        "start_year": "cdtnzaduqfoyhfjmzt",
+        "end_year": "cknqdzosklcvbj",
         "for_now": false
     }
 };
@@ -1717,10 +1926,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-client-user"
-               value="waiajuixakwylvp"
+               value="ulpzidsotzmqij"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>waiajuixakwylvp</code></p>
+<p>Must not be greater than 35 characters. Example: <code>ulpzidsotzmqij</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>surname</code></b>&nbsp;&nbsp;
@@ -1728,10 +1937,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="surname"                data-endpoint="PUTapi-v1-client-user"
-               value="yhluerorrderydqlawhbzt"
+               value="rjykvauzneic"
                data-component="body">
     <br>
-<p>Must not be greater than 35 characters. Example: <code>yhluerorrderydqlawhbzt</code></p>
+<p>Must not be greater than 35 characters. Example: <code>rjykvauzneic</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
@@ -1739,10 +1948,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="gender"                data-endpoint="PUTapi-v1-client-user"
-               value="female"
+               value="male"
                data-component="body">
     <br>
-<p>Example: <code>female</code></p>
+<p>Example: <code>male</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>male</code></li> <li><code>female</code></li></ul>
         </div>
@@ -1752,10 +1961,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="birthdate"                data-endpoint="PUTapi-v1-client-user"
-               value="2024-09-15"
+               value="2024-09-16"
                data-component="body">
     <br>
-<p>Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2024-09-15</code></p>
+<p>Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2024-09-16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>address</code></b>&nbsp;&nbsp;
@@ -1763,10 +1972,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="address"                data-endpoint="PUTapi-v1-client-user"
-               value="cdticpuhygugnutidf"
+               value="potqupiagtzklsloby"
                data-component="body">
     <br>
-<p>Must not be greater than 300 characters. Example: <code>cdticpuhygugnutidf</code></p>
+<p>Must not be greater than 300 characters. Example: <code>potqupiagtzklsloby</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>about</code></b>&nbsp;&nbsp;
@@ -1774,10 +1983,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="about"                data-endpoint="PUTapi-v1-client-user"
-               value="cotofi"
+               value="nkxplovynnnfweg"
                data-component="body">
     <br>
-<p>Must not be greater than 500 characters. Example: <code>cotofi</code></p>
+<p>Must not be greater than 500 characters. Example: <code>nkxplovynnnfweg</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>avatar_url</code></b>&nbsp;&nbsp;
@@ -1785,10 +1994,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="avatar_url"                data-endpoint="PUTapi-v1-client-user"
-               value="http://quigley.com/temporibus-qui-repellendus-inventore-non"
+               value="http://gerlach.net/nobis-non-facilis-hic-dignissimos-ex-rerum"
                data-component="body">
     <br>
-<p>Must be a valid URL. Example: <code>http://quigley.com/temporibus-qui-repellendus-inventore-non</code></p>
+<p>Must be a valid URL. Example: <code>http://gerlach.net/nobis-non-facilis-hic-dignissimos-ex-rerum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -1805,10 +2014,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.university"                data-endpoint="PUTapi-v1-client-user"
-               value="non"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>qui</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>speciality</code></b>&nbsp;&nbsp;
@@ -1816,10 +2025,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.speciality"                data-endpoint="PUTapi-v1-client-user"
-               value="fugiat"
+               value="id"
                data-component="body">
     <br>
-<p>Example: <code>fugiat</code></p>
+<p>Example: <code>id</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>start_year</code></b>&nbsp;&nbsp;
@@ -1827,10 +2036,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.start_year"                data-endpoint="PUTapi-v1-client-user"
-               value="hb"
+               value="cdtnzaduqfoyhfjmzt"
                data-component="body">
     <br>
-<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2024 characters. Example: <code>hb</code></p>
+<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2024 characters. Example: <code>cdtnzaduqfoyhfjmzt</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>end_year</code></b>&nbsp;&nbsp;
@@ -1838,10 +2047,10 @@ Must be one of:
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="user_education.end_year"                data-endpoint="PUTapi-v1-client-user"
-               value="iavlytlfnuwcnc"
+               value="cknqdzosklcvbj"
                data-component="body">
     <br>
-<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2050 characters. Example: <code>iavlytlfnuwcnc</code></p>
+<p>Must be 4 digits. Must be at least 1900 characters. Must not be greater than 2050 characters. Example: <code>cknqdzosklcvbj</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>for_now</code></b>&nbsp;&nbsp;
@@ -1885,8 +2094,8 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"old_password\": \"oegkhlgytngzengpehphucfs\",
-    \"new_password\": \"apdllguorrtkmrpuiwsq\"
+    \"old_password\": \"q\",
+    \"new_password\": \"vianotbhojrbbqlvepiavyq\"
 }"
 </code></pre></div>
 
@@ -1902,8 +2111,8 @@ const headers = {
 };
 
 let body = {
-    "old_password": "oegkhlgytngzengpehphucfs",
-    "new_password": "apdllguorrtkmrpuiwsq"
+    "old_password": "q",
+    "new_password": "vianotbhojrbbqlvepiavyq"
 };
 
 fetch(url, {
@@ -1992,10 +2201,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="old_password"                data-endpoint="PATCHapi-v1-client-user-password"
-               value="oegkhlgytngzengpehphucfs"
+               value="q"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>oegkhlgytngzengpehphucfs</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>q</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>new_password</code></b>&nbsp;&nbsp;
@@ -2003,10 +2212,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="new_password"                data-endpoint="PATCHapi-v1-client-user-password"
-               value="apdllguorrtkmrpuiwsq"
+               value="vianotbhojrbbqlvepiavyq"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>apdllguorrtkmrpuiwsq</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>vianotbhojrbbqlvepiavyq</code></p>
         </div>
         </form>
 
@@ -2027,8 +2236,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"new_email\": \"braxton79@example.org\",
-    \"current_password\": \"zajflnlcx\"
+    \"new_email\": \"mueller.alia@example.org\",
+    \"current_password\": \"tlpzrocixedejwczeo\"
 }"
 </code></pre></div>
 
@@ -2044,8 +2253,8 @@ const headers = {
 };
 
 let body = {
-    "new_email": "braxton79@example.org",
-    "current_password": "zajflnlcx"
+    "new_email": "mueller.alia@example.org",
+    "current_password": "tlpzrocixedejwczeo"
 };
 
 fetch(url, {
@@ -2134,10 +2343,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="new_email"                data-endpoint="PATCHapi-v1-client-user-email"
-               value="braxton79@example.org"
+               value="mueller.alia@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>braxton79@example.org</code></p>
+<p>Must be a valid email address. Example: <code>mueller.alia@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>current_password</code></b>&nbsp;&nbsp;
@@ -2145,10 +2354,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="current_password"                data-endpoint="PATCHapi-v1-client-user-email"
-               value="zajflnlcx"
+               value="tlpzrocixedejwczeo"
                data-component="body">
     <br>
-<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>zajflnlcx</code></p>
+<p>Must be at least 6 characters. Must not be greater than 30 characters. Example: <code>tlpzrocixedejwczeo</code></p>
         </div>
         </form>
 

@@ -29,6 +29,8 @@ final class PutRequest extends FormRequest implements RestRequest
             'user_education.start_year' => 'nullable|numeric|digits:4|min:1900|max:'.now()->format('Y'),
             'user_education.end_year' => 'nullable|numeric|digits:4|min:1900|max:2050|gt:user_education.start_year',
             'user_education.for_now' => 'nullable|bool',
+            'categories' => 'nullable|array',
+            'categories.*' => 'ulid|exists:categories,id'
         ];
     }
 

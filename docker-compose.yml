@@ -11,11 +11,12 @@ services:
       - 80:80
       - 3000:3000
       - 8001:8001
+      - 8031:8031
       - 9090:9090
     volumes:
       - "./eco-backend:/var/www/eco/eco-backend"
       - "./config/nginx/:/etc/nginx/conf.d/"
-  backend: &backend
+  backend:
     container_name: eco-backend
     working_dir: "/var/www/eco/eco-backend"
     restart: unless-stopped
@@ -25,6 +26,16 @@ services:
     volumes:
       - "./config/php/php.ini:/usr/local/etc/php/php.ini"
       - "./eco-backend:/var/www/eco/eco-backend"
+  posts-service:
+    container_name: eco-posts-service
+    working_dir: "/var/www/eco/eco-posts-service"
+    restart: unless-stopped
+    build:
+      context: "./eco-posts-service"
+      dockerfile: Dockerfile
+    volumes:
+      - "./config/php/php.ini:/usr/local/etc/php/php.ini"
+      - "./eco-posts-service:/var/www/eco/eco-posts-service"
   frontend:
     container_name: eco-frontend
     working_dir: "/var/www/eco/eco-frontend"
@@ -64,6 +75,30 @@ services:
       - "5432:5432"
     volumes:
       - "/var/www/eco/postgis-data:/var/lib/postgresql/data"
+  posts-db:
+    container_name: eco-posts-db
+    image: postgis/postgis:16-3.4-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - "/var/www/eco/postgis-posts-data:/var/lib/postgresql/data"
+  posts-mongodb:
+    container_name: eco-posts-mongodb
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: posts_chat
+    ports:
+      - "27017:27017"
+    volumes:
+      - "/var/www/eco/mongo-posts-data:/data/db"
   redis:
     container_name: eco-redis
     image: redis:latest
@@ -92,15 +127,3 @@ services:
     volumes:
       - ./eco-achievement-service:/var/www/eco/eco-achievement-service
       - ./config/supervisor/default.conf:/etc/supervisor/supervisord.conf
-  composer:
-    <<: *backend
-    restart: no
-    container_name: eco-composer-install
-    command: '/bin/sh -c "composer install"'
-    working_dir: "/var/www/eco/eco-backend"
-  setup-dotenv:
-    <<: *backend
-    restart: on-failure
-    container_name: eco-setup-dotenv
-    command: '/bin/sh -c "cp -n .env.example .env"'
-    working_dir: "/var/www/eco/eco-backend"

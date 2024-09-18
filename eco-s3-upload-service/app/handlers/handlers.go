@@ -11,7 +11,7 @@ import (
 
 func HandleUpload(uploader *utils.S3Uploader) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		err := r.ParseMultipartForm(72 << 20) // 72MB max memory
+		err := r.ParseMultipartForm(2000 << 20)
 		if err != nil {
 			http.Error(w, "Failed to parse multipart form", http.StatusBadRequest)
 			return
