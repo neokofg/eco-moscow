@@ -18,18 +18,29 @@ import { FactoryOpts, InputMask, MaskedDate } from "imask";
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   withAsterisk?: boolean;
   Icon?: FC<IconType>;
+  IconStart?: FC<IconType>;
+  FullWidth?: bool
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ placeholder, Icon, withAsterisk, className, type, ...props }, ref) => {
+  ({ placeholder, Icon, withAsterisk, className, type, IconStart, FullWidth,  ...props }, ref) => {
     return (
-      <div className="transition duration-100 relative">
+      <div className={cn(
+        "transition duration-100 relative",
+        FullWidth && 'w-full',
+      )}>
+        {IconStart && (
+          <div className="absolute left-4 top-4">
+            <IconStart />
+          </div>
+        )}
         <label
           className={cn(
             "select-none pointer-events-none transition duration-300 absolute text-content-tertiary top-4 text-base font-medium left-4",
             props.value &&
             placeholder &&
             "translate-y-[-8px] opacity-100 text-content-primary text-xs",
+            IconStart && "pl-10",
           )}
         >
           {placeholder}
@@ -43,6 +54,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             placeholder &&
             "placeholder:text-opacity-0 pt-[26px] pb-[6px]",
             Icon && "pr-12",
+            IconStart && "pl-14",
             className,
           )}
           ref={ref}
