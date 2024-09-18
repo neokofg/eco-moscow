@@ -13,12 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import {
-  AvatarIcon,
-  CalendarIcon,
-  CameraIcon,
-  PenIcon,
-} from "@/src/shared/icons";
+import { AvatarIcon, CalendarIcon, CameraIcon } from "@/src/shared/icons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/src/shared/ui/avatar";
 import { Button } from "@/src/shared/ui/button";
 import { useMobile, useUser } from "@/src/app/providers";
@@ -32,6 +27,8 @@ import { RadioGroup, RadioGroupItem } from "@/src/shared/ui/radio-group";
 import { Dialog, DialogContent, DialogTrigger } from "@/src/shared/ui/dialog";
 import { API_S3_URL, privateAPI } from "@/src/shared/api";
 import { toast } from "@/src/shared/ui/use-toast";
+import { ChangeEmail } from "./changeEmail";
+import { ChangePassword } from "./changePassword";
 
 const formSchema = z.object({
   name: z.string(),
@@ -126,19 +123,13 @@ export const EditProfile: FC = () => {
   };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setStatus("initial");
       setFile(e.target.files[0]);
     }
   };
   const [file, setFile] = useState<File | null>(null);
-  const [status, setStatus] = useState<
-    "initial" | "uploading" | "success" | "fail"
-  >("initial");
 
   const handleUpload = async () => {
     if (file) {
-      setStatus("uploading");
-
       const formData = new FormData();
       formData.append("files", file);
 
@@ -153,10 +144,8 @@ export const EditProfile: FC = () => {
         form.setValue("avatar_url", data[0]);
 
         console.log(form.getValues());
-        setStatus("success");
       } catch (error) {
         console.error(error);
-        setStatus("fail");
       }
     }
   };
@@ -338,13 +327,7 @@ export const EditProfile: FC = () => {
           <p className="mt-2 font-medium text-base text-content-secondary">
             Вы можете установить новый пароль для входа в личный кабинет
           </p>
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="w-auto mt-4" variant="secondary">
-                Изменить пароль учетной записи
-              </Button>
-            </DialogTrigger>
-          </Dialog>
+          <ChangePassword />
         </div>
         <div>
           <h3
@@ -362,11 +345,7 @@ export const EditProfile: FC = () => {
                 disabled
                 withAsterisk
               />
-              <Dialog>
-                <DialogTrigger className="absolute top-4 right-4">
-                  <PenIcon />
-                </DialogTrigger>
-              </Dialog>
+              <ChangeEmail />
             </div>
             <div className="w-full" />
           </div>

@@ -27,3 +27,4 @@ export { ChevronLeftIcon } from "./chevron_left";
 export { ChevronRightIcon } from "./chevron_right";
 export { CalendarIcon } from "./calendar";
 export { PenIcon } from "./pen";
+export { ArrowUp } from "./arrow_up";

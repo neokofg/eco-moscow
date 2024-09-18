@@ -68,8 +68,10 @@ export const Header: FC = () => {
             style={sofiaSansCondensed.style}
             className="flex gap-1 text-[32px] leading-6 font-extrabold"
           >
-            <span className="uppercase text-content-green">ЭКО</span>
-            <span className="uppercase hidden sm:inline-block text-content-primary">
+            <h3 className="text-[32px] leading-6 font-extrabold uppercase text-content-green">
+              ЭКО
+            </h3>
+            <h3 className="text-[32px] leading-6 font-extrabold uppercase hidden sm:inline-block text-content-primary">
               {pathname == "/"
                 ? "Москва"
                 : pathname?.includes("/profile")
@@ -77,7 +79,7 @@ export const Header: FC = () => {
                   : navLinks.find((link) => link.href === pathname) == undefined
                     ? "Москва"
                     : navLinks.find((link) => link.href === pathname)?.label}
-            </span>
+            </h3>
           </div>
         </Link>
         <ul className="hidden xl:flex p-1 bg-background-secondary border border-border-secondary rounded-2xl">

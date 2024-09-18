@@ -1,5 +1,5 @@
 import { AvatarIcon } from "@/src/shared/icons";
-import { Avatar } from "@/src/shared/ui/avatar";
+import { Comments } from "@/src/widgets/posts/comments/ui/Comments";
 import Image from "next/image";
 
 const ArticleId = () => {
@@ -69,6 +69,7 @@ const Article = ({
         </div>
       </div>
       <div>{article}</div>
+
     </div>
   );
 };

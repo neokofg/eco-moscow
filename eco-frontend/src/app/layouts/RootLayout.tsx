@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import "@/src/app/styles";
-import { inter } from "../fonts";
+import { inter, sofiaSansCondensed } from "../fonts";
 import { MainLayout } from ".";
 import { cookies } from "next/headers";
 import { UserProvider } from "../providers";
@@ -20,7 +20,10 @@ export function RootLayout({
   const token = cookieStore.get("token");
 
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${sofiaSansCondensed.variable}`}
+    >
       <body className={inter.className}>
         <UserProvider cookie_token={token?.value as string}>
           <MainLayout>{children}</MainLayout>

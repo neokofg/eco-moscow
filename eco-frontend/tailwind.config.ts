@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -6,12 +7,17 @@ const config: Config = {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./**/*.{svg}",
   ],
   theme: {
     extend: {
       container: {
         padding: "1rem",
         center: true,
+      },
+      fontFamily: {
+        sofiaSansCondensed: ["var(--font-sofia-sans-condensed)"],
+        inter: ["var(--font-inter)"],
       },
       colors: {
         white: "var(--white)",
@@ -50,6 +56,88 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function({ addComponents }) {
+      addComponents({
+        ".display-extra-large": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-9xl font-bold text-content-primary":
+            {},
+        },
+
+        ".display-large": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-8xl font-bold text-content-primary":
+            {},
+        },
+
+        ".display-medium": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-7xl font-bold text-content-primary":
+            {},
+        },
+
+        ".display-small": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-6xl font-bold text-content-primary":
+            {},
+        },
+
+        ".display-tiny": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-5xl font-bold text-content-primary":
+            {},
+        },
+
+        ".heading-large": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-4xl font-bold text-content-primary":
+            {},
+        },
+
+        ".heading-medium": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-3xl font-bold text-content-primary":
+            {},
+        },
+
+        ".heading-small": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-2xl font-bold text-content-primary":
+            {},
+        },
+
+        ".heading-tiny": {
+          "@apply tracking-tight uppercase font-sofiaSansCondensed text-xl font-bold text-content-primary":
+            {},
+        },
+
+        ".label-large": {
+          "@apply font-inter text-lg font-medium text-content-primary": {},
+        },
+
+        ".label-base": {
+          "@apply font-inter text-base font-medium text-content-primary": {},
+        },
+
+        ".label-small": {
+          "@apply font-inter text-sm font-medium text-content-primary": {},
+        },
+
+        ".label-tiny": {
+          "@apply font-inter text-xs font-medium text-content-primary": {},
+        },
+
+        ".paragraph-large": {
+          "@apply font-inter text-lg font-normal text-content-primary": {},
+        },
+
+        ".paragraph-base": {
+          "@apply font-inter text-base font-normal text-content-primary": {},
+        },
+
+        ".paragraph-small": {
+          "@apply font-inter text-sm font-normal text-content-primary": {},
+        },
+
+        ".paragraph-tiny": {
+          "@apply font-inter text-xs font-normal text-content-primary": {},
+        },
+      });
+    }),
+  ],
 };
 export default config;

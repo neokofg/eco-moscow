@@ -1,0 +1,1 @@
+export {RecordId as default} from "@/src/pages/community"

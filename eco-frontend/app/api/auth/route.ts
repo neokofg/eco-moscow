@@ -7,5 +7,7 @@ export async function GET(request: NextRequest) {
   if (token == undefined)
     return NextResponse.json({ message: "token is undefined" });
   cookies().set("token", token);
-  return NextResponse.redirect(new URL("/", request.url));
+  return NextResponse.redirect(
+    new URL(process.env.NEXT_PUBLIC_URL as string, request.url),
+  );
 }

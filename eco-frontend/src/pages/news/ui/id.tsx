@@ -1,6 +1,5 @@
 import { NewsCard } from "@/src/shared/ui/newscard";
 import Image from "next/image";
-
 const NewsId = () => {
   return(
     <News/>
