@@ -37,7 +37,7 @@ final readonly class AuthService implements AuthServiceInterface
     }
 
     /**
-     * @param \App\Dto\V1\Auth\User\RegisterDto|RegisterDtoContract $dto
+     * @param RegisterDto|RegisterDtoContract $dto
      * @return true
      * @throws ServiceUnavailableException
      */
@@ -45,12 +45,16 @@ final readonly class AuthService implements AuthServiceInterface
     {
         $password = appCrypt($dto->password);
 
-        $register_user = $this->authRepository->createRegisterUser($dto->email, RegisterUserEnum::user, $dto->name, $password);
-
-        $code = appDecrypt($register_user->code);
+        $register_user = $this->authRepository->createRegisterUser(
+            $dto->email,
+            RegisterUserEnum::user,
+            $dto->name,
+            $dto->surname,
+            $password
+        );
 
         try {
-            $this->sendAuthCodeMail($code, $dto->email);
+            $this->sendAuthTokenMail($register_user->token, $dto->email);
         } catch (\Throwable $exception) {
             throw new ServiceUnavailableException($exception);
         }
@@ -59,22 +63,19 @@ final readonly class AuthService implements AuthServiceInterface
     }
 
     /**
-     * @param \App\Dto\V1\Auth\User\RegisterValidateDto|RegisterValidateDtoContract $dto
+     * @param RegisterValidateDto|RegisterValidateDtoContract $dto
      * @return array{token: string}
      * @throws InvalidCodeException
      */
     #[ArrayShape(['token' => "string"])]
     public function registerValidateUser(RegisterValidateDto|RegisterValidateDtoContract $dto): array
     {
-        $register_user = $this->authRepository->findRegisterUser($dto->email, RegisterUserEnum::user);
-
-        if (appDecrypt($register_user->code) != $dto->code) {
-            throw new InvalidCodeException();
-        }
+        $register_user = $this->authRepository->findRegisterUser($dto->token);
 
         return DB::transaction(function () use ($register_user) {
             $user = $this->userRepository->createUser(
                 $register_user->name,
+                $register_user->surname,
                 $register_user->email,
                 appDecrypt($register_user->password)
             );

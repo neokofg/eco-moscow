@@ -28,6 +28,6 @@ final readonly class RegisterController extends Controller
     {
         $data = $this->authService->registerUser($request->getDto());
 
-        return $this->presenter->present($data, __('Code is successfully sent'), Response::HTTP_CREATED);
+        return $this->presenter->present($data, __('Token is successfully sent'), Response::HTTP_CREATED);
     }
 }

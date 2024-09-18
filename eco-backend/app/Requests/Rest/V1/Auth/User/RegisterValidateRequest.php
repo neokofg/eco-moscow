@@ -10,26 +10,24 @@ use JetBrains\PhpStorm\ArrayShape;
 final class RegisterValidateRequest extends FormRequest implements RestRequest
 {
     /**
-     * @return array{code: string, email: string}
+     * @return array{token: string}
      */
-    #[ArrayShape(['code' => "string", 'email' => "string"])]
+    #[ArrayShape(['token' => "string"])]
     public function rules(): array
     {
         return [
-            'code' =>  'required|integer|digits:4',
-            'email' => 'required|email|exists:register_users,email',
+            'token' =>  'required|string',
         ];
     }
 
     /**
-     * @return \App\Dto\V1\Auth\User\RegisterValidateDto
+     * @return RegisterValidateDto
      */
     public function getDto(): RegisterValidateDto
     {
         $validated = $this->validated();
         return new RegisterValidateDto(
-            $validated['code'],
-            $validated['email'],
+            $validated['token'],
         );
     }
 }

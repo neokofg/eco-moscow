@@ -20,7 +20,17 @@ services:
       context: './eco-backend'
       dockerfile: Dockerfile
     volumes:
+      - './config/php:/etc/php83'
       - './eco-backend:/var/www/eco/eco-backend'
+  s3-upload-service:
+    container_name: s3-upload-service
+    working_dir: '/var/www/eco/eco-s3-upload-service'
+    restart: unless-stopped
+    build:
+      context: './eco-s3-upload-service'
+      dockerfile: Dockerfile
+    volumes:
+      - './eco-s3-upload-service:/var/www/eco/eco-s3-upload-service'
   db:
     container_name: eco-database
     image: postgis/postgis:16-3.4-alpine

@@ -22,7 +22,7 @@ final readonly class RegisterValidateController extends Controller
     }
 
     /**
-     * @param \App\Requests\Rest\V1\Auth\User\RegisterValidateRequest $request
+     * @param RegisterValidateRequest $request
      * @return JsonResponse
      */
     public function __invoke(RegisterValidateRequest $request): JsonResponse
@@ -30,7 +30,7 @@ final readonly class RegisterValidateController extends Controller
         try {
             $data = $this->authService->registerValidateUser($request->getDto());
         } catch (InvalidCodeException $exception) {
-            return $this->presenter->present(false, __('Invalid code'), Response::HTTP_FORBIDDEN);
+            return $this->presenter->present(false, __('Invalid token'), Response::HTTP_FORBIDDEN);
         }
 
         return $this->presenter->present($data, __('Successfully validated'), Response::HTTP_CREATED);

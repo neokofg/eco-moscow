@@ -8,11 +8,13 @@ final readonly class RegisterDto extends RegisterDtoContract
 {
     /**
      * @param string $name
+     * @param string $surname
      * @param string $email
      * @param string $password
      */
     public function __construct(
         public string $name,
+        public string $surname,
         public string $email,
         public string $password
     )

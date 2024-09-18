@@ -6,10 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "clickbar/laravel-magellan": "^1.6",
         "laravel/framework": "^11.9",
         "laravel/octane": "^2.5",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "predis/predis": "^2.2",
         "socialiteproviders/yandex": "^4.1"
     },
     "require-dev": {

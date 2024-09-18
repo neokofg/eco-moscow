@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static create(array $array)
- * @property string $code
+ * @method static where(string $string, string $token)
  * @property string $name
  * @property string $email
  * @property string $password
+ * @property string $surname
+ * @property string $token
  */
 class RegisterUser extends Model
 {

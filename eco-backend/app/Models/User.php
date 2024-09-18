@@ -12,6 +12,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static create(string[] $array)
  * @method static firstOrCreate(string[] $array, array $array1)
  * @method static findOrFail(int $userId)
+ * @property string $password
  */
 class User extends Authenticatable
 {
@@ -20,10 +21,10 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasUlids;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at'
     ];
 
     protected $hidden = [

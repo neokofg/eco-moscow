@@ -62,20 +62,6 @@ function getUser(): User
 }
 
 /**
- * @return BusinessUser
- * @throws AuthenticationException
- */
-function getBusinessUser(): BusinessUser
-{
-    $business_user = Auth::guard('sanctum')->user();
-    if (get_class($business_user) == BusinessUser::class) {
-        return $business_user;
-    } else {
-        throw new AuthenticationException();
-    }
-}
-
-/**
  * @return AdminUser
  * @throws AuthenticationException
  */

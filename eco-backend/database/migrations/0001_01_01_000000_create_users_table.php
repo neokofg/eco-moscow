@@ -14,9 +14,15 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->string('name');
+            $table->string('surname')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->text('about')->nullable();
+            $table->enum('gender',['male','female'])->default('male');
+
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->boolean('is_oauth')->default(false);
+
             $table->timestamps();
         });
     }

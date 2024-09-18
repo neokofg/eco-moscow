@@ -18,4 +18,17 @@ trait MailTrait
             $message->subject(__('Email verification'));
         });
     }
+
+    /**
+     * @param string $token
+     * @param string $email
+     * @return void
+     */
+    public function sendAuthTokenMail(string $token, string $email): void
+    {
+        Mail::send('emails.token', ['token' => $token], function ($message) use ($email) {
+            $message->to($email);
+            $message->subject(__('Email verification'));
+        });
+    }
 }

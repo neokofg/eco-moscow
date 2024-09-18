@@ -15,9 +15,10 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->timestamps();
             $table->enum('type', ['user','business_user']);
-            $table->string('code');
+            $table->string('token')->unique();
             $table->string('email');
             $table->string('name');
+            $table->string('surname');
             $table->string('password');
         });
     }

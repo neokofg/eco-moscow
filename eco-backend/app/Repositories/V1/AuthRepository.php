@@ -2,9 +2,12 @@
 
 namespace App\Repositories\V1;
 
+use App\Exceptions\Custom\Auth\InvalidCodeException;
 use App\Models\Enums\RegisterUserEnum;
 use App\Models\RegisterUser;
 use App\Repositories\Repository;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Hash;
 
 final readonly class AuthRepository extends Repository
 {
@@ -12,32 +15,37 @@ final readonly class AuthRepository extends Repository
      * @param string $email
      * @param RegisterUserEnum $type
      * @param string $name
+     * @param string $surname
      * @param string $password
      * @return RegisterUser
      */
-    public function createRegisterUser(string $email, RegisterUserEnum $type, string $name, string $password): RegisterUser
+    public function createRegisterUser(string $email, RegisterUserEnum $type, string $name, string $surname, string $password): RegisterUser
     {
-        $code = appCrypt(generateCode());
+        $token = hash_hmac('sha256', now()->format('Y-m-d H:i:s'), config('app.key'));
 
         return RegisterUser::create([
             'type' => $type,
-            'code' => $code,
+            'token' => $token,
             'email' => $email,
             'name' => $name,
+            'surname' => $surname,
             'password' => $password
         ]);
     }
 
     /**
-     * @param string $email
-     * @param RegisterUserEnum $type
+     * @param string $token
      * @return RegisterUser
+     * @throws InvalidCodeException
      */
-    public function findRegisterUser(string $email, RegisterUserEnum $type): RegisterUser
+    public function findRegisterUser(string $token): RegisterUser
     {
-        return RegisterUser::where('type', $type)
-            ->where('email', $email)
-            ->first();
+        try {
+            return RegisterUser::where('token', $token)
+                ->firstOrFail();
+        } catch (ModelNotFoundException $exception) {
+            throw new InvalidCodeException();
+        }
     }
 
     /**
