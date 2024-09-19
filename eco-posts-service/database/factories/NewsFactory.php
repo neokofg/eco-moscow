@@ -16,7 +16,7 @@ class NewsFactory extends Factory
             'header' => $this->faker->title,
             'content' => $this->faker->sentence(),
             'image_url' => $this->faker->imageUrl(),
-            'category_id' => Category::first()->id
+            'category_id' => Category::inRandomOrder()->first()->id
         ];
     }
 }
