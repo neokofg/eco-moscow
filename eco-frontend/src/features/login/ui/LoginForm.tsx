@@ -124,6 +124,13 @@ export const LoginForm: FC = () => {
             <object type="image/svg+xml" data="/yandex_id.svg"></object>
             Войти с Яндекс ID
           </Button>
+          <Button
+            onClick={() => (window.location.href = API_URL + "/oauth/yandex")}
+            className="mt-6 bg-background-primary text-content-primary border border-border-primary"
+          >
+            <object type="image/svg+xml" data="/gosuslugi.svg"></object>
+            Войти через Госуслуги
+          </Button>
         </form>
       </Form>
       <div className="z-10 rounded-3xl bg-background-primary flex gap-1 py-6 justify-center items-center">

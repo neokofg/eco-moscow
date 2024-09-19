@@ -1,4 +1,5 @@
 "use client";
+import { AddressSuggestions } from "react-dadata";
 
 import { ru } from "date-fns/locale";
 import {
@@ -24,11 +25,19 @@ import { Popover, PopoverContent } from "@/src/shared/ui/popover";
 import { format, isValid, parse } from "date-fns";
 import { Calendar } from "@/src/shared/ui/calendar";
 import { RadioGroup, RadioGroupItem } from "@/src/shared/ui/radio-group";
-import { Dialog, DialogContent, DialogTrigger } from "@/src/shared/ui/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/src/shared/ui/dialog";
 import { API_S3_URL, privateAPI } from "@/src/shared/api";
 import { toast } from "@/src/shared/ui/use-toast";
 import { ChangeEmail } from "./changeEmail";
 import { ChangePassword } from "./changePassword";
+import { Org } from "./org";
 
 const formSchema = z.object({
   name: z.string(),
@@ -38,6 +47,12 @@ const formSchema = z.object({
   about: z.string().optional(),
   address: z.string(),
   avatar_url: z.string().optional(),
+  company: z.string().optional(),
+  inn: z.string().optional(),
+  ogrn: z.string().optional(),
+  kpp: z.string().optional(),
+  okpo: z.string().optional(),
+  ur_address: z.string().optional(),
 });
 
 function convertDateFormatAgain(dateString: string): string {
@@ -49,6 +64,9 @@ function convertDateFormatAgain(dateString: string): string {
 function convertDateFormat(dateString: string) {
   const [day, month, year] = dateString.split(".");
   return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+}
+interface Body {
+  [key: string]: any;
 }
 
 export const EditProfile: FC = () => {
@@ -73,8 +91,15 @@ export const EditProfile: FC = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    const body = values;
+    const body: Body = values;
     body.birthdate = convertDateFormat(body.birthdate);
+    body.organizer = {
+      company: body.company,
+      inn: body.inn,
+      ogrn: body.ogrn,
+      kpp: body.kpp,
+      okpo: body.okpo,
+    };
 
     return privateAPI
       .put("/api/v1/client/user", body)
@@ -347,6 +372,157 @@ export const EditProfile: FC = () => {
               </FormItem>
             )}
           />
+        </div>
+        <div className="flex justify-between items-center bg-background-green p-6 rounded-3xl">
+          <div className="w-[55%]">
+            <h5 className="text-[30px]">станьте организатором</h5>
+            <span>
+              Действуйте, основываясь на мнении вашей аудитории, и создавайте
+              простые мероприятия для сбора быстрой обратной связи!
+            </span>
+          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button className="label-base font-semibold w-[230px]">
+                Стать организатором
+              </Button>
+            </DialogTrigger>
+
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Станьте организатором</DialogTitle>
+              </DialogHeader>
+              <div className="mt-6 flex flex-col gap-4 mb-6">
+                <FormField
+                  name="company"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          className={
+                            form.getFieldState(field.name).invalid
+                              ? "outline-border-error"
+                              : ""
+                          }
+                          placeholder="Название компаний"
+                          withAsterisk
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="px-3 pt-2 text-border-error text-sm" />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="ur_address"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          className={
+                            form.getFieldState(field.name).invalid
+                              ? "outline-border-error"
+                              : ""
+                          }
+                          placeholder="Юридический адрес"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="px-3 pt-2 text-border-error text-sm" />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="inn"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          className={
+                            form.getFieldState(field.name).invalid
+                              ? "outline-border-error"
+                              : ""
+                          }
+                          placeholder="ИНН"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="px-3 pt-2 text-border-error text-sm" />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="ogrn"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          className={
+                            form.getFieldState(field.name).invalid
+                              ? "outline-border-error"
+                              : ""
+                          }
+                          placeholder="ОГРН"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="px-3 pt-2 text-border-error text-sm" />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="kpp"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          className={
+                            form.getFieldState(field.name).invalid
+                              ? "outline-border-error"
+                              : ""
+                          }
+                          placeholder="КПП"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="px-3 pt-2 text-border-error text-sm" />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  name="okpo"
+                  control={form.control}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          className={
+                            form.getFieldState(field.name).invalid
+                              ? "outline-border-error"
+                              : ""
+                          }
+                          placeholder="ОКПО"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage className="px-3 pt-2 text-border-error text-sm" />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="flex gap-2">
+                <DialogClose asChild>
+                  <Button variant="secondary">Отменить</Button>
+                </DialogClose>
+                <Button type="submit">Отправить на заявку</Button>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
         <div>
           <h3
