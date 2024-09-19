@@ -65,7 +65,7 @@ export const MapPage: FC<{ category_id: string }> = ({ category_id }) => {
     if (mapInstance == undefined) return;
 
     let url = "https://events.eco-mos.ru/api/v1/events?first=30&page=1";
-    if (category_id != undefined) url += `&category_id=${category_id}`;
+    if (category_id.length > 0) url += `&category_id=${category_id}`;
     if (search.length > 0) url += `&search=${search}`;
 
     const res = await fetch(url, {
