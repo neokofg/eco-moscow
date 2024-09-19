@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 git_output=$(git pull)
 
@@ -22,30 +22,30 @@ for service in "${!services[@]}"; do
     echo "Processing $service ..."
 
     if echo "$CHANGES" | grep -q "^$service_dir/"; then
-            echo "Changes detected in $service"
+        echo "Changes detected in $service"
 
-            if echo "$CHANGES" | grep -q "^$service_dir/composer.json"; then
-                echo "Running composer install for $service ..."
-                docker compose exec $service composer install
-            fi
+        if echo "$CHANGES" | grep -q "^$service_dir/composer.json"; then
+            echo "Running composer install for $service ..."
+            docker compose exec $service composer install
+        fi
 
-            if echo "$CHANGES" | grep -q "^$service_dir/database/migrations"; then
-                echo "Running migrations for $service ..."
-                docker compose exec $service php artisan migrate --force
-            fi
+        if echo "$CHANGES" | grep -q "^$service_dir/database/migrations"; then
+            echo "Running migrations for $service ..."
+            docker compose exec $service php artisan migrate --force
+        fi
 
-            if echo "$CHANGES" | grep -q "^$service_dir/routes/api.php"; then
-                echo "Updating api for $service ..."
-                docker compose exec $service php artisan scribe:generate --force
-            fi
+        if echo "$CHANGES" | grep -q "^$service_dir/routes/api.php"; then
+            echo "Updating API for $service ..."
+            docker compose exec $service php artisan scribe:generate --force
+        fi
 
-            echo "Optimizing and caching routes for $service"
-            docker compose exec $service php artisan optimize:clear
-            docker compose exec $service php artisan route:cache
+        echo "Optimizing and caching routes for $service"
+        docker compose exec $service php artisan optimize:clear
+        docker compose exec $service php artisan route:cache
 
-            echo "Rebuilding and restarting $service container"
-            docker compose stop $service
-            docker compose up -d --build $service
+        echo "Rebuilding and restarting $service container"
+        docker compose stop $service
+        docker compose up -d --build $service
     else
         echo "No changes detected in $service"
     fi
