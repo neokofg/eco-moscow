@@ -24,7 +24,7 @@ class Event extends Model
     protected array $postgisColumns = [
         'location' => [
             'type' => 'geometry',
-            'srid' => 3857,
+            'srid' => 4326,
         ],
     ];
 

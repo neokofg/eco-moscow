@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('content');
             $table->string('image_url');
             $table->string('address');
-            $table->magellanPoint('location', 3857);
+            $table->magellanPoint('location', 4326);
             $table->integer('views')->default(0);
             $table->ulid('user_id');
             $table->ulid('category_id');
