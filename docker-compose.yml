@@ -76,6 +76,15 @@ services:
       - 50051:50051
     volumes:
       - "./eco-moder:/var/www/eco/eco-moder"
+  admin:
+    container_name: eco-admin
+    working_dir: "/var/www/eco/eco-admin"
+    restart: unless-stopped
+    build:
+      context: "./eco-admin"
+      dockerfile: Dockerfile
+    volumes:
+      - "./eco-admin:/var/www/eco/eco-admin"
   frontend:
     container_name: eco-frontend
     restart: unless-stopped
