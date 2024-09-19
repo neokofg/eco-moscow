@@ -3,6 +3,8 @@
 namespace App\Controllers\Rest\V1\Event;
 
 use App\Controllers\Controller;
+use App\Controllers\Grpc\Client\ModerClient;
+use App\Controllers\Grpc\Controller\ModerController;
 use App\Models\Event;
 use App\Models\EventUser;
 use App\Presenters\EventPresenter;
@@ -12,6 +14,7 @@ use App\Traits\ValidateIdTrait;
 use Clickbar\Magellan\Data\Geometries\Point;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\App;
 use Symfony\Component\HttpFoundation\Response;
 
 final readonly class EventController extends Controller
@@ -32,6 +35,13 @@ final readonly class EventController extends Controller
     public function store(StoreRequest $request): JsonResponse
     {
         $validated = $request->validated();
+
+        $client = App::make(ModerClient::class);
+        $controller = new ModerController($client);
+        if(!$controller->moder($validated['title'] . ' ' . $validated['content'])) {
+            return $this->presenter->present(false, __('Bad words'), Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
         $event = Event::create([
             'title' => $validated['title'],
             'content' => $validated['content'],

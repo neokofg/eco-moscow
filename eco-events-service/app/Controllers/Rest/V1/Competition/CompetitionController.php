@@ -3,6 +3,8 @@
 namespace App\Controllers\Rest\V1\Competition;
 
 use App\Controllers\Controller;
+use App\Controllers\Grpc\Client\ModerClient;
+use App\Controllers\Grpc\Controller\ModerController;
 use App\Models\Competition;
 use App\Models\CompetitionUser;
 use App\Presenters\CompetitionPresenter;
@@ -11,6 +13,7 @@ use App\Requests\Rest\V1\Competition\StoreRequest;
 use App\Traits\ValidateIdTrait;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\App;
 use Symfony\Component\HttpFoundation\Response;
 
 final readonly class CompetitionController extends Controller
@@ -35,6 +38,13 @@ final readonly class CompetitionController extends Controller
     public function store(StoreRequest $request): JsonResponse
     {
         $validated = $request->validated();
+
+        $client = App::make(ModerClient::class);
+        $controller = new ModerController($client);
+        if(!$controller->moder($validated['title'] . ' ' . $validated['content'])) {
+            return $this->presenter->present(false, __('Bad words'), Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
         $event = Competition::create([
             'title' => $validated['title'],
             'content' => $validated['content'],

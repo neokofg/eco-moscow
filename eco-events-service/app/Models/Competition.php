@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @method static find(string $id)
+ * @method static create(array $array)
  */
 class Competition extends Model
 {

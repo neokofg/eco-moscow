@@ -3,6 +3,8 @@
 namespace App\Controllers\Rest\V1\Promotion;
 
 use App\Controllers\Controller;
+use App\Controllers\Grpc\Client\ModerClient;
+use App\Controllers\Grpc\Controller\ModerController;
 use App\Models\Promotion;
 use App\Models\PromotionUser;
 use App\Presenters\PromotionPresenter;
@@ -12,6 +14,7 @@ use App\Requests\Rest\V1\Promotion\StoreRequest;
 use App\Traits\ValidateIdTrait;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\App;
 use Symfony\Component\HttpFoundation\Response;
 
 final readonly class PromotionController extends Controller
@@ -36,6 +39,13 @@ final readonly class PromotionController extends Controller
     public function store(StoreRequest $request): JsonResponse
     {
         $validated = $request->validated();
+
+        $client = App::make(ModerClient::class);
+        $controller = new ModerController($client);
+        if(!$controller->moder($validated['title'] . ' ' . $validated['content'])) {
+            return $this->presenter->present(false, __('Bad words'), Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
         $promotion = Promotion::create([
             'title' => $validated['title'],
             'content' => $validated['content'],
