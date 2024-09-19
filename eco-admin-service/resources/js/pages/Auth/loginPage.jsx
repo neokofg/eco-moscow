@@ -50,13 +50,6 @@ function LoginPage () {
                             <Button className={"w-full mt-4"} type={"submit"}>Войти</Button>
                         </div>
                     </form>
-
-                    <p className="mt-10 text-center text-sm text-gray-400">
-                        Нету доступа?{' '}
-                        <a href="https://t.me/gelious7" className="font-semibold leading-6 text-zinc-100 hover:text-indigo-300">
-                            Получите доступ
-                        </a>
-                    </p>
                 </div>
             </div>
         </>
