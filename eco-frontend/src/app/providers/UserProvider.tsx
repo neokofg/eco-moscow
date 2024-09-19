@@ -32,6 +32,8 @@ interface User {
   address: string;
   updated_at: string;
   is_organizer: boolean;
+  subscribers: number;
+  subscriptions: number;
   user_education: {
     id: string;
     created_at: string;

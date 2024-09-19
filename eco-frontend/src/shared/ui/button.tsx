@@ -10,7 +10,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "label-base bg-content-green text-content-inverse-primary",
+        default:
+          "label-base bg-content-green text-content-inverse-primary disabled:bg-zinc-200 disabled:text-zinc-400",
         destructive: "bg-background-red text-border-error",
         secondary: "text-content-primary bg-background-tertiary",
         ghost: "bg-transparent text-content-primary",
