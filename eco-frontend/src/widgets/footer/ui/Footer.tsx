@@ -10,9 +10,9 @@ import MasterCard from "@/src/shared/assets/mastercard.png";
 import { usePathname } from "next/navigation";
 
 export const Footer = () => {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
-  if (pathname == "/sign-in") return
+  if (pathname == "/sign-in") return;
 
   return (
     <footer className="mt-8 bg-background-primary py-12">
@@ -70,10 +70,7 @@ export const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <Image src={Apple} width={177} height={52} alt="apple" />
-            <Image src={Google} width={177} height={52} alt="google" />
-          </div>
+          <div className="flex flex-col gap-4"> </div>
         </div>
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-row items-center justify-start text-sm text-content-tertiary font-medium gap-8">
@@ -81,13 +78,7 @@ export const Footer = () => {
             <p>Политика конфиденциальности</p>
             <p>Политика обработки персональных данных</p>
           </div>
-          <div className="flex flex-row gap-[14px] items-center">
-            <Image src={Mir} width={45} height={16} alt="google" />
-            <Image src={Visa} width={44} height={16} alt="google" />
-            <Image src={MasterCard} width={82} height={16} alt="google" />
-            <Image src={SBP} width={31} height={16} alt="google" />
-            <Image src={Dolyame} width={95} height={16} alt="google" />
-          </div>
+          <div className="flex flex-row gap-[14px] items-center"></div>
         </div>
       </div>
     </footer>

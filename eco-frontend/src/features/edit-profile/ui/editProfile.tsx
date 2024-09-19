@@ -1,6 +1,4 @@
 "use client";
-import { AddressSuggestions } from "react-dadata";
-
 import { ru } from "date-fns/locale";
 import {
   Form,
@@ -37,7 +35,6 @@ import { API_S3_URL, privateAPI } from "@/src/shared/api";
 import { toast } from "@/src/shared/ui/use-toast";
 import { ChangeEmail } from "./changeEmail";
 import { ChangePassword } from "./changePassword";
-import { Org } from "./org";
 
 const formSchema = z.object({
   name: z.string(),

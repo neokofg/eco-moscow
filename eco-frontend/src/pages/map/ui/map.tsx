@@ -96,7 +96,7 @@ export const MapPage: FC<{ category_id: string }> = ({ category_id }) => {
                       </div>
                       <p class="label-small text-content-tertiary">${e[i].address}</p>
                     </div>
-                    <img src="${e[i].user.avatar_url}" alt="avatar" />
+                    <img class="h-14 w-14 rounded-full" src="${e[i].user.avatar_url}" alt="avatar" />
                 </div>`,
       });
 

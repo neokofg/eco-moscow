@@ -171,10 +171,22 @@ export const EventsPage: FC<EventsPageProps> = ({ type }) => {
             Найти
           </Button>
         </div>
+        <div className="bg-content-green rounded-3xl text-content-inverse-primary">
+          <div>
+            <h5 className="text-content-inverse-primary">
+              создайте мероприятия
+            </h5>
+            <span className="text-content-inverse-primary">
+              Действуйте, основываясь на мнении вашей аудитории, и создавайте
+              простые мероприятия для сбора быстрой обратной связи!
+            </span>
+          </div>
+          <Button onClick={() => { }}>Создайте мероприятия</Button>
+        </div>
         <div className="flex gap-6 px-6">
           {eventsLinks.map((c) => (
             <NavLink
-              className="p-0 pb-1 label-base text-content-tertiary"
+              className="p-0  p b-1 label-base text-content-tertiary"
               activeClassName="text-content-primary border-b-[3px] border-border-success"
               href={c.href}
             >
