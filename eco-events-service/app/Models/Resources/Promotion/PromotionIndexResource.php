@@ -30,7 +30,6 @@ final class PromotionIndexResource extends JsonResource
                 'id' => $user->id,
                 'fio' => $user->name . ' ' . $user->surname,
                 'avatar_url' => $user->avatar_url,
-                'subscribers' => $user->subscribers()->count(),
             ],
             'category' => [
                 'id' => $category->id,

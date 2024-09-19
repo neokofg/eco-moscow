@@ -72,12 +72,6 @@ class User extends Authenticatable
     {
         return $this->id;
     }
-
-    public function subscribers(): BelongsToMany
-    {
-        return $this->belongsToMany(User::class, 'main_db.user_subscriptions', 'user_id', 'subscribed_user_id', 'id', 'id');
-    }
-
     public function events(): HasMany
     {
         return $this->hasMany(EventUser::class, 'user_id', 'id');
