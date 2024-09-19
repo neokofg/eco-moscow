@@ -128,7 +128,7 @@ export const MapPage: FC<{ category_id: string }> = ({ category_id }) => {
 
   return (
     <div className="relative container rounded-3xl mt-4 mb-12">
-      <div className="absolute left-[22px] top-2 z-50 w-[418px]">
+      <div className="absolute left-[22px] top-2 z-20 w-[418px]">
         <div className="p-6 rounded-3xl flex flex-col gap-6 bg-background-primary ">
           <h4>ПОИСК</h4>
           <Input
@@ -138,7 +138,7 @@ export const MapPage: FC<{ category_id: string }> = ({ category_id }) => {
           />
         </div>
 
-        {search == "" && category_id == undefined ? (
+        {search == "" && category_id.length == 0 ? (
           <div className="flex max-h-[648px] flex-col gap-4 bg-background-primary overflow-y-scroll rounded-3xl mt-2 p-6">
             <span className="label-large">Категории</span>
             <div className="w-full grid grid-cols-3 gap-2">
@@ -154,11 +154,12 @@ export const MapPage: FC<{ category_id: string }> = ({ category_id }) => {
             <div className="h-full flex flex-col gap-2">
               {events.map((e) => (
                 <ArticlesCard
+                  key={e.id}
                   time="3 часа назад"
                   avatar_url={e.user.avatar_url}
                   author={e.user.fio}
                   views={e.views}
-                  image={""}
+                  image={"/mock_image.png"}
                   description={e.content}
                   name={e.title}
                 />

@@ -36,7 +36,7 @@ export const ProfileFavoritePage: FC = () => {
       <ToggleGroup
         value={selectedCategories}
         onValueChange={(e) => setSelectedCategories(e)}
-        className="grid 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-6"
+        className="grid row-auto 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-6"
         type="multiple"
       >
         {categories.map((c) => (

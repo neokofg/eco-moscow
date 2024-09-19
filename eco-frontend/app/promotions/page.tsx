@@ -1,5 +1,5 @@
 import { EventsPage } from "@/src/pages/events";
 
 export default function Page() {
-  return <EventsPage type="/events" />;
+  return <EventsPage type="/promotions" />;
 }

@@ -21,7 +21,7 @@ export const NavLink: FC<NavLinkProps> = ({
   const pathname = usePathname();
   return (
     <Link
-      className={cn(pathname === rest.href ? activeClassName : "", className)}
+      className={cn(className, pathname === rest.href ? activeClassName : "")}
       {...rest}
     >
       {Icon && <Icon />}

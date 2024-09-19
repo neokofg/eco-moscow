@@ -134,7 +134,7 @@ export const Header: FC = () => {
                     <div className="flex gap-2">
                       <div className="w-[280px]">
                         {eventsLinks.map((link) => (
-                          <NavigationMenuLink asChild>
+                          <NavigationMenuLink key={link.href} asChild>
                             <NavLink
                               activeClassName=""
                               className="flex p-4 gap-4 items-center"
