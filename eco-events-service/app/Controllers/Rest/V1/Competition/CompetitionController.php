@@ -43,6 +43,11 @@ final readonly class CompetitionController extends Controller
             'user_id' => getUser()->id,
         ]);
 
+        $user = getUser();
+        $user->update([
+            'event_points' => $user->event_points + 1
+        ]);
+
         $event = $this->competitionPresenter->present($event);
 
         return $this->presenter->present($event, __('Successfully created event'), Response::HTTP_CREATED);
@@ -113,6 +118,11 @@ final readonly class CompetitionController extends Controller
         CompetitionUser::create([
             'competition_id' => $event->id,
             'user_id' => getUser()->id,
+        ]);
+
+        $user = getUser();
+        $user->update([
+            'participant_points' => $user->participant_points + 50
         ]);
 
         $event = $this->competitionPresenter->present($event);

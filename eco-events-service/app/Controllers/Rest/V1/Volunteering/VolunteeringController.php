@@ -43,6 +43,11 @@ final readonly class VolunteeringController extends Controller
             'user_id' => getUser()->id,
         ]);
 
+        $user = getUser();
+        $user->update([
+            'event_points' => $user->event_points + 1
+        ]);
+
         $event = $this->volunteeringPresenter->present($event);
 
         return $this->presenter->present($event, __('Successfully created event'), Response::HTTP_CREATED);
@@ -113,6 +118,11 @@ final readonly class VolunteeringController extends Controller
         VolunteeringUser::create([
             'volunteering_id' => $event->id,
             'user_id' => getUser()->id,
+        ]);
+
+        $user = getUser();
+        $user->update([
+            'participant_points' => $user->participant_points + 50
         ]);
 
         $event = $this->volunteeringPresenter->present($event);

@@ -45,6 +45,11 @@ final readonly class PromotionController extends Controller
             'user_id' => getUser()->id,
         ]);
 
+        $user = getUser();
+        $user->update([
+            'event_points' => $user->event_points + 1
+        ]);
+
         $promotion = $this->promotionPresenter->present($promotion);
 
         return $this->presenter->present($promotion, __('Successfully created event'), Response::HTTP_CREATED);
@@ -118,6 +123,11 @@ final readonly class PromotionController extends Controller
             'promotion_id' => $event->id,
             'sum' => $validated['sum'],
             'user_id' => getUser()->id,
+        ]);
+
+        $user = getUser();
+        $user->update([
+            'participant_points' => $user->participant_points + 50
         ]);
 
         $event = $this->promotionPresenter->present($event);

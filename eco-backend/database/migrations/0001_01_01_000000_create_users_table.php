@@ -35,6 +35,9 @@ return new class extends Migration
             $table->boolean('is_was_filled')->default(false);
 
             $table->timestamps();
+
+            $table->integer('event_points')->default(0);
+            $table->integer('participant_points')->default(0);
         });
     }
 
