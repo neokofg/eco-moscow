@@ -10,6 +10,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.eco-mos.ru",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { IMaskInput, IMaskInputProps } from "react-imask";
+import { IMaskInput } from "react-imask";
 import {
   FC,
   forwardRef,
@@ -13,7 +13,7 @@ import { cn } from "@/src/shared/lib/utils";
 import { EyeClosedIcon, EyeIcon, IconType } from "@/src/shared/icons";
 import { Button } from "./button";
 import { PopoverTrigger } from "./popover";
-import { FactoryOpts, InputMask, MaskedDate } from "imask";
+import { InputMask, MaskedDate } from "imask";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   withAsterisk?: boolean;
@@ -23,12 +23,26 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ placeholder, Icon, withAsterisk, className, type, IconStart, FullWidth,  ...props }, ref) => {
+  (
+    {
+      placeholder,
+      Icon,
+      withAsterisk,
+      className,
+      type,
+      IconStart,
+      FullWidth,
+      ...props
+    },
+    ref,
+  ) => {
     return (
-      <div className={cn(
-        "transition duration-100 relative",
-        FullWidth && 'w-full',
-      )}>
+      <div
+        className={cn(
+          "transition duration-100 relative",
+          FullWidth && "w-full",
+        )}
+      >
         {IconStart && (
           <div className="absolute left-4 top-4">
             <IconStart />
@@ -41,6 +55,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             placeholder &&
             "translate-y-[-8px] opacity-100 text-content-primary text-xs",
             IconStart && "pl-10",
+            className,
           )}
         >
           {placeholder}

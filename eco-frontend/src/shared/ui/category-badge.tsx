@@ -16,8 +16,8 @@ export const CategoryBadge: FC<CategoryBadgeProps> = ({
   return (
     <div
       className={cn(
-        "border border-border-primary min-w-[163px] flex bg-background-primary flex-row rounded-2xl",
-        active ? "bg-content-primary text-content-inverse-primary" : "",
+        "border shrink-0 border-border-primary min-w-[192px] flex bg-background-primary flex-row rounded-2xl",
+        active ? "bg-content-primary" : "",
       )}
     >
       <Image
@@ -27,7 +27,14 @@ export const CategoryBadge: FC<CategoryBadgeProps> = ({
         src={src}
         className="bg-background-tertiary rounded-s-2xl"
       />
-      <p className="px-4 py-3">{title}</p>
+      <p
+        className={cn(
+          "px-4 py-3",
+          active ? "text-content-inverse-primary" : "",
+        )}
+      >
+        {title}
+      </p>
     </div>
   );
 };

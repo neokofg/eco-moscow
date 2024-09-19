@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { UserAvatar } from "./useravatar";
 import { FC } from "react";
+import { formatViews } from "../lib/views";
 
 interface ArticlesCardProps {
   author?: string;
@@ -11,12 +12,6 @@ interface ArticlesCardProps {
   isBig?: boolean;
   description?: string;
   avatar_url?: string;
-}
-
-function formatViews(views: number): string {
-  if (views >= 1000000) return Math.ceil(views / 1000000) + " млн просмотров";
-  if (views >= 1000) return Math.ceil(views / 1000) + "K просмотров";
-  return views + " просмотров";
 }
 
 export const ArticlesCard: FC<ArticlesCardProps> = ({

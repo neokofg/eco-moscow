@@ -1,6 +1,5 @@
 import { CategoryBadge } from "@/src/shared/ui/category-badge";
 import { News, Articles, Videos } from "@/src/widgets/posts";
-import Image from "next/image";
 
 export const Posts = () => {
   return (
