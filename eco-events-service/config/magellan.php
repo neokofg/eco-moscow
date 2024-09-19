@@ -18,7 +18,7 @@ return [
          * array on the model.
          */
         'default_postgis_type' => 'geometry',
-        'default_srid' => 4326,
+        'default_srid' => 3857,
 
         /**
          * When set to true, the Eloquent model will automatically transform geometries to the database projection
