@@ -6,6 +6,7 @@ use App\Controllers\Grpc\Client\AchievementClient;
 use App\Controllers\Grpc\Controller\AchievementController;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -70,6 +71,11 @@ class User extends Authenticatable
     public function id(): string
     {
         return $this->id;
+    }
+
+    public function subscribers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'main_db.user_subscriptions', 'user_id', 'subscribed_user_id', 'id', 'id');
     }
 
     public function events(): HasMany
