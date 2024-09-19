@@ -33,9 +33,4 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-    public function id(): string
-    {
-        return $this->id;
-    }
 }
