@@ -8,5 +8,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 EXPOSE 50051
-RUN python -m nltk.downloader punkt
+RUN python -m nltk.downloader punkt punkt_tab
 CMD ["python", "main.py"]
