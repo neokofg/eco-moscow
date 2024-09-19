@@ -1,8 +1,10 @@
 "use client";
+import { useUser } from "@/src/app/providers";
 import { publicAPI } from "@/src/shared/api";
 import { ArticlesCard } from "@/src/shared/ui/articlecard";
 import { Button } from "@/src/shared/ui/button";
 import { CategoryBadge } from "@/src/shared/ui/category-badge";
+import { Dialog, DialogContent, DialogTrigger } from "@/src/shared/ui/dialog";
 import { Input } from "@/src/shared/ui/input";
 import { NavLink } from "@/src/shared/ui/navlink";
 import Link from "next/link";
@@ -115,6 +117,7 @@ export const EventsPage: FC<EventsPageProps> = ({ type }) => {
   const [categories, setCategories] = useState<Categoriy[]>([]);
   const [search, setSearch] = useState<string>("");
   const [events, setEvents] = useState<Event[]>([]);
+  const { user } = useUser();
 
   const getEvents = async () => {
     let url =
@@ -171,18 +174,6 @@ export const EventsPage: FC<EventsPageProps> = ({ type }) => {
             Найти
           </Button>
         </div>
-        <div className="bg-content-green rounded-3xl text-content-inverse-primary">
-          <div>
-            <h5 className="text-content-inverse-primary">
-              создайте мероприятия
-            </h5>
-            <span className="text-content-inverse-primary">
-              Действуйте, основываясь на мнении вашей аудитории, и создавайте
-              простые мероприятия для сбора быстрой обратной связи!
-            </span>
-          </div>
-          <Button onClick={() => { }}>Создайте мероприятия</Button>
-        </div>
         <div className="flex gap-6 px-6">
           {eventsLinks.map((c) => (
             <NavLink
@@ -195,6 +186,42 @@ export const EventsPage: FC<EventsPageProps> = ({ type }) => {
           ))}
         </div>
       </div>
+
+      {user?.is_organizer && (
+        <div className="p-6 bg-content-green rounded-3xl flex justify-between items-center text-content-inverse-primary">
+          <div className="flex gap-1 flex-col w-[50%]">
+            <h5 className="text-content-inverse-primary">
+              создайте мероприятия
+            </h5>
+            <span className="text-content-inverse-primary">
+              Действуйте, основываясь на мнении вашей аудитории, и создавайте
+              простые мероприятия для сбора быстрой обратной связи!
+            </span>
+          </div>
+          <Link
+            href="/events/create"
+            className="py-3 px-6 bg-background-primary rounded-2xl text-content-primary font-semibold"
+          >
+            Создайте мероприятия
+          </Link>
+          {/*
+             *
+             *
+             *
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                className="bg-background-primary w-[250px] text-content-primary"
+                onClick={() => { }}
+              >
+                Создайте мероприятия
+              </Button>
+            </DialogTrigger>
+            <DialogContent></DialogContent>
+          </Dialog>
+             */}
+        </div>
+      )}
       <div className="grid grid-cols-4 gap-4">
         {events.map((e) => (
           <Link key={e.id} href={type + "/" + e.id}>
