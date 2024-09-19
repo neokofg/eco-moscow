@@ -181,10 +181,12 @@ export const Header: FC = () => {
           ))}
         </ul>
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="text-content-secondary">
-            <SearchIcon />
-            Поиск
-          </Button>
+          <Link href={'/search'}>
+            <Button variant="ghost" className="text-content-secondary">
+              <SearchIcon />
+              Поиск
+            </Button>
+          </Link>
           {isMobile && (
             <Button variant="secondary" size="icon-md">
               <BurgerIcon />
