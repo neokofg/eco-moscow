@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Resources\Event;
+namespace App\Models\Resources\Promotion;
 
 use Clickbar\Magellan\Data\Geometries\Point;
 use Illuminate\Http\Request;

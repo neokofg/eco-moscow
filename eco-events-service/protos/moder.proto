@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option php_namespace = "GRPC\\Moder";
+option php_metadata_namespace = "GRPC\\Moder\\GPBMetadata";
+
+package moder;
+
+service ModerService {
+    rpc PredictModer (ModerRequest) returns (ModerResponse) {}
+}
+
+message ModerRequest {
+    string text = 1;
+}
+
+message ModerResponse {
+    bool isTrue = 2;
+}

@@ -35,7 +35,7 @@ Route::prefix('v1')->group(function () {
             Route::middleware(['auth:sanctum','type.client'])
                 ->post('/participate',  [CompetitionController::class, 'participate']);
         });
-        Route::middleware(['auth:sanctum','type.client'])
+        Route::middleware(['auth:sanctum','type.organizer'])
             ->post('/',                 [CompetitionController::class, 'store']);
     });
     Route::prefix('volunteerings')->group(function () {
@@ -45,7 +45,7 @@ Route::prefix('v1')->group(function () {
             Route::middleware(['auth:sanctum','type.client'])
                 ->post('/participate',  [VolunteeringController::class, 'participate']);
         });
-        Route::middleware(['auth:sanctum','type.client'])
+        Route::middleware(['auth:sanctum','type.organizer'])
             ->post('/',                 [VolunteeringController::class, 'store']);
     });
     Route::prefix('marathons')->group(function () {
@@ -55,7 +55,7 @@ Route::prefix('v1')->group(function () {
             Route::middleware(['auth:sanctum','type.client'])
                 ->post('/participate',  [MarathonController::class, 'participate']);
         });
-        Route::middleware(['auth:sanctum','type.client'])
+        Route::middleware(['auth:sanctum','type.organizer'])
             ->post('/',                 [MarathonController::class, 'store']);
     });
 });

@@ -65,6 +65,17 @@ services:
     volumes:
       - "./config/php/php.ini:/usr/local/etc/php/php.ini"
       - "./eco-events-service:/var/www/eco/eco-events-service"
+  moder:
+    container_name: eco-moder
+    working_dir: "/var/www/eco/eco-moder"
+    restart: unless-stopped
+    build:
+      context: "./eco-moder"
+      dockerfile: Dockerfile
+    ports:
+      - 50051:50051
+    volumes:
+      - "./eco-moder:/var/www/eco/eco-moder"
   frontend:
     container_name: eco-frontend
     restart: unless-stopped

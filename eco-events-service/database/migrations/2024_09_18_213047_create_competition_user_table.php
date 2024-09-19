@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('competition_user', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->timestamps();
-            $table->foreignId('competition_id')->constrained('events');
+            $table->foreignUlid('competition_id')->constrained('competitions')->cascadeOnDelete();
             $table->ulid('user_id');
         });
     }

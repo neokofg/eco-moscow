@@ -3,6 +3,7 @@
 use App\Exceptions\Custom\QueryException;
 use App\Middlewares\SetAcceptJsonHeader;
 use App\Middlewares\UserMiddleware;
+use App\Middlewares\UserOrganizerMiddleware;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
@@ -26,6 +27,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         $middleware->alias([
             'type.client' =>    UserMiddleware::class,
+            'type.organizer' =>    UserOrganizerMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
