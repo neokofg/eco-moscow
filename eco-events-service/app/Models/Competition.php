@@ -15,7 +15,7 @@ class Competition extends Model
     use HasFactory;
     use HasUlids;
 
-    protected $table = 'events';
+    protected $table = 'competitions';
 
     protected $guarded = [
         'id',
@@ -25,11 +25,11 @@ class Competition extends Model
 
     public function user(): User
     {
-        return User::find($this->id);
+        return User::find($this->user_id);
     }
 
     public function category(): Category
     {
-        return Category::find($this->id);
+        return Category::find($this->category_id);
     }
 }
