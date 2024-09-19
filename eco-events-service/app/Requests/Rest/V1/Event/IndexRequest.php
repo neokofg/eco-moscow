@@ -13,7 +13,7 @@ final class IndexRequest extends FormRequest implements RestRequest
     public function rules(): array
     {
         return [
-            'first' => 'required|int|min:1|max:30',
+            'first' => 'required|int|min:1',
             'page' => 'required|int|max:1',
             'search' => 'nullable|string|max:255',
             'user_id' => 'nullable|ulid|exists:main_db.users,id',
