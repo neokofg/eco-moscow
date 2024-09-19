@@ -24,7 +24,7 @@ final class EventIndexResource extends JsonResource
             'views' => $this->views,
             'address' => $this->address,
             'image_url' => $this->image_url,
-            'location' => $this->location->getX() . ',' . $this->location->getY(),
+            'location' => $this->location->getY() . ',' . $this->location->getX(),
             'user' => [
                 'id' => $user->id,
                 'fio' => $user->name . ' ' . $user->surname,
