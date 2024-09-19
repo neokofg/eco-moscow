@@ -88,12 +88,12 @@ export const EditEducation = () => {
             </FormItem>
           )}
         />
-        <div className="flex gap-4">
+        <div className="flex gap-4 w-full">
           <FormField
             name="start_year"
             control={form.control}
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full">
                 <FormControl>
                   <Input
                     className={
@@ -113,7 +113,7 @@ export const EditEducation = () => {
             name="end_year"
             control={form.control}
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="w-full">
                 <FormControl>
                   <Input
                     className={
@@ -136,13 +136,16 @@ export const EditEducation = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Switch
-                  checked={field.value}
-                  onChange={field.onChange}
-                  className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-content-green"
-                >
-                  <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
-                </Switch>
+                <div className="flex justify-start items-center gap-2">
+                  <Switch
+                    checked={field.value}
+                    onChange={field.onChange}
+                    className="group inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition data-[checked]:bg-content-green"
+                  >
+                    <span className="size-4 translate-x-1 rounded-full bg-white transition group-data-[checked]:translate-x-6" />
+                  </Switch>
+                  <span>По настоящее время</span>
+                </div>
               </FormControl>
               <FormMessage className="px-3 pt-2 text-border-error text-sm" />
             </FormItem>

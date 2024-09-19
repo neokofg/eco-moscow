@@ -199,8 +199,18 @@ export const EditProfile: FC = () => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <Input placeholder="Фамилия" withAsterisk {...field} />
+                    <Input
+                      className={
+                        form.getFieldState(field.name).invalid
+                          ? "outline-border-error"
+                          : ""
+                      }
+                      placeholder="Фамилия"
+                      withAsterisk
+                      {...field}
+                    />
                   </FormControl>
+                  <FormMessage className="px-3 pt-2 text-border-error text-sm" />
                 </FormItem>
               )}
             />
@@ -210,8 +220,18 @@ export const EditProfile: FC = () => {
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormControl>
-                    <Input placeholder="Имя" withAsterisk {...field} />
+                    <Input
+                      className={
+                        form.getFieldState(field.name).invalid
+                          ? "outline-border-error"
+                          : ""
+                      }
+                      placeholder="Имя"
+                      withAsterisk
+                      {...field}
+                    />
                   </FormControl>
+                  <FormMessage className="px-3 pt-2 text-border-error text-sm" />
                 </FormItem>
               )}
             />
@@ -255,6 +275,11 @@ export const EditProfile: FC = () => {
                     <FormControl>
                       <MaskInput
                         placeholder="Дата рождения"
+                        className={
+                          form.getFieldState(field.name).invalid
+                            ? "outline-border-error"
+                            : ""
+                        }
                         withAsterisk
                         Icon={isMobile ? undefined : CalendarIcon}
                         onAccept={handleInputChange}
@@ -281,7 +306,7 @@ export const EditProfile: FC = () => {
                       />
                     </PopoverContent>
                   </Popover>
-                  <FormMessage />
+                  <FormMessage className="px-3 pt-2 text-border-error text-sm" />
                 </FormItem>
               )}
             />
@@ -292,11 +317,17 @@ export const EditProfile: FC = () => {
                 <FormItem className="w-full">
                   <FormControl>
                     <Input
+                      className={
+                        form.getFieldState(field.name).invalid
+                          ? "outline-border-error"
+                          : ""
+                      }
                       placeholder="Место проживания"
                       withAsterisk
                       {...field}
                     />
                   </FormControl>
+                  <FormMessage className="px-3 pt-2 text-border-error text-sm" />
                 </FormItem>
               )}
             />
@@ -353,7 +384,23 @@ export const EditProfile: FC = () => {
 
         <div className="flex gap-4 items-start w-[272px]">
           <Button type="submit">Сохранить</Button>
-          <Button variant="secondary">Отменить</Button>
+          <Button
+            onClick={() => {
+              form.setValue("name", user.name as string);
+              form.setValue("surname", user.surname as string);
+              form.setValue("gender", user.gender as string);
+              form.setValue("about", user.about as string);
+              form.setValue(
+                "birthdate",
+                convertDateFormatAgain(user.birthdate),
+              );
+              form.setValue("address", user.address as string);
+              form.setValue("avatar_url", user.avatar_url as string);
+            }}
+            variant="secondary"
+          >
+            Отменить
+          </Button>
         </div>
       </form>
     </Form>
