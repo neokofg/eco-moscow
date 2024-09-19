@@ -53,9 +53,9 @@ export const Page = () => {
             </ul>
           </nav>
         </div>
-        <PageSearchContent />
+        {/* <PageSearchContent /> */}
         <PageSearch />
-        <PageSearchNotFound />
+        {/* <PageSearchNotFound /> */}
       </div>
     </div>
   );
