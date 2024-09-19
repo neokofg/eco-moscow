@@ -4,8 +4,8 @@ namespace App\Presenters;
 
 use App\Models\Event;
 use App\Models\Promotion;
-use App\Models\Resources\Event\PromotionIndexResource;
-use App\Models\Resources\Event\PromotionResource;
+use App\Models\Resources\Promotion\PromotionIndexResource;
+use App\Models\Resources\Promotion\PromotionResource;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 final readonly class PromotionPresenter
