@@ -25,6 +25,7 @@ final class PromotionIndexResource extends JsonResource
             'image_url' => $this->image_url,
             'sum_gathered' => $this->sum_gathered,
             'sum_needed' => $this->sum_needed,
+            'created_at' => $this->created_at,
             'user' => [
                 'id' => $user->id,
                 'fio' => $user->name . ' ' . $user->surname,

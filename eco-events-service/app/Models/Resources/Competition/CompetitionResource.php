@@ -23,6 +23,8 @@ final class CompetitionResource extends JsonResource
             'content' => $this->content,
             'views' => $this->views,
             'image_url' => $this->image_url,
+            'created_at' => $this->created_at,
+            'participators' => $this->participants()->count(),
             'participating' => Auth::guard('sanctum')->user()?->competitions()->where('competition_id','=',$this->id)->exists(),
             'user' => [
                 'id' => $user->id,

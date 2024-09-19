@@ -24,6 +24,8 @@ final class EventResource extends JsonResource
             'views' => $this->views,
             'address' => $this->address,
             'image_url' => $this->image_url,
+            'created_at' => $this->created_at,
+            'participators' => $this->participants()->count(),
             'location' => $this->location->getY() . ',' . $this->location->getX(),
             'participating' => Auth::guard('sanctum')->user()?->events()->where('event_id','=',$this->id)->exists(),
             'user' => [

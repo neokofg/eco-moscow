@@ -23,6 +23,7 @@ final class CompetitionIndexResource extends JsonResource
             'content' => $this->content,
             'views' => $this->views,
             'image_url' => $this->image_url,
+            'created_at' => $this->created_at,
             'user' => [
                 'id' => $user->id,
                 'fio' => $user->name . ' ' . $user->surname,

@@ -6,6 +6,7 @@ use App\Models\MainDb\Category;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @method static find(string $id)
@@ -32,5 +33,10 @@ class Competition extends Model
     public function category(): Category
     {
         return Category::find($this->category_id);
+    }
+
+    public function participants(): HasMany
+    {
+        return $this->hasMany(CompetitionUser::class, 'competition_id', 'id');
     }
 }

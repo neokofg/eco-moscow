@@ -25,6 +25,8 @@ final class PromotionResource extends JsonResource
             'image_url' => $this->image_url,
             'sum_gathered' => $this->sum_gathered,
             'sum_needed' => $this->sum_needed,
+            'created_at' => $this->created_at,
+            'participators' => $this->participants()->count(),
             'participating' => Auth::guard('sanctum')->user()?->promotions()->where('promotion_id','=',$this->id)->exists(),
             'user' => [
                 'id' => $user->id,
