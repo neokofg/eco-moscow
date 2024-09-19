@@ -112,6 +112,21 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'events_db' => [
+            'driver' => 'pgsql',
+            'url' => env('EVENTS_DB_URL'),
+            'host' => env('EVENTS_DB_HOST', '127.0.0.1'),
+            'port' => env('EVENTS_DB_PORT', '5432'),
+            'database' => env('EVENTS_DB_DATABASE', 'laravel'),
+            'username' => env('EVENTS_DB_USERNAME', 'root'),
+            'password' => env('EVENTS_DB_PASSWORD', ''),
+            'charset' => env('EVENTS_DB_CHARSET', 'utf8'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
     ],
 
     /*
