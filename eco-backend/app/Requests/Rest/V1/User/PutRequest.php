@@ -30,7 +30,13 @@ final class PutRequest extends FormRequest implements RestRequest
             'user_education.end_year' => 'nullable|numeric|digits:4|min:1900|max:2050|gt:user_education.start_year',
             'user_education.for_now' => 'nullable|bool',
             'categories' => 'nullable|array',
-            'categories.*' => 'ulid|exists:categories,id'
+            'categories.*' => 'ulid|exists:categories,id',
+            'organizer' => 'nullable|array',
+            'organizer.company' => 'nullable|string',
+            'organizer.inn' => 'nullable|string',
+            'organizer.ogrn' => 'nullable|string',
+            'organizer.kpp' => 'nullable|string',
+            'organizer.okpo' => 'nullable|string',
         ];
     }
 

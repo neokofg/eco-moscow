@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option php_namespace = "GRPC\\Achievement";
+option php_metadata_namespace = "GRPC\\Achievement\\GPBMetadata";
+
+package achievement;
+
+service AchievementService {
+  rpc AddAchievement (AddAchievementRequest) returns (AddAchievementResponse);
+}
+
+message AddAchievementRequest {
+  string user_id = 1;
+  string achievement_id = 2;
+}
+
+message AddAchievementResponse {
+  bool success = 1;
+}

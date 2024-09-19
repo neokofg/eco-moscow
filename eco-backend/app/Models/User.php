@@ -36,6 +36,11 @@ class User extends Authenticatable
             UserEducation::create([
                 'user_id' => $user->id
             ]);
+            try {
+                $user->achievements()->attach(Achievement::where('key','=','NEWBIE')->first()->id);
+            } catch (\Throwable $exception) {
+            }
+
         });
 
         static::updated(function ($user) {
