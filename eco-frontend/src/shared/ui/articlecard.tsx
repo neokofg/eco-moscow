@@ -48,7 +48,9 @@ export const ArticlesCard: FC<ArticlesCardProps> = ({
         <p className="text-content-primary text-lg font-semibold overflow-hidden">
           {name}
         </p>
-        <p className="paragraph-small text-content-secondary">{description}</p>
+        <p className="paragraph-small text-content-secondary break-words whitespace-nowrap overflow-hidden overflow-ellipsis">
+          {description}
+        </p>
       </div>
     </div>
   );

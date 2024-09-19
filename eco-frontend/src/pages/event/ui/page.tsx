@@ -197,7 +197,7 @@ export const EventPage: FC<EventPage> = ({ id, type }) => {
         >
           {type == "promotions" ? "Пожертвовать" : "Участвовать"}
         </Button>
-        <p>{data.content}</p>
+        <p className="w-full whitespace-normal break-words">{data.content}</p>
       </div>
       <div className="w-[352px] h-[172px] rounded-3xl p-6 bg-background-primary">
         <h5 className="text-[30px]">участники</h5>

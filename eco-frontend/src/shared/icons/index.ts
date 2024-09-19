@@ -28,3 +28,8 @@ export { ChevronRightIcon } from "./chevron_right";
 export { CalendarIcon } from "./calendar";
 export { PenIcon } from "./pen";
 export { ArrowUp } from "./arrow_up";
+export { UsersGroupIcon } from "./users_group";
+export { BoltIcon } from "./bolt";
+export { HandShakeIcon } from "./hand_shake";
+export { GiftIcon } from "./gift";
+export { GalleryWideIcon } from "./gallery_wide";

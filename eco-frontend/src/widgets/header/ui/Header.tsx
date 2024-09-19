@@ -4,13 +4,18 @@ import { sofiaSansCondensed } from "@/src/app/fonts";
 import { useMobile, useUser } from "@/src/app/providers";
 import {
   AvatarIcon,
+  BoltIcon,
   BurgerIcon,
   GalleryIcon,
+  GalleryWideIcon,
+  GiftIcon,
+  HandShakeIcon,
   LogoIcon,
   SearchIcon,
   ShieldStarIcon,
   StarIcon,
   UserIdIcon,
+  UsersGroupIcon,
   XIcon,
 } from "@/src/shared/icons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/src/shared/ui/avatar";
@@ -60,27 +65,27 @@ const eventsLinks = [
   {
     href: "/events",
     title: "Мероприятия",
-    icon: ShieldStarIcon,
+    icon: GalleryWideIcon,
   },
   {
-    href: "/discount",
+    href: "/promotions",
     title: "Акции",
-    icon: ShieldStarIcon,
+    icon: GiftIcon,
   },
   {
-    href: "/contest",
+    href: "/competitions",
     title: "Конкурсы",
-    icon: ShieldStarIcon,
+    icon: BoltIcon,
   },
   {
-    href: "/help",
+    href: "/volunteerings",
     title: "Волонтёрство",
-    icon: ShieldStarIcon,
+    icon: UsersGroupIcon,
   },
   {
-    href: "/marathon",
+    href: "/marathons",
     title: "Марафон",
-    icon: ShieldStarIcon,
+    icon: HandShakeIcon,
   },
 ];
 
